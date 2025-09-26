@@ -28,6 +28,11 @@ export default function ProjectsSection() {
 						<div key={project.id} className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
 							<div className="aspect-video bg-gray-700 relative">
 								<Image src={project.image} alt={project.title} fill className="object-cover" />
+								<div className="absolute top-3 right-3">
+									<span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">
+										{project.technologies[0]}
+									</span>
+								</div>
 							</div>
 							<div className="p-4 sm:p-6">
 								<h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{project.title}</h3>
