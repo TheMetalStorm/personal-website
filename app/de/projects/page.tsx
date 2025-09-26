@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllProjects } from '../data/projectsClient';
-import { useI18n } from '../hooks/useI18n';
+import { getAllProjects } from '../../data/projectsClient';
+import { useI18n } from '../../hooks/useI18n';
 
-export default function ProjectsPage() {
+export default function GermanProjectsPage() {
   const { t, translations } = useI18n();
   const allProjects = getAllProjects(translations);
   
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
         {/* Header */}
         <div className="mb-12">
           <Link 
-            href="/" 
+            href="/de" 
             className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium mb-6 transition-colors"
           >
             ← {t('navigation.home')}
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
                 {/* Actions */}
                 <div className="flex gap-3">
                   <Link
-                    href={`/projects/${project.slug}`}
+                    href={`/de/projects/${project.slug}`}
                     className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-center text-sm font-medium"
                   >
                     {t('projects.viewProject')}

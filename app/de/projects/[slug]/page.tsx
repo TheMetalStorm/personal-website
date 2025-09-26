@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
-import { getAllProjectSlugs } from '../../data/projectsBase';
-import ProjectDetail from '../../components/ProjectDetail';
+import { getAllProjectSlugs } from '../../../data/projectsBase';
+import ProjectDetail from '../../../components/ProjectDetail';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function GermanProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   
   return <ProjectDetail slug={slug} />;
