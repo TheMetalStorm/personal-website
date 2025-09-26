@@ -75,27 +75,6 @@
         "lightweightFastDesc": "Optimized for performance with minimal resource usage and fast startup times."
       }
     },
-    "shooty": {
-      "title": "Shooty",
-      "description": "A Videogame written in Zig using Raylib.",
-      "fullDescription": "Shooty is a fast-paced action game built with Zig and Raylib. Players control a Spaceship, battling against waves of enemies in a vibrant 2D world.",
-      "imagesCaptions": {
-        "homepage": "Game main menu",
-        "gallery": "Gameplay screenshot",
-        "booking": "High score screen",
-        "mobile": "Game over screen"
-      },
-      "features": {
-        "spriteAnimation": "Sprite Animation",
-        "spriteAnimationDesc": "Smooth and fluid sprite animations for characters and objects using advanced animation techniques.",
-        "bookingSystem": "Collision System",
-        "bookingSystemDesc": "Precise collision detection system for accurate gameplay mechanics and interactions.",
-        "imageOptimization": "Performance Optimization",
-        "imageOptimizationDesc": "Optimized rendering pipeline for smooth 60+ FPS gameplay experience.",
-        "socialMedia": "Game Physics",
-        "socialMediaDesc": "Realistic physics simulation for projectiles, movement, and environmental interactions."
-      }
-    },
     "c8-serenityos": {
       "title": "CHIP-8 Emulator for SerenityOS",
       "description": "A CHIP-8 emulator implementation built specifically for the SerenityOS operating system.",
@@ -134,6 +113,48 @@
         "crudOperationsDesc": "Full Create, Read, Update, Delete functionality for books, authors, and borrowing records.",
         "apiDocumentation": "API Documentation",
         "apiDocumentationDesc": "Comprehensive API documentation."
+      }
+    },
+    "socket-fun": {
+      "title": "SocketFun",
+      "description": "Experimenting with sockets in C on Linux, featuring echo and chat servers with concurrent connection handling.",
+      "fullDescription": "SocketFun is a learning project that explores socket programming in C on Linux. It includes both an Echo Server/Client and Chat Server/Client implementation, demonstrating concurrent connection handling using epoll(). The project showcases low-level network programming concepts and efficient I/O multiplexing techniques for handling multiple client connections simultaneously.",
+      "imageCaptions": {
+        "implementation": "C socket programming implementation",
+        "echo": "Echo server reflecting client messages",
+        "chat": "Multi-client chat server in action",
+        "concurrent": "epoll() handling concurrent connections"
+      },
+      "features": {
+        "echoServer": "Echo Server",
+        "echoServerDesc": "TCP Echo Server that reflects client messages back, demonstrating basic client-server communication patterns.",
+        "chatServer": "Chat Server", 
+        "chatServerDesc": "Multi-client chat server enabling real-time communication between connected clients.",
+        "concurrentConnections": "Concurrent Connections",
+        "concurrentConnectionsDesc": "Support for up to 128 simultaneous client connections using efficient I/O multiplexing.",
+        "epollHandling": "epoll() Implementation",
+        "epollHandlingDesc": "High-performance event-driven I/O using Linux epoll() for scalable network applications."
+      }
+    },
+    "world-launcher": {
+      "title": "World-Launcher",
+      "description": "A Windows launcher for Super Mario World ROM hacks with integrated patching capabilities using Floating IPS.",
+      "fullDescription": "World-Launcher is a comprehensive Windows application designed for Super Mario World ROM hack enthusiasts. It combines ROM patching functionality with a user-friendly launcher interface, allowing users to easily patch ROM files with .bps or .ips patches and launch them directly in their preferred SNES emulator. The application integrates Floating IPS by Alcaro for reliable ROM patching and provides seamless emulator integration for an enhanced gaming experience.",
+      "imageCaptions": {
+        "interface": "Clean Windows Forms interface for ROM management",
+        "patching": "Automated ROM patching with Floating IPS integration",
+        "launcher": "Game launcher displaying available ROM hacks",
+        "emulator": "Direct emulator integration with fullscreen options"
+      },
+      "features": {
+        "romPatching": "ROM Patching",
+        "romPatchingDesc": "Integrated Floating IPS patcher supporting .bps and .ips patch formats for reliable ROM modifications.",
+        "gameLauncher": "Game Launcher",
+        "gameLauncherDesc": "Easy-to-use launcher interface for organizing and starting ROM hacks directly from the application.",
+        "emulatorIntegration": "Emulator Integration",
+        "emulatorIntegrationDesc": "Seamless integration with SNES emulators like Snes9x, with fullscreen launch options.",
+        "userFriendlyInterface": "User-Friendly Interface",
+        "userFriendlyInterfaceDesc": "Intuitive Windows Forms interface making ROM hack management accessible to all users."
       }
     }
   },
@@ -194,6 +215,27 @@
         "inventoryManagementDesc": "Comprehensive inventory system with item crafting, equipment upgrades, and resource management.",
         "dialogueSystem": "Dialogue System",
         "dialogueSystemDesc": "Rich dialogue system with character development and story branching based on player choices."
+      }
+    },
+    "shooty": {
+      "title": "Shooty",
+      "description": "A fast-paced arcade shooter game written in Zig using Raylib.",
+      "fullDescription": "Shooty is a fast-paced arcade shooter game built with Zig and Raylib. Players control a spaceship, battling against waves of enemies in intense arcade-style combat. Features smooth sprite animations, precise collision detection, and engaging gameplay mechanics.",
+      "imageCaptions": {
+        "gameplay": "Intense arcade shooting action",
+        "shooting": "Player spaceship firing at enemies",
+        "enemies": "Challenging enemy AI patterns",
+        "gameover": "Game over screen with final score"
+      },
+      "features": {
+        "spriteAnimation": "Sprite Animation",
+        "spriteAnimationDesc": "Smooth and fluid sprite animations for characters, projectiles, and visual effects.",
+        "collisionDetection": "Collision Detection",
+        "collisionDetectionDesc": "Precise collision detection system for accurate hit detection and gameplay interactions.",
+        "scoreSystem": "Scoring System",
+        "scoreSystemDesc": "Dynamic scoring system with combo multipliers and bonus points for skilled play.",
+        "soundEffects": "Sound Effects",
+        "soundEffectsDesc": "Immersive audio feedback with shooting sounds, explosions, and ambient music."
       }
     }
   }

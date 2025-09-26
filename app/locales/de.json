@@ -75,27 +75,6 @@
         "lightweightFastDesc": "Für Performance optimiert mit minimaler Ressourcennutzung und schnellen Startzeiten."
       }
     },
-    "shooty": {
-      "title": "Shooty",
-      "description": "Ein Videospiel, das in Zig mit Raylib geschrieben wurde.",
-      "fullDescription": "Shooty ist ein schnelles Actionspiel, das mit Zig und Raylib entwickelt wurde. Die Spieler steuern ein Raumschiff und kämpfen gegen Wellen von Feinden in einer lebendigen 2D-Welt.",
-      "imagesCaptions": {
-        "homepage": "Spiel-Hauptmenü",
-        "gallery": "Gameplay-Screenshot",
-        "booking": "Highscore-Bildschirm",
-        "mobile": "Game-Over-Bildschirm"
-      },
-      "features": {
-        "spriteAnimation": "Sprite-Animation",
-        "spriteAnimationDesc": "Fließende und flüssige Sprite-Animationen für Charaktere und Objekte mit fortgeschrittenen Animationstechniken.",
-        "bookingSystem": "Kollisionssystem",
-        "bookingSystemDesc": "Präzises Kollisionserkennungssystem für genaue Gameplay-Mechaniken und Interaktionen.",
-        "imageOptimization": "Performance-Optimierung",
-        "imageOptimizationDesc": "Optimierte Rendering-Pipeline für flüssige 60+ FPS Gameplay-Erfahrung.",
-        "socialMedia": "Spiel-Physik",
-        "socialMediaDesc": "Realistische Physiksimulation für Projektile, Bewegung und Umgebungsinteraktionen."
-      }
-    },
     "c8-serenityos": {
       "title": "CHIP-8 Emulator für SerenityOS",
       "description": "Eine CHIP-8 Emulator-Implementierung, die speziell für das SerenityOS-Betriebssystem entwickelt wurde.",
@@ -134,6 +113,48 @@
         "crudOperationsDesc": "Vollständige Erstellen-, Lesen-, Aktualisieren-, Löschen-Funktionalität für Bücher, Autoren und Ausleihaufzeichnungen.",
         "apiDocumentation": "API-Dokumentation",
         "apiDocumentationDesc": "Umfassende API-Dokumentation."
+      }
+    },
+    "socket-fun": {
+      "title": "SocketFun",
+      "description": "Experimente mit Sockets in C unter Linux, mit Echo- und Chat-Servern mit gleichzeitiger Verbindungsbehandlung.",
+      "fullDescription": "SocketFun ist ein Lernprojekt, das Socket-Programmierung in C unter Linux erforscht. Es umfasst sowohl eine Echo-Server/Client- als auch eine Chat-Server/Client-Implementierung und demonstriert die gleichzeitige Verbindungsbehandlung mit epoll(). Das Projekt zeigt Low-Level-Netzwerkprogrammierungskonzepte und effiziente I/O-Multiplexing-Techniken für die Behandlung mehrerer Client-Verbindungen gleichzeitig.",
+      "imageCaptions": {
+        "implementation": "C Socket-Programmierung Implementierung",
+        "echo": "Echo-Server reflektiert Client-Nachrichten",
+        "chat": "Multi-Client-Chat-Server in Aktion",
+        "concurrent": "epoll() behandelt gleichzeitige Verbindungen"
+      },
+      "features": {
+        "echoServer": "Echo-Server",
+        "echoServerDesc": "TCP Echo-Server, der Client-Nachrichten zurücksendet und grundlegende Client-Server-Kommunikationsmuster demonstriert.",
+        "chatServer": "Chat-Server",
+        "chatServerDesc": "Multi-Client-Chat-Server ermöglicht Echtzeitkommunikation zwischen verbundenen Clients.",
+        "concurrentConnections": "Gleichzeitige Verbindungen", 
+        "concurrentConnectionsDesc": "Unterstützung für bis zu 128 gleichzeitige Client-Verbindungen mit effizientem I/O-Multiplexing.",
+        "epollHandling": "epoll() Implementierung",
+        "epollHandlingDesc": "Hochleistungs-ereignisgesteuertes I/O unter Verwendung von Linux epoll() für skalierbare Netzwerkanwendungen."
+      }
+    },
+    "world-launcher": {
+      "title": "World-Launcher",
+      "description": "Ein Windows-Launcher für Super Mario World ROM-Hacks mit integrierten Patching-Funktionen mit Floating IPS.",
+      "fullDescription": "World-Launcher ist eine umfassende Windows-Anwendung für Super Mario World ROM-Hack-Enthusiasten. Sie kombiniert ROM-Patching-Funktionalität mit einer benutzerfreundlichen Launcher-Oberfläche, die es Benutzern ermöglicht, ROM-Dateien einfach mit .bps- oder .ips-Patches zu patchen und sie direkt in ihrem bevorzugten SNES-Emulator zu starten. Die Anwendung integriert Floating IPS von Alcaro für zuverlässiges ROM-Patching und bietet nahtlose Emulator-Integration für ein verbessertes Spielerlebnis.",
+      "imageCaptions": {
+        "interface": "Saubere Windows Forms-Oberfläche für ROM-Verwaltung",
+        "patching": "Automatisiertes ROM-Patching mit Floating IPS-Integration",
+        "launcher": "Spiele-Launcher zeigt verfügbare ROM-Hacks an",
+        "emulator": "Direkte Emulator-Integration mit Vollbild-Optionen"
+      },
+      "features": {
+        "romPatching": "ROM-Patching",
+        "romPatchingDesc": "Integrierter Floating IPS-Patcher unterstützt .bps- und .ips-Patch-Formate für zuverlässige ROM-Modifikationen.",
+        "gameLauncher": "Spiele-Launcher",
+        "gameLauncherDesc": "Benutzerfreundliche Launcher-Oberfläche zum Organisieren und Starten von ROM-Hacks direkt aus der Anwendung.",
+        "emulatorIntegration": "Emulator-Integration",
+        "emulatorIntegrationDesc": "Nahtlose Integration mit SNES-Emulatoren wie Snes9x, mit Vollbild-Start-Optionen.",
+        "userFriendlyInterface": "Benutzerfreundliche Oberfläche",
+        "userFriendlyInterfaceDesc": "Intuitive Windows Forms-Oberfläche macht ROM-Hack-Verwaltung für alle Benutzer zugänglich."
       }
     }
   },
@@ -194,6 +215,27 @@
         "inventoryManagementDesc": "Umfassendes Inventarsystem mit Gegenstandsherstellung, Ausrüstungsverbesserungen und Ressourcenverwaltung.",
         "dialogueSystem": "Dialog-System",
         "dialogueSystemDesc": "Reichhaltiges Dialogsystem mit Charakterentwicklung und Storyverzweigung basierend auf Spielerentscheidungen."
+      }
+    },
+    "shooty": {
+      "title": "Shooty",
+      "description": "Ein schnelles Arcade-Shooter-Spiel, das in Zig mit Raylib geschrieben wurde.",
+      "fullDescription": "Shooty ist ein schnelles Arcade-Shooter-Spiel, das mit Zig und Raylib entwickelt wurde. Die Spieler steuern ein Raumschiff und kämpfen gegen Wellen von Feinden in intensiven Arcade-Kämpfen. Mit flüssigen Sprite-Animationen, präziser Kollisionserkennung und fesselnden Gameplay-Mechaniken.",
+      "imageCaptions": {
+        "gameplay": "Intensive Arcade-Shooter-Action",
+        "shooting": "Spieler-Raumschiff feuert auf Feinde",
+        "enemies": "Herausfordernde Gegner-KI-Muster",
+        "gameover": "Game-Over-Bildschirm mit Endpunktzahl"
+      },
+      "features": {
+        "spriteAnimation": "Sprite-Animation",
+        "spriteAnimationDesc": "Fließende und flüssige Sprite-Animationen für Charaktere, Projektile und visuelle Effekte.",
+        "collisionDetection": "Kollisionserkennung",
+        "collisionDetectionDesc": "Präzises Kollisionserkennungssystem für genaue Treffererkennung und Gameplay-Interaktionen.",
+        "scoreSystem": "Punktesystem",
+        "scoreSystemDesc": "Dynamisches Punktesystem mit Kombinations-Multiplikatoren und Bonuspunkten für geschicktes Spiel.",
+        "soundEffects": "Soundeffekte",
+        "soundEffectsDesc": "Immersives Audio-Feedback mit Schussgeräuschen, Explosionen und Hintergrundmusik."
       }
     }
   }
