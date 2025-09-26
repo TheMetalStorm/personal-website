@@ -1,0 +1,200 @@
+{
+  "hero": {
+    "name": "Simon Arapoglu",
+    "title": "Software-Entwickler",
+    "description": "Ich entwickle Software und Videospiele. Dabei experimentiere ich gerne mit neuen Technologien und probiere verschiedene Ansätze aus, um die bestmögliche Lösung zu finden."
+  },
+  "navigation": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "games": "Spiele",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "projects": {
+    "viewCode": "Code ansehen",
+    "viewAll": "Alle Projekte ansehen",
+    "title": "Projekte",
+    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe",
+    "viewProject": "Projekt ansehen",
+    "technologies": "Technologien",
+    "gallery": "Projektgalerie",
+    "about": "Über dieses Projekt"
+  },
+  "games": {
+    "viewCode": "Code ansehen",
+    "viewAll": "Alle Spiele ansehen",
+    "title": "Spiele",
+    "description": "Spiele, die ich in verschiedenen Engines entwickelt habe",
+    "viewGame": "Spiel ansehen",
+    "playGame": "Spiel spielen",
+    "engine": "Engine",
+    "genre": "Genre",
+    "technologies": "Technologien",
+    "gallery": "Spielegalerie",
+    "about": "Über dieses Spiel"
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "description": "Technologien, mit denen ich arbeite"
+  },
+  "contact": {
+    "resume": "Lebenslauf ansehen",
+    "title": "Kontakt aufnehmen",
+    "description": "Zögern Sie nicht, sich zu melden, wenn Sie zusammenarbeiten möchten oder einfach nur Hallo sagen wollen!",
+    "email": "Kontakt aufnehmen",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "notFound": "Seite nicht gefunden"
+  },
+  "projectFeatures": {
+    "title": "Hauptfunktionen"
+  },
+  "projectsData": {
+    "zilo": {
+      "title": "Zilo Text Editor",
+      "description": "Eine Neuimplementierung des kilo Text Editors, geschrieben in der Zig Programmiersprache.",
+      "fullDescription": "Zilo ist ein Terminal-Texteditor. Er beinhaltet Syntaxhervorhebung und Suchfunktionalität, alles angetrieben von der Zig Programmiersprache.",
+      "imagesCaptions": {
+        "main": "Hauptoberfläche des Editors mit Syntaxhervorhebung",
+        "search": "Integrierte Such- und Ersetzungsfunktionalität",
+        "terminal": "Nahtlose Terminal-Integration"
+      },
+      "features": {
+        "syntaxHighlighting": "Syntaxhervorhebung",
+        "syntaxHighlightingDesc": "Syntaxhervorhebung für C und Zig.",
+        "searchReplace": "Suchen & Ersetzen",
+        "searchReplaceDesc": "Mächtige Such- und Ersetzungsfunktionalität mit Regex-Unterstützung und Groß-/Kleinschreibungsoptionen.",
+        "terminalIntegration": "Terminal-Integration",
+        "terminalIntegrationDesc": "Nahtlose Integration in die Terminal-Umgebung für effizienten Arbeitsablauf.",
+        "lightweightFast": "Leichtgewichtig & Schnell",
+        "lightweightFastDesc": "Für Performance optimiert mit minimaler Ressourcennutzung und schnellen Startzeiten."
+      }
+    },
+    "shooty": {
+      "title": "Shooty",
+      "description": "Ein Videospiel, das in Zig mit Raylib geschrieben wurde.",
+      "fullDescription": "Shooty ist ein schnelles Actionspiel, das mit Zig und Raylib entwickelt wurde. Die Spieler steuern ein Raumschiff und kämpfen gegen Wellen von Feinden in einer lebendigen 2D-Welt.",
+      "imagesCaptions": {
+        "homepage": "Spiel-Hauptmenü",
+        "gallery": "Gameplay-Screenshot",
+        "booking": "Highscore-Bildschirm",
+        "mobile": "Game-Over-Bildschirm"
+      },
+      "features": {
+        "spriteAnimation": "Sprite-Animation",
+        "spriteAnimationDesc": "Fließende und flüssige Sprite-Animationen für Charaktere und Objekte mit fortgeschrittenen Animationstechniken.",
+        "bookingSystem": "Kollisionssystem",
+        "bookingSystemDesc": "Präzises Kollisionserkennungssystem für genaue Gameplay-Mechaniken und Interaktionen.",
+        "imageOptimization": "Performance-Optimierung",
+        "imageOptimizationDesc": "Optimierte Rendering-Pipeline für flüssige 60+ FPS Gameplay-Erfahrung.",
+        "socialMedia": "Spiel-Physik",
+        "socialMediaDesc": "Realistische Physiksimulation für Projektile, Bewegung und Umgebungsinteraktionen."
+      }
+    },
+    "c8-serenityos": {
+      "title": "CHIP-8 Emulator für SerenityOS",
+      "description": "Eine CHIP-8 Emulator-Implementierung, die speziell für das SerenityOS-Betriebssystem entwickelt wurde.",
+      "fullDescription": "Dieses Projekt ist ein vollständiger CHIP-8 Emulator, der für SerenityOS entwickelt wurde und präzise CPU-Emulation, Grafik-Rendering und Sound-Unterstützung bietet. CHIP-8 ist eine einfache virtuelle Maschine, die in den 1970er Jahren für die Programmierung von Spielen entworfen wurde, und dieser Emulator bringt diese klassischen Spiele mit pixelgenauer Genauigkeit auf die moderne SerenityOS-Plattform.",
+      "imagesCaptions": {
+        "emulator": "CHIP-8 Emulator Hauptoberfläche mit ROM-Auswahl",
+        "gameplay": "Klassisches CHIP-8 Spiel läuft mit flüssigem Rendering",
+        "debugger": "Eingebauter Debugger zeigt CPU-Zustand und Speicher"
+      },
+      "features": {
+        "cpuEmulation": "Präzise CPU-Emulation",
+        "cpuEmulationDesc": "Genaue Implementierung des CHIP-8 Befehlssatzes mit zyklusgenauen Timing und ordnungsgemäßer Register-Behandlung.",
+        "graphicsRendering": "Grafik-Rendering",
+        "graphicsRenderingDesc": "Pixelgenaue 64x32 Monochrom-Display-Darstellung mit ordnungsgemäßer Sprite-Kollisionserkennung.",
+        "soundSystem": "Sound-System",
+        "soundSystemDesc": "Authentische Piep-Ton-Generierung entsprechend den ursprünglichen CHIP-8 Spezifikationen.",
+        "debuggerTools": "Debugging-Tools",
+        "debuggerToolsDesc": "Eingebauter Debugger mit Disassembly-Ansicht, Register-Inspektion und schrittweiser Ausführung."
+      }
+    },
+    "spring-library-api": {
+      "title": "Spring Bibliotheksverwaltungs-API",
+      "description": "Eine umfassende REST-API für Bibliotheksverwaltung, entwickelt mit Spring Boot und Java.",
+      "fullDescription": "Dieses Projekt ist ein vollständiges Backend-System für Bibliotheksverwaltung, das mit Spring Boot entwickelt wurde. Es bietet REST-API-Endpunkte für die Verwaltung von Büchern, Autoren, Ausleihern und Leihvorgängen. Das System umfasst ordnungsgemäße Datenvalidierung, Ausnahmebehandlung und folgt REST-Prinzipien für sauberes API-Design. Perfekt zum Erlernen von Spring Boot-Konzepten oder als Grundlage für größere Bibliotheksverwaltungssysteme.",
+      "imagesCaptions": {
+        "apiEndpoints": "REST-API-Endpunkte für Buch- und Benutzerverwaltung",
+        "database": "Entity-Relationship-Diagramm der Datenstruktur",
+        "documentation": "Interaktive API-Dokumentation mit Swagger"
+      },
+      "features": {
+        "restfulApi": "RESTful API Design",
+        "restfulApiDesc": "Saubere und intuitive REST-API nach Industriestandards mit ordnungsgemäßen HTTP-Methoden und Statuscodes.",
+        "databaseIntegration": "Datenbank-Integration",
+        "databaseIntegrationDesc": "Nahtlose Integration mit MongoDB unter Verwendung von JPA und Hibernate für effizientes Datenmanagement.",
+        "crudOperations": "Vollständige CRUD-Operationen", 
+        "crudOperationsDesc": "Vollständige Erstellen-, Lesen-, Aktualisieren-, Löschen-Funktionalität für Bücher, Autoren und Ausleihaufzeichnungen.",
+        "apiDocumentation": "API-Dokumentation",
+        "apiDocumentationDesc": "Umfassende API-Dokumentation."
+      }
+    }
+  },
+  "gamesData": {
+    "space-invaders-unity": {
+      "title": "Space Invaders",
+      "description": "Klassisches Arcade-Shooter-Spiel, neu erstellt in Unity mit moderner Grafik und Effekten.",
+      "fullDescription": "Eine originalgetreue Nachbildung des klassischen Space Invaders Arcade-Spiels, komplett neu in Unity entwickelt. Bietet flüssiges Gameplay, Partikeleffekte, Power-Ups und ein umfassendes Punktesystem. Dieses Projekt zeigt grundlegende Spielentwicklungskonzepte einschließlich Gegner-KI-Muster, Kollisionserkennung und Spielzustandsverwaltung.",
+      "imageCaptions": {
+        "gameplay": "Intensive Weltraumkämpfe mit Partikeleffekten",
+        "menu": "Saubere und intuitive Hauptmenü-Oberfläche",
+        "gameover": "Game-Over-Bildschirm mit Highscore-Anzeige"
+      },
+      "features": {
+        "classicGameplay": "Klassisches Gameplay",
+        "classicGameplayDesc": "Authentisches Space Invaders Erlebnis mit modernen Verbesserungen und flüssigen Steuerelementen.",
+        "scoreSystem": "Erweiterte Punktewertung",
+        "scoreSystemDesc": "Umfassendes Punktesystem mit Multiplikatoren, Boni und Highscore-Verfolgung.",
+        "powerUps": "Power-Up-System",
+        "powerUpsDesc": "Sammelbare Power-Ups einschließlich Schnellfeuer, Mehrfachschuss und temporäre Schilde.",
+        "particleEffects": "Visuelle Effekte",
+        "particleEffectsDesc": "Dynamische Partikeleffekte für Explosionen, Laser und Umgebungselemente."
+      }
+    },
+    "puzzle-platformer-unreal": {
+      "title": "Puzzle Platformer",
+      "description": "3D-Puzzle-Plattformspiel in Unreal Engine mit physikbasierten Herausforderungen.",
+      "fullDescription": "Ein innovatives 3D-Puzzle-Plattformspiel, das traditionelle Plattform-Mechaniken mit komplexen physikbasierten Rätseln kombiniert. Komplett in Unreal Engine mit sowohl Blueprints als auch C++ entwickelt, bietet dieses Spiel dynamische Beleuchtung, interaktive Umgebungen und einen integrierten Level-Editor. Spieler müssen zunehmend komplexe Rätsel lösen, während sie herausfordernde Plattform-Abschnitte bewältigen.",
+      "imageCaptions": {
+        "puzzles": "Komplexe physikbasierte Rätsel-Mechaniken",
+        "movement": "Flüssige Charakterbewegung und Plattformspiel"
+      },
+      "features": {
+        "physicsBasedPuzzles": "Physik-Rätsel",
+        "physicsBasedPuzzlesDesc": "Komplexe Rätsel-Mechaniken mit realistischer Physiksimulation und Umgebungsinteraktionen.",
+        "levelEditor": "Level-Editor",
+        "levelEditorDesc": "Eingebauter Level-Editor, der es Spielern ermöglicht, benutzerdefinierte Rätsel-Level zu erstellen und zu teilen.",
+        "checkpointSystem": "Intelligente Checkpoints",
+        "checkpointSystemDesc": "Intelligentes Checkpoint-System, das sich an Spielerfortschritt und Schwierigkeitsspitzen anpasst.",
+        "dynamicLighting": "Dynamische Beleuchtung",
+        "dynamicLightingDesc": "Fortgeschrittenes Beleuchtungssystem mit Echtzeit-Schatten und atmosphärischen Effekten."
+      }
+    },
+    "retro-rpg-godot": {
+      "title": "Retro RPG",
+      "description": "Klassisches RPG mit Pixel-Art-Grafiken, entwickelt in Godot Engine.",
+      "fullDescription": "Eine Hommage an klassische 16-Bit-RPGs mit rundenbasierten Kämpfen, einem fesselnden Quest-System und wunderschöner Pixel-Art. Komplett in Godot Engine mit GDScript entwickelt, umfasst dieses Spiel ein vollständiges Inventarverwaltungssystem, verzweigte Dialogbäume und mehrere Charakterentwicklungspfade. Die Spielwelt ist voller Geheimnisse, Nebenquests und unvergesslicher Charaktere.",
+      "imageCaptions": {
+        "worldmap": "Ausgedehnte Weltkarte mit vielfältigen Umgebungen",
+        "battle": "Strategisches rundenbasiertes Kampfsystem"
+      },
+      "features": {
+        "turnBasedCombat": "Rundenbasierte Kämpfe",
+        "turnBasedCombatDesc": "Strategisches Kampfsystem mit Elementschwächen, Spezialfähigkeiten und taktischer Positionierung.",
+        "questSystem": "Quest-System",
+        "questSystemDesc": "Verzweigte Quest-Linien mit mehreren Lösungen und bedeutungsvollen Spielerentscheidungen.",
+        "inventoryManagement": "Inventarverwaltung",
+        "inventoryManagementDesc": "Umfassendes Inventarsystem mit Gegenstandsherstellung, Ausrüstungsverbesserungen und Ressourcenverwaltung.",
+        "dialogueSystem": "Dialog-System",
+        "dialogueSystemDesc": "Reichhaltiges Dialogsystem mit Charakterentwicklung und Storyverzweigung basierend auf Spielerentscheidungen."
+      }
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "hero": {
+    "name": "Simon Arapoglu",
+    "title": "Software Developer",
+    "description": "I develop software and video games. I like to experiment with new technologies and try different approaches to find the best possible solution."
+  },
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "games": "Games",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "projects": {
+    "viewCode": "View Code",
+    "viewAll": "View All Projects",
+    "title": "Projects",
+    "description": "Here are some of the projects I've worked on",
+    "viewProject": "View Project",
+    "technologies": "Technologies",
+    "gallery": "Project Gallery",
+    "about": "About This Project"
+  },
+  "games": {
+    "viewCode": "View Code",
+    "viewAll": "View All Games",
+    "title": "Games",
+    "description": "Games I've developed in different engines",
+    "viewGame": "View Game",
+    "playGame": "Play Game",
+    "engine": "Engine",
+    "genre": "Genre",
+    "technologies": "Technologies",
+    "gallery": "Game Gallery",
+    "about": "About This Game"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "description": "Technologies I work with"
+  },
+  "contact": {
+    "resume": "View Resume",
+    "title": "Get In Touch",
+    "description": "Feel free to reach out if you'd like to collaborate or just want to say hello!",
+    "email": "Get in Touch",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found"
+  },
+  "projectFeatures": {
+    "title": "Key Features"
+  },
+  "projectsData": {
+    "zilo": {
+      "title": "Zilo Text Editor",
+      "description": "A reimplementation of the kilo Text Editor, written in the Zig Programming language.",
+      "fullDescription": "Zilo is a terminal text editor. It includes syntax highlighting and search functionality, all powered by the Zig programming language.",
+      "imagesCaptions": {
+        "main": "Main editor interface with syntax highlighting",
+        "search": "Built-in search and replace functionality",
+        "terminal": "Seamless terminal integration"
+      },
+      "features": {
+        "syntaxHighlighting": "Syntax Highlighting",
+        "syntaxHighlightingDesc": "Syntax highlighting for C and Zig.",
+        "searchReplace": "Search & Replace",
+        "searchReplaceDesc": "Powerful search and replace functionality with regex support and case-sensitive options.",
+        "terminalIntegration": "Terminal Integration",
+        "terminalIntegrationDesc": "Seamless integration with terminal environment for efficient workflow.",
+        "lightweightFast": "Lightweight & Fast",
+        "lightweightFastDesc": "Optimized for performance with minimal resource usage and fast startup times."
+      }
+    },
+    "shooty": {
+      "title": "Shooty",
+      "description": "A Videogame written in Zig using Raylib.",
+      "fullDescription": "Shooty is a fast-paced action game built with Zig and Raylib. Players control a Spaceship, battling against waves of enemies in a vibrant 2D world.",
+      "imagesCaptions": {
+        "homepage": "Game main menu",
+        "gallery": "Gameplay screenshot",
+        "booking": "High score screen",
+        "mobile": "Game over screen"
+      },
+      "features": {
+        "spriteAnimation": "Sprite Animation",
+        "spriteAnimationDesc": "Smooth and fluid sprite animations for characters and objects using advanced animation techniques.",
+        "bookingSystem": "Collision System",
+        "bookingSystemDesc": "Precise collision detection system for accurate gameplay mechanics and interactions.",
+        "imageOptimization": "Performance Optimization",
+        "imageOptimizationDesc": "Optimized rendering pipeline for smooth 60+ FPS gameplay experience.",
+        "socialMedia": "Game Physics",
+        "socialMediaDesc": "Realistic physics simulation for projectiles, movement, and environmental interactions."
+      }
+    },
+    "c8-serenityos": {
+      "title": "CHIP-8 Emulator for SerenityOS",
+      "description": "A CHIP-8 emulator implementation built specifically for the SerenityOS operating system.",
+      "fullDescription": "This project is a complete CHIP-8 emulator developed for SerenityOS, featuring accurate CPU emulation, graphics rendering, and sound support. CHIP-8 is a simple virtual machine designed in the 1970s for programming games, and this emulator brings those classic games to the modern SerenityOS platform with pixel-perfect accuracy.",
+      "imagesCaptions": {
+        "emulator": "CHIP-8 emulator main interface showing ROM selection",
+        "gameplay": "Classic CHIP-8 game running with smooth rendering",
+        "debugger": "Built-in debugger showing CPU state and memory"
+      },
+      "features": {
+        "cpuEmulation": "Accurate CPU Emulation",
+        "cpuEmulationDesc": "Precise implementation of the CHIP-8 instruction set with cycle-accurate timing and proper register handling.",
+        "graphicsRendering": "Graphics Rendering",
+        "graphicsRenderingDesc": "Pixel-perfect 64x32 monochrome display rendering with proper sprite collision detection.",
+        "soundSystem": "Sound System",
+        "soundSystemDesc": "Authentic beep sound generation matching the original CHIP-8 specifications.",
+        "debuggerTools": "Debugging Tools",
+        "debuggerToolsDesc": "Built-in debugger with disassembly view, register inspection, and step-by-step execution."
+      }
+    },
+    "spring-library-api": {
+      "title": "Spring Library Management API",
+      "description": "A comprehensive REST API for library management built with Spring Boot and Java.",
+      "fullDescription": "This project is a full-featured library management system backend built with Spring Boot. It provides REST API endpoints for managing books, authors, borrowers, and lending operations. The system includes proper data validation, exception handling, and follows REST principles for clean API design. Perfect for learning Spring Boot concepts or as a foundation for larger library management systems.",
+      "imagesCaptions": {
+        "apiEndpoints": "REST API endpoints for book and user management",
+        "database": "Entity relationship diagram showing data structure",
+        "documentation": "Interactive API documentation with Swagger"
+      },
+      "features": {
+        "restfulApi": "RESTful API Design",
+        "restfulApiDesc": "Clean and intuitive REST API following industry standards with proper HTTP methods and status codes.",
+        "databaseIntegration": "Database Integration",
+        "databaseIntegrationDesc": "Seamless integration with MongoDB using JPA and Hibernate for efficient data management.",
+        "crudOperations": "Complete CRUD Operations",
+        "crudOperationsDesc": "Full Create, Read, Update, Delete functionality for books, authors, and borrowing records.",
+        "apiDocumentation": "API Documentation",
+        "apiDocumentationDesc": "Comprehensive API documentation."
+      }
+    }
+  },
+  "gamesData": {
+    "space-invaders-unity": {
+      "title": "Space Invaders",
+      "description": "Classic arcade shooter game rebuilt in Unity with modern graphics and effects.",
+      "fullDescription": "A faithful recreation of the classic Space Invaders arcade game, built from the ground up in Unity. Features smooth gameplay, particle effects, power-ups, and a comprehensive scoring system. This project showcases fundamental game development concepts including enemy AI patterns, collision detection, and game state management.",
+      "imageCaptions": {
+        "gameplay": "Intense space combat with particle effects",
+        "menu": "Clean and intuitive main menu interface",
+        "gameover": "Game over screen with high score display"
+      },
+      "features": {
+        "classicGameplay": "Classic Gameplay",
+        "classicGameplayDesc": "Authentic Space Invaders experience with modern enhancements and smooth controls.",
+        "scoreSystem": "Advanced Scoring",
+        "scoreSystemDesc": "Comprehensive scoring system with multipliers, bonuses, and high score tracking.",
+        "powerUps": "Power-Up System",
+        "powerUpsDesc": "Collectible power-ups including rapid fire, multi-shot, and temporary shields.",
+        "particleEffects": "Visual Effects",
+        "particleEffectsDesc": "Dynamic particle effects for explosions, lasers, and environmental elements."
+      }
+    },
+    "puzzle-platformer-unreal": {
+      "title": "Puzzle Platformer",
+      "description": "3D puzzle-platformer game built in Unreal Engine with physics-based challenges.",
+      "fullDescription": "An innovative 3D puzzle-platformer that combines traditional platforming mechanics with complex physics-based puzzles. Built entirely in Unreal Engine using both Blueprints and C++, this game features dynamic lighting, interactive environments, and a built-in level editor. Players must solve increasingly complex puzzles while navigating challenging platforming sections.",
+      "imageCaptions": {
+        "puzzles": "Complex physics-based puzzle mechanics",
+        "movement": "Smooth character movement and platforming"
+      },
+      "features": {
+        "physicsBasedPuzzles": "Physics Puzzles",
+        "physicsBasedPuzzlesDesc": "Complex puzzle mechanics utilizing realistic physics simulation and environmental interactions.",
+        "levelEditor": "Level Editor",
+        "levelEditorDesc": "Built-in level editor allowing players to create and share custom puzzle levels.",
+        "checkpointSystem": "Smart Checkpoints",
+        "checkpointSystemDesc": "Intelligent checkpoint system that adapts to player progress and difficulty spikes.",
+        "dynamicLighting": "Dynamic Lighting",
+        "dynamicLightingDesc": "Advanced lighting system with real-time shadows and atmospheric effects."
+      }
+    },
+    "retro-rpg-godot": {
+      "title": "Retro RPG",
+      "description": "Classic-style RPG with pixel art graphics built in Godot Engine.",
+      "fullDescription": "A homage to classic 16-bit RPGs, featuring turn-based combat, an engaging quest system, and beautiful pixel art. Built entirely in Godot Engine using GDScript, this game includes a complete inventory management system, branching dialogue trees, and multiple character progression paths. The game world is filled with secrets, side quests, and memorable characters.",
+      "imageCaptions": {
+        "worldmap": "Expansive world map with diverse environments",
+        "battle": "Strategic turn-based combat system"
+      },
+      "features": {
+        "turnBasedCombat": "Turn-Based Combat",
+        "turnBasedCombatDesc": "Strategic combat system with elemental weaknesses, special abilities, and tactical positioning.",
+        "questSystem": "Quest System",
+        "questSystemDesc": "Branching quest lines with multiple solutions and meaningful player choices.",
+        "inventoryManagement": "Inventory Management",
+        "inventoryManagementDesc": "Comprehensive inventory system with item crafting, equipment upgrades, and resource management.",
+        "dialogueSystem": "Dialogue System",
+        "dialogueSystemDesc": "Rich dialogue system with character development and story branching based on player choices."
+      }
+    }
+  }
+}
