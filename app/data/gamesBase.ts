@@ -123,6 +123,46 @@ const baseGames = [
     githubUrl: "https://github.com/yourusername/retro-rpg-godot",
     slug: "retro-rpg-godot",
     featured: false
+  },
+  {
+    id: "shooty",
+    name: "Shooty",
+    image: "/portrait.jpg",
+    images: [
+      {
+        src: "/portrait.jpg",
+        alt: "Shooty gameplay screenshot",
+        captionKey: "gameplay"
+      },
+      {
+        src: "/code.jpg",
+        alt: "Player shooting mechanics",
+        captionKey: "shooting"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "Enemy AI system",
+        captionKey: "enemies"
+      },
+      {
+        src: "/code.jpg",
+        alt: "Game over screen",
+        captionKey: "gameover"
+      }
+    ],
+    engine: "Raylib",
+    technologies: ["Zig", "Raylib"],
+    genre: "Arcade Shooter",
+    features: [
+      { title: "spriteAnimation", description: "spriteAnimationDesc" },
+      { title: "collisionDetection", description: "collisionDetectionDesc" },
+      { title: "scoreSystem", description: "scoreSystemDesc" },
+      { title: "soundEffects", description: "soundEffectsDesc" }
+    ],
+    githubUrl: "https://github.com/TheMetalStorm/shooty",
+    itchUrl: "https://themetalstorm.itch.io/shooty",
+    slug: "shooty",
+    featured: true
   }
 ];
 

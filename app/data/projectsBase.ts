@@ -124,40 +124,77 @@ const baseProjects = [
     featured: true
   },
   {
-    id: "shooty",
-    name: "Shooty", 
-    image: "/portrait.jpg",
+    id: "socket-fun",
+    name: "SocketFun",
+    image: "/code.jpg",
     images: [
       {
-        src: "/portrait.jpg",
-        alt: "Shooty portfolio homepage",
-        captionKey: "homepage"
-      },
-      {
         src: "/code.jpg",
-        alt: "Gallery management interface",
-        captionKey: "gallery"
+        alt: "Socket programming code implementation",
+        captionKey: "implementation"
       },
       {
         src: "/portrait.jpg",
-        alt: "Booking system",
-        captionKey: "booking"
+        alt: "Echo server and client communication",
+        captionKey: "echo"
       },
       {
         src: "/code.jpg",
-        alt: "Mobile responsive design",
-        captionKey: "mobile"
+        alt: "Chat server handling multiple clients",
+        captionKey: "chat"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "epoll() concurrent connection handling",
+        captionKey: "concurrent"
       }
     ],
-    technologies: ["Zig", "Raylib"],
+    technologies: ["C", "Linux", "Sockets", "epoll", "TCP", "Makefile"],
     features: [
-      { title: "spriteAnimation", description: "spriteAnimationDesc" },
-      { title: "bookingSystem", description: "bookingSystemDesc" },
-      { title: "imageOptimization", description: "imageOptimizationDesc" },
-      { title: "socialMedia", description: "socialMediaDesc" }
+      { title: "echoServer", description: "echoServerDesc" },
+      { title: "chatServer", description: "chatServerDesc" },
+      { title: "concurrentConnections", description: "concurrentConnectionsDesc" },
+      { title: "epollHandling", description: "epollHandlingDesc" }
     ],
-    githubUrl: "https://github.com/TheMetalStorm/shooty",
-    slug: "shooty",
+    githubUrl: "https://github.com/TheMetalStorm/SocketFun",
+    slug: "socket-fun",
+    featured: false
+  },
+  {
+    id: "world-launcher",
+    name: "World-Launcher",
+    image: "/code.jpg",
+    images: [
+      {
+        src: "/code.jpg",
+        alt: "World Launcher main interface",
+        captionKey: "interface"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "ROM patching process in action",
+        captionKey: "patching"
+      },
+      {
+        src: "/code.jpg",
+        alt: "Game launcher with ROM hack list",
+        captionKey: "launcher"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "Emulator integration and settings",
+        captionKey: "emulator"
+      }
+    ],
+    technologies: ["C#", "C++", "Windows Forms", ".NET", "Floating IPS"],
+    features: [
+      { title: "romPatching", description: "romPatchingDesc" },
+      { title: "gameLauncher", description: "gameLauncherDesc" },
+      { title: "emulatorIntegration", description: "emulatorIntegrationDesc" },
+      { title: "userFriendlyInterface", description: "userFriendlyInterfaceDesc" }
+    ],
+    githubUrl: "https://github.com/TheMetalStorm/World-Launcher",
+    slug: "world-launcher",
     featured: false
   }
 ];
