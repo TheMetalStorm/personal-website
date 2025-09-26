@@ -8,7 +8,7 @@ import ContactSection from './components/ContactSection';
 
 export default function SimplePortfolio() {
 	return (
-		<main className="min-h-screen bg-gray-900 pt-12">
+		<main className="min-h-screen bg-gray-900 pt-16">
 			<HeroSection />
 			<SkillsSection />
 			<ProjectsSection />
