@@ -1,14 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useI18n } from '../hooks/useI18n';
 
 export default function ContactSection() {
+	const { t } = useI18n();
+	
 	return (
 		<section className="py-16 px-4 border-t border-gray-800">
 			<div className="max-w-2xl mx-auto">
 				<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Contact</h2>
-					<p className="text-gray-300">Interested in working together? Let&apos;s have a conversation.</p>
+					<h2 className="text-2xl font-semibold text-white">{t('contact.title')}</h2>
+					<p className="text-gray-300">{t('contact.description')}</p>
 
 					{/* Location */}
 					<div className="flex items-center justify-center gap-2 text-gray-300">
@@ -34,7 +37,7 @@ export default function ContactSection() {
 								<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
 								<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 							</svg>
-							Get in Touch
+							{t('contact.email')}
 						</a>
 						<a
 							href="/resume.pdf"
@@ -49,7 +52,7 @@ export default function ContactSection() {
 								/>
 								<path fillRule="evenodd" d="M8 11a1 1 0 100 2h4a1 1 0 100-2H8zm0-4a1 1 0 100 2h4a1 1 0 100-2H8z" clipRule="evenodd" />
 							</svg>
-							View Resume
+							 {t('contact.resume')}
 						</a>
 					</div>
 
