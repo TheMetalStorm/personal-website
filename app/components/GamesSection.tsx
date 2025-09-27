@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { getFeaturedGames } from '../data/gamesClient';
 import { useI18n } from '../hooks/useI18n';
 import { Gamepad2, Play, Github, ExternalLink } from 'lucide-react';
+import ItemCard from './ItemCard';
 
 export default function GamesSection() {
 	const { t, locale, translations } = useI18n();
@@ -24,94 +24,63 @@ export default function GamesSection() {
 					</Link>
 				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-					{featuredGames.map((game) => (
-						<div key={game.id} className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-							<div className="aspect-video bg-gray-700 relative">
-								<Image src={game.image} alt={game.title} fill className="object-cover" />
-								<div className="absolute top-3 right-3 flex flex-wrap justify-end gap-2">
-									<span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">
-										{game.engine}
-									</span>
-									{game.genre && (
-										<span className="px-2 py-1 bg-purple-600 text-white text-xs rounded-full">
-											{game.genre}
-										</span>
-									)}
-									{game.playUrl && (
-										<span className="px-2 py-1 bg-green-600 text-white text-xs rounded-full">
-											{t('games.playableInBrowser')}
-										</span>
-									)}
-									{game.itchUrl && (
-										<span className="px-2 py-1 bg-pink-600 text-white text-xs rounded-full">
-											{t('games.downloadOnItch')}
-										</span>
-									)}
-								</div>
-							</div>
-							<div className="p-4 sm:p-6">
-								<h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{game.title}</h3>
-								<p className="text-gray-300 text-sm sm:text-base mb-4">{game.description}</p>
-								<div className="flex flex-wrap gap-2 mb-4">
-									{game.technologies.slice(0, 3).map((tech, index) => (
-										<span key={index} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">
-											{tech}
-										</span>
-									))}
-									{game.technologies.length > 3 && (
-										<span className="px-2 py-1 bg-gray-700 text-gray-400 text-xs rounded">
-											+{game.technologies.length - 3}
-										</span>
-									)}
-								</div>
-								<div className="flex items-center gap-3">
-									<Link 
-										href={`${gamesUrl}/${game.slug}`} 
-										className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-center text-sm font-medium"
-									>
-										<Gamepad2 className="w-4 h-4 inline mr-2" />
-										{t('games.viewGame')}
-									</Link>
-									
-									{game.playUrl && (
-										<a
-											href={game.playUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="p-2 text-green-500 hover:text-green-400 hover:bg-gray-700 rounded-lg transition-colors"
-											title={t('games.playGame')}
-										>
-											<Play className="w-5 h-5" />
-										</a>
-									)}
+					{featuredGames.map((game) => {
+						const badges = [
+							{ text: game.engine, color: 'blue' as const },
+							...(game.genre ? [{ text: game.genre, color: 'purple' as const }] : []),
+							...(game.playUrl ? [{ text: t('games.playableInBrowser'), color: 'green' as const }] : []),
+							...(game.itchUrl ? [{ text: t('games.downloadOnItch'), color: 'pink' as const }] : [])
+						];
 
-									{game.githubUrl && (
-										<a
-											href={game.githubUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
-											title={t('games.viewCode')}
-										>
-											<Github className="w-5 h-5" />
-										</a>
-									)}
+						const actions = [
+							{
+								href: `${gamesUrl}/${game.slug}`,
+								label: t('games.viewGame'),
+								icon: 'Gamepad2' as const,
+								isPrimary: true,
+								isExternal: false
+							},
+							...(game.playUrl ? [{
+								href: game.playUrl,
+								label: '',
+								icon: 'Play' as const,
+								isPrimary: false,
+								isExternal: true,
+								title: t('games.playGame')
+							}] : []),
+							...(game.githubUrl ? [{
+								href: game.githubUrl,
+								label: '',
+								icon: 'Github' as const,
+								isPrimary: false,
+								isExternal: true,
+								title: t('games.viewCode')
+							}] : []),
+							...(game.itchUrl ? [{
+								href: game.itchUrl,
+								label: '',
+								icon: 'ExternalLink' as const,
+								isPrimary: false,
+								isExternal: true,
+								title: 'View on itch.io'
+							}] : [])
+						];
 
-									{game.itchUrl && (
-										<a
-											href={game.itchUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="p-2 text-purple-500 hover:text-purple-400 hover:bg-gray-700 rounded-lg transition-colors"
-											title="View on itch.io"
-										>
-											<ExternalLink className="w-5 h-5" />
-										</a>
-									)}
-								</div>
-							</div>
-						</div>
-					))}
+						return (
+							<ItemCard
+								key={game.id}
+								id={game.id}
+								title={game.title}
+								description={game.description}
+								image={game.image}
+								badges={badges}
+								technologies={game.technologies}
+								actions={actions}
+								type="game"
+								hoverColor="blue"
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</section>
