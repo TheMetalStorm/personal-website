@@ -30,6 +30,7 @@ export interface Game {
   releaseDate?: string;
 }
 
+// TODO: Add ISPN game and Bachelor Thesis project
 // Base games data (language-neutral) - Server-side safe
 const baseGames = [
   {
