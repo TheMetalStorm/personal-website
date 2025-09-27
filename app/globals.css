@@ -3,5 +3,41 @@
 @tailwind utilities;
 
 body {
-	background-color: #111111;
+	background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+	min-height: 100vh;
+}
+
+/* Custom animations */
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-5px); }
+}
+
+@keyframes glow {
+	0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.15); }
+	50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); }
+}
+
+@keyframes shimmer {
+	0% { background-position: -200% 0; }
+	100% { background-position: 200% 0; }
+}
+
+.animate-float {
+	animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+	animation: glow 2s ease-in-out infinite;
+}
+
+.shimmer {
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.1),
+		transparent
+	);
+	background-size: 200% 100%;
+	animation: shimmer 2s infinite;
 }

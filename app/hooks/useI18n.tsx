@@ -47,6 +47,28 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     setTranslations(translationsMap[currentLocale]);
   }, [pathname]);
 
+  // Restore scroll position after language change
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+      if (savedScrollPosition) {
+        // Wait for the page to fully render before scrolling
+        const scrollY = parseInt(savedScrollPosition, 10);
+        const restoreScroll = () => {
+          window.scrollTo(0, scrollY);
+          sessionStorage.removeItem('scrollPosition');
+        };
+        
+        // Try immediate restore first
+        restoreScroll();
+        
+        // Also try after a short delay to ensure content is loaded
+        setTimeout(restoreScroll, 50);
+      }
+    }
+  }, [pathname]);
+
   const setLocale = (newLocale: Locale) => {
     const currentPath = pathname;
     let newPath: string;
@@ -68,6 +90,13 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
 
     if (newPath !== currentPath) {
+      // Store current scroll position in sessionStorage (client-side only)
+      if (typeof window !== 'undefined') {
+        const scrollY = window.scrollY;
+        sessionStorage.setItem('scrollPosition', scrollY.toString());
+      }
+      
+      // Navigate to new path
       router.push(newPath);
     }
   };
