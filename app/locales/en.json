@@ -2,7 +2,7 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software Developer",
-    "description": "I develop software and video games. I like to experiment with new technologies and try different approaches to find the best possible solution."
+    "description": "I develop software and video games. I like to experiment with new technologies and try different approaches to find the best possible solution. Take a look around and play some games directly in your browser!"
   },
   "navigation": {
     "home": "Home",
@@ -28,6 +28,8 @@
     "description": "Games I've developed in different engines",
     "viewGame": "View Game",
     "playGame": "Play Game",
+    "playableInBrowser": "Playable in browser",
+    "downloadOnItch": "Download on itch",
     "engine": "Engine",
     "genre": "Genre",
     "technologies": "Technologies",
@@ -159,64 +161,6 @@
     }
   },
   "gamesData": {
-    "space-invaders-unity": {
-      "title": "Space Invaders",
-      "description": "Classic arcade shooter game rebuilt in Unity with modern graphics and effects.",
-      "fullDescription": "A faithful recreation of the classic Space Invaders arcade game, built from the ground up in Unity. Features smooth gameplay, particle effects, power-ups, and a comprehensive scoring system. This project showcases fundamental game development concepts including enemy AI patterns, collision detection, and game state management.",
-      "imageCaptions": {
-        "gameplay": "Intense space combat with particle effects",
-        "menu": "Clean and intuitive main menu interface",
-        "gameover": "Game over screen with high score display"
-      },
-      "features": {
-        "classicGameplay": "Classic Gameplay",
-        "classicGameplayDesc": "Authentic Space Invaders experience with modern enhancements and smooth controls.",
-        "scoreSystem": "Advanced Scoring",
-        "scoreSystemDesc": "Comprehensive scoring system with multipliers, bonuses, and high score tracking.",
-        "powerUps": "Power-Up System",
-        "powerUpsDesc": "Collectible power-ups including rapid fire, multi-shot, and temporary shields.",
-        "particleEffects": "Visual Effects",
-        "particleEffectsDesc": "Dynamic particle effects for explosions, lasers, and environmental elements."
-      }
-    },
-    "puzzle-platformer-unreal": {
-      "title": "Puzzle Platformer",
-      "description": "3D puzzle-platformer game built in Unreal Engine with physics-based challenges.",
-      "fullDescription": "An innovative 3D puzzle-platformer that combines traditional platforming mechanics with complex physics-based puzzles. Built entirely in Unreal Engine using both Blueprints and C++, this game features dynamic lighting, interactive environments, and a built-in level editor. Players must solve increasingly complex puzzles while navigating challenging platforming sections.",
-      "imageCaptions": {
-        "puzzles": "Complex physics-based puzzle mechanics",
-        "movement": "Smooth character movement and platforming"
-      },
-      "features": {
-        "physicsBasedPuzzles": "Physics Puzzles",
-        "physicsBasedPuzzlesDesc": "Complex puzzle mechanics utilizing realistic physics simulation and environmental interactions.",
-        "levelEditor": "Level Editor",
-        "levelEditorDesc": "Built-in level editor allowing players to create and share custom puzzle levels.",
-        "checkpointSystem": "Smart Checkpoints",
-        "checkpointSystemDesc": "Intelligent checkpoint system that adapts to player progress and difficulty spikes.",
-        "dynamicLighting": "Dynamic Lighting",
-        "dynamicLightingDesc": "Advanced lighting system with real-time shadows and atmospheric effects."
-      }
-    },
-    "retro-rpg-godot": {
-      "title": "Retro RPG",
-      "description": "Classic-style RPG with pixel art graphics built in Godot Engine.",
-      "fullDescription": "A homage to classic 16-bit RPGs, featuring turn-based combat, an engaging quest system, and beautiful pixel art. Built entirely in Godot Engine using GDScript, this game includes a complete inventory management system, branching dialogue trees, and multiple character progression paths. The game world is filled with secrets, side quests, and memorable characters.",
-      "imageCaptions": {
-        "worldmap": "Expansive world map with diverse environments",
-        "battle": "Strategic turn-based combat system"
-      },
-      "features": {
-        "turnBasedCombat": "Turn-Based Combat",
-        "turnBasedCombatDesc": "Strategic combat system with elemental weaknesses, special abilities, and tactical positioning.",
-        "questSystem": "Quest System",
-        "questSystemDesc": "Branching quest lines with multiple solutions and meaningful player choices.",
-        "inventoryManagement": "Inventory Management",
-        "inventoryManagementDesc": "Comprehensive inventory system with item crafting, equipment upgrades, and resource management.",
-        "dialogueSystem": "Dialogue System",
-        "dialogueSystemDesc": "Rich dialogue system with character development and story branching based on player choices."
-      }
-    },
     "shooty": {
       "title": "Shooty",
       "description": "A fast-paced arcade shooter game written in Zig using Raylib.",
@@ -257,6 +201,29 @@
         "creativeChallengesDesc": "Innovative solutions to design challenges and creative interpretation of game jam themes.",
         "timeConstraints": "Time Management",
         "timeConstraintsDesc": "Efficient development workflow and prioritization to deliver a complete game within jam constraints."
+      }
+    },
+    "spitting-sugar": {
+      "title": "Spitting Sugar",
+      "description": "A Portal-inspired first person puzzle game where you spit different sweets to solve challenges.",
+      "fullDescription": "Spitting Sugar is an innovative first-person puzzle game inspired by Portal's mechanics. Players use unique sweet-spitting abilities to build bridges, defeat enemies, and solve complex puzzles. Developed during a game jam using Unity, this creative project showcases inventive gameplay mechanics and clever level design that transforms simple projectiles into versatile problem-solving tools. Sadly, the source code has been lost to time.",
+      "imageCaptions": {
+        "gameplay": "Spitting Sugar puzzle solving in action",
+        "mechanics": "Sweet projectile mechanics and interactions",
+        "puzzles": "Creative puzzle design and level layout",
+        "development": "Game jam development process and iteration"
+      },
+      "features": {
+        "sweetProjectiles": "Sweet Projectiles",
+        "sweetProjectilesDesc": "Spit different types of candy with unique properties and effects to interact with the environment.",
+        "bridgeBuilding": "Bridge Building",
+        "bridgeBuildingDesc": "Create pathways and structures using sweet projectiles to reach new areas and solve puzzles.",
+        "enemyCombat": "Enemy Combat",
+        "enemyCombatDesc": "Defeat enemies using strategic sweet-based attacks and environmental interactions.",
+        "portalInspiredPuzzles": "Portal-Inspired Puzzles",
+        "portalInspiredPuzzlesDesc": "Complex environmental puzzles requiring creative thinking and innovative use of sweet mechanics.",
+        "gameJamCreativity": "Game Jam Innovation",
+        "gameJamCreativityDesc": "Unique mechanics and creative solutions developed under the constraints and creativity of a game jam."
       }
     }
   }
