@@ -33,96 +33,84 @@ export interface Game {
 // Base games data (language-neutral) - Server-side safe
 const baseGames = [
   {
-    id: "space-invaders-unity",
-    name: "Space Invaders",
+    id: "spitting-sugar",
+    name: "Spitting Sugar",
     image: "/code.jpg",
     images: [
       {
         src: "/code.jpg",
-        alt: "Space Invaders gameplay",
+        alt: "Spitting Sugar gameplay",
         captionKey: "gameplay"
       },
       {
         src: "/portrait.jpg",
-        alt: "Main menu screen",
-        captionKey: "menu"
+        alt: "Sweet projectile mechanics",
+        captionKey: "mechanics"
       },
       {
         src: "/code.jpg",
-        alt: "Game over screen",
-        captionKey: "gameover"
-      }
-    ],
-    engine: "Unity",
-    technologies: ["Unity", "C#", "2D Graphics"],
-    genre: "Arcade Shooter",
-    features: [
-      { title: "classicGameplay", description: "classicGameplayDesc" },
-      { title: "scoreSystem", description: "scoreSystemDesc" },
-      { title: "powerUps", description: "powerUpsDesc" },
-      { title: "particleEffects", description: "particleEffectsDesc" }
-    ],
-    githubUrl: "https://github.com/yourusername/space-invaders-unity",
-    slug: "space-invaders-unity",
-    featured: true
-  },
-  {
-    id: "puzzle-platformer-unreal",
-    name: "Puzzle Platformer",
-    image: "/portrait.jpg",
-    images: [
-      {
-        src: "/portrait.jpg",
         alt: "Puzzle level design",
         captionKey: "puzzles"
       },
       {
-        src: "/code.jpg",
-        alt: "Character movement",
-        captionKey: "movement"
+        src: "/portrait.jpg",
+        alt: "Game jam development",
+        captionKey: "development"
       }
     ],
-    engine: "Unreal Engine",
-    technologies: ["Unreal Engine", "Blueprints", "C++", "3D Graphics"],
-    genre: "Puzzle Platformer",
+    engine: "Unity",
+    technologies: ["Unity", "C#", "WebGL", "First Person Controller"],
+    genre: "First Person Puzzle",
     features: [
-      { title: "physicsBasedPuzzles", description: "physicsBasedPuzzlesDesc" },
-      { title: "levelEditor", description: "levelEditorDesc" },
-      { title: "checkpointSystem", description: "checkpointSystemDesc" },
-      { title: "dynamicLighting", description: "dynamicLightingDesc" }
+      { title: "sweetProjectiles", description: "sweetProjectilesDesc" },
+      { title: "bridgeBuilding", description: "bridgeBuildingDesc" },
+      { title: "enemyCombat", description: "enemyCombatDesc" },
+      { title: "portalInspiredPuzzles", description: "portalInspiredPuzzlesDesc" }
     ],
-    githubUrl: "https://github.com/yourusername/puzzle-platformer",
-    slug: "puzzle-platformer-unreal",
+    playUrl: "/unity/spitting-sugar/index.html",
+    slug: "spitting-sugar",
     featured: true
   },
   {
-    id: "retro-rpg-godot",
-    name: "Retro RPG",
+    id: "pirate-game-jam-2025",
+    name: "Living Armory",
     image: "/code.jpg",
     images: [
       {
         src: "/code.jpg",
-        alt: "RPG world map",
-        captionKey: "worldmap"
+        alt: "Living Armory gameplay",
+        captionKey: "gameplay"
       },
       {
         src: "/portrait.jpg",
-        alt: "Battle system interface",
-        captionKey: "battle"
+        alt: "Game mechanics and features",
+        captionKey: "mechanics"
+      },
+      {
+        src: "/code.jpg",
+        alt: "Unity development environment",
+        captionKey: "development"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "Game jam submission interface",
+        captionKey: "submission"
       }
     ],
-    engine: "Godot",
-    technologies: ["Godot", "GDScript", "Pixel Art"],
-    genre: "Role-Playing Game",
+    engine: "Unity",
+    technologies: ["Unity", "C#", "WebGL"],
+    genre: "Metroidbrainia",
     features: [
-      { title: "turnBasedCombat", description: "turnBasedCombatDesc" },
-      { title: "questSystem", description: "questSystemDesc" },
-      { title: "inventoryManagement", description: "inventoryManagementDesc" },
-      { title: "dialogueSystem", description: "dialogueSystemDesc" }
+      { title: "gameJamDevelopment", description: "gameJamDevelopmentDesc" },
+      { title: "rapidPrototyping", description: "rapidPrototypingDesc" },
+      { title: "creativeChallenges", description: "creativeChallengesDesc" },
+      { title: "timeConstraints", description: "timeConstraintsDesc" }
     ],
-    githubUrl: "https://github.com/yourusername/retro-rpg-godot",
-    slug: "retro-rpg-godot",
-    featured: false
+    githubUrl: "https://github.com/Nashi1337/pirategamejam25",
+    itchUrl: "https://nashi1337.itch.io/living-armory",
+    playUrl: "/unity/living-armory/index.html",
+    slug: "pirate-game-jam-2025",
+    featured: true
   },
   {
     id: "shooty",
@@ -162,45 +150,6 @@ const baseGames = [
     githubUrl: "https://github.com/TheMetalStorm/shooty",
     itchUrl: "https://themetalstorm.itch.io/shooty",
     slug: "shooty",
-    featured: true
-  },
-  {
-    id: "pirate-game-jam-2025",
-    name: "Living Armory",
-    image: "/code.jpg",
-    images: [
-      {
-        src: "/code.jpg",
-        alt: "Living Armory gameplay",
-        captionKey: "gameplay"
-      },
-      {
-        src: "/portrait.jpg",
-        alt: "Game mechanics and features",
-        captionKey: "mechanics"
-      },
-      {
-        src: "/code.jpg",
-        alt: "Unity development environment",
-        captionKey: "development"
-      },
-      {
-        src: "/portrait.jpg",
-        alt: "Game jam submission interface",
-        captionKey: "submission"
-      }
-    ],
-    engine: "Unity",
-    technologies: ["Unity", "C#", "WebGL"],
-    genre: "Game Jam Entry",
-    features: [
-      { title: "gameJamDevelopment", description: "gameJamDevelopmentDesc" },
-      { title: "rapidPrototyping", description: "rapidPrototypingDesc" },
-      { title: "creativeChallenges", description: "creativeChallengesDesc" },
-      { title: "timeConstraints", description: "timeConstraintsDesc" }
-    ],
-    playUrl: "/unity/living-armory/index.html",
-    slug: "pirate-game-jam-2025",
     featured: true
   }
 ];
