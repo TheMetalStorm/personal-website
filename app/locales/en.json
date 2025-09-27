@@ -237,6 +237,27 @@
         "soundEffects": "Sound Effects",
         "soundEffectsDesc": "Immersive audio feedback with shooting sounds, explosions, and ambient music."
       }
+    },
+    "pirate-game-jam-2025": {
+      "title": "Living Armory",
+      "description": "A Unity WebGL game developed for the Pirate Software Game Jam 2025, playable directly in your browser.",
+      "fullDescription": "Living Armory is an exciting game jam entry created for the Pirate Software Game Jam 2025. This Unity WebGL project demonstrates the ability to rapidly prototype and develop a complete game concept within the constraints of a game jam timeline. The game is fully playable in your browser and showcases creative problem-solving, efficient development practices, and polished gameplay mechanics.",
+      "imageCaptions": {
+        "gameplay": "Fast-paced gameplay mechanics developed for the jam",
+        "mechanics": "Unique game mechanics and player interactions",
+        "development": "Unity development process and workflow",
+        "submission": "Final game jam submission and presentation"
+      },
+      "features": {
+        "gameJamDevelopment": "Game Jam Development",
+        "gameJamDevelopmentDesc": "Complete game development cycle compressed into a game jam timeframe with focus on core mechanics.",
+        "rapidPrototyping": "Rapid Prototyping",
+        "rapidPrototypingDesc": "Quick iteration and testing of game concepts to validate ideas and refine gameplay mechanics.",
+        "creativeChallenges": "Creative Problem Solving",
+        "creativeChallengesDesc": "Innovative solutions to design challenges and creative interpretation of game jam themes.",
+        "timeConstraints": "Time Management",
+        "timeConstraintsDesc": "Efficient development workflow and prioritization to deliver a complete game within jam constraints."
+      }
     }
   }
 }
