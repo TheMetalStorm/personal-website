@@ -163,6 +163,45 @@ const baseGames = [
     itchUrl: "https://themetalstorm.itch.io/shooty",
     slug: "shooty",
     featured: true
+  },
+  {
+    id: "pirate-game-jam-2025",
+    name: "Living Armory",
+    image: "/code.jpg",
+    images: [
+      {
+        src: "/code.jpg",
+        alt: "Living Armory gameplay",
+        captionKey: "gameplay"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "Game mechanics and features",
+        captionKey: "mechanics"
+      },
+      {
+        src: "/code.jpg",
+        alt: "Unity development environment",
+        captionKey: "development"
+      },
+      {
+        src: "/portrait.jpg",
+        alt: "Game jam submission interface",
+        captionKey: "submission"
+      }
+    ],
+    engine: "Unity",
+    technologies: ["Unity", "C#", "WebGL"],
+    genre: "Game Jam Entry",
+    features: [
+      { title: "gameJamDevelopment", description: "gameJamDevelopmentDesc" },
+      { title: "rapidPrototyping", description: "rapidPrototypingDesc" },
+      { title: "creativeChallenges", description: "creativeChallengesDesc" },
+      { title: "timeConstraints", description: "timeConstraintsDesc" }
+    ],
+    playUrl: "/unity/living-armory/index.html",
+    slug: "pirate-game-jam-2025",
+    featured: true
   }
 ];
 

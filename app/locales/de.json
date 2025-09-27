@@ -237,6 +237,27 @@
         "soundEffects": "Soundeffekte",
         "soundEffectsDesc": "Immersives Audio-Feedback mit Schussgeräuschen, Explosionen und Hintergrundmusik."
       }
+    },
+    "pirate-game-jam-2025": {
+      "title": "Living Armory",
+      "description": "Ein Unity WebGL-Spiel, das für den Pirate Software Game Jam 2025 entwickelt wurde und direkt im Browser spielbar ist.",
+      "fullDescription": "Living Armory ist ein aufregendes Game-Jam-Projekt, das für den Pirate Software Game Jam 2025 erstellt wurde. Dieses Unity WebGL-Projekt demonstriert die Fähigkeit, schnell Prototypen zu erstellen und ein vollständiges Spielkonzept innerhalb der Beschränkungen eines Game-Jam-Zeitrahmens zu entwickeln. Das Spiel ist vollständig im Browser spielbar und zeigt kreative Problemlösung, effiziente Entwicklungspraktiken und polierte Gameplay-Mechaniken.",
+      "imageCaptions": {
+        "gameplay": "Schnelle Gameplay-Mechaniken für den Jam entwickelt",
+        "mechanics": "Einzigartige Spielmechaniken und Spielerinteraktionen",
+        "development": "Unity-Entwicklungsprozess und Arbeitsablauf",
+        "submission": "Finale Game-Jam-Einreichung und Präsentation"
+      },
+      "features": {
+        "gameJamDevelopment": "Game-Jam-Entwicklung",
+        "gameJamDevelopmentDesc": "Vollständiger Spielentwicklungszyklus komprimiert in einen Game-Jam-Zeitrahmen mit Fokus auf Kernmechaniken.",
+        "rapidPrototyping": "Schnelles Prototyping",
+        "rapidPrototypingDesc": "Schnelle Iteration und Testen von Spielkonzepten zur Validierung von Ideen und Verfeinerung von Gameplay-Mechaniken.",
+        "creativeChallenges": "Kreative Problemlösung",
+        "creativeChallengesDesc": "Innovative Lösungen für Designherausforderungen und kreative Interpretation von Game-Jam-Themen.",
+        "timeConstraints": "Zeitmanagement",
+        "timeConstraintsDesc": "Effizienter Entwicklungsworkflow und Priorisierung zur Lieferung eines vollständigen Spiels innerhalb der Jam-Beschränkungen."
+      }
     }
   }
 }
