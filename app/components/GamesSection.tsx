@@ -28,13 +28,23 @@ export default function GamesSection() {
 						<div key={game.id} className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
 							<div className="aspect-video bg-gray-700 relative">
 								<Image src={game.image} alt={game.title} fill className="object-cover" />
-								<div className="absolute top-3 right-3 flex gap-2">
+								<div className="absolute top-3 right-3 flex flex-wrap justify-end gap-2">
 									<span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">
 										{game.engine}
 									</span>
 									{game.genre && (
 										<span className="px-2 py-1 bg-purple-600 text-white text-xs rounded-full">
 											{game.genre}
+										</span>
+									)}
+									{game.playUrl && (
+										<span className="px-2 py-1 bg-green-600 text-white text-xs rounded-full">
+											{t('games.playableInBrowser')}
+										</span>
+									)}
+									{game.itchUrl && (
+										<span className="px-2 py-1 bg-pink-600 text-white text-xs rounded-full">
+											{t('games.downloadOnItch')}
 										</span>
 									)}
 								</div>
