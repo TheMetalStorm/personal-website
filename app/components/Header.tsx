@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useI18n } from '../hooks/useI18n';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Home, Code2, Gamepad2 } from 'lucide-react';
+import { Home, Code2, Gamepad2, FileText } from 'lucide-react';
 
 export default function Header() {
 	const { t, locale } = useI18n();
@@ -11,6 +11,7 @@ export default function Header() {
 	const homeUrl = locale === 'de' ? '/de' : '/';
 	const projectsUrl = locale === 'de' ? '/de/projects' : '/projects';
 	const gamesUrl = locale === 'de' ? '/de/games' : '/games';
+	const resumePath = locale === 'de' ? '/resume/Resume_German.pdf' : '/resume/Resume_English.pdf';
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
@@ -42,6 +43,16 @@ export default function Header() {
 							<Gamepad2 className="w-4 h-4" />
 							<span className="hidden sm:inline">{t('navigation.games')}</span>
 						</Link>
+
+						<a
+							href={resumePath}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm font-medium"
+						>
+							<FileText className="w-4 h-4" />
+							<span className="hidden sm:inline">{t('contact.resume')}</span>
+						</a>
 
 						{/* Language Switcher */}
 						<LanguageSwitcher />
