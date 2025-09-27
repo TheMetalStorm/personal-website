@@ -2,7 +2,7 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software-Entwickler",
-    "description": "Ich entwickle Software und Videospiele. Dabei experimentiere ich gerne mit neuen Technologien und probiere verschiedene Ansätze aus, um die bestmögliche Lösung zu finden."
+    "description": "Ich entwickle Software und Videospiele. Ich experimentiere gerne mit neuen Technologien und probiere verschiedene Ansätze aus, um die bestmögliche Lösung zu finden. Schauen Sie sich um und spielen Sie einige Spiele direkt in Ihrem Browser!"
   },
   "navigation": {
     "home": "Startseite",
@@ -28,6 +28,8 @@
     "description": "Spiele, die ich in verschiedenen Engines entwickelt habe",
     "viewGame": "Spiel ansehen",
     "playGame": "Spiel spielen",
+    "playableInBrowser": "Im Browser spielbar",
+    "downloadOnItch": "Auf itch herunterladen",
     "engine": "Engine",
     "genre": "Genre",
     "technologies": "Technologien",
@@ -159,64 +161,6 @@
     }
   },
   "gamesData": {
-    "space-invaders-unity": {
-      "title": "Space Invaders",
-      "description": "Klassisches Arcade-Shooter-Spiel, neu erstellt in Unity mit moderner Grafik und Effekten.",
-      "fullDescription": "Eine originalgetreue Nachbildung des klassischen Space Invaders Arcade-Spiels, komplett neu in Unity entwickelt. Bietet flüssiges Gameplay, Partikeleffekte, Power-Ups und ein umfassendes Punktesystem. Dieses Projekt zeigt grundlegende Spielentwicklungskonzepte einschließlich Gegner-KI-Muster, Kollisionserkennung und Spielzustandsverwaltung.",
-      "imageCaptions": {
-        "gameplay": "Intensive Weltraumkämpfe mit Partikeleffekten",
-        "menu": "Saubere und intuitive Hauptmenü-Oberfläche",
-        "gameover": "Game-Over-Bildschirm mit Highscore-Anzeige"
-      },
-      "features": {
-        "classicGameplay": "Klassisches Gameplay",
-        "classicGameplayDesc": "Authentisches Space Invaders Erlebnis mit modernen Verbesserungen und flüssigen Steuerelementen.",
-        "scoreSystem": "Erweiterte Punktewertung",
-        "scoreSystemDesc": "Umfassendes Punktesystem mit Multiplikatoren, Boni und Highscore-Verfolgung.",
-        "powerUps": "Power-Up-System",
-        "powerUpsDesc": "Sammelbare Power-Ups einschließlich Schnellfeuer, Mehrfachschuss und temporäre Schilde.",
-        "particleEffects": "Visuelle Effekte",
-        "particleEffectsDesc": "Dynamische Partikeleffekte für Explosionen, Laser und Umgebungselemente."
-      }
-    },
-    "puzzle-platformer-unreal": {
-      "title": "Puzzle Platformer",
-      "description": "3D-Puzzle-Plattformspiel in Unreal Engine mit physikbasierten Herausforderungen.",
-      "fullDescription": "Ein innovatives 3D-Puzzle-Plattformspiel, das traditionelle Plattform-Mechaniken mit komplexen physikbasierten Rätseln kombiniert. Komplett in Unreal Engine mit sowohl Blueprints als auch C++ entwickelt, bietet dieses Spiel dynamische Beleuchtung, interaktive Umgebungen und einen integrierten Level-Editor. Spieler müssen zunehmend komplexe Rätsel lösen, während sie herausfordernde Plattform-Abschnitte bewältigen.",
-      "imageCaptions": {
-        "puzzles": "Komplexe physikbasierte Rätsel-Mechaniken",
-        "movement": "Flüssige Charakterbewegung und Plattformspiel"
-      },
-      "features": {
-        "physicsBasedPuzzles": "Physik-Rätsel",
-        "physicsBasedPuzzlesDesc": "Komplexe Rätsel-Mechaniken mit realistischer Physiksimulation und Umgebungsinteraktionen.",
-        "levelEditor": "Level-Editor",
-        "levelEditorDesc": "Eingebauter Level-Editor, der es Spielern ermöglicht, benutzerdefinierte Rätsel-Level zu erstellen und zu teilen.",
-        "checkpointSystem": "Intelligente Checkpoints",
-        "checkpointSystemDesc": "Intelligentes Checkpoint-System, das sich an Spielerfortschritt und Schwierigkeitsspitzen anpasst.",
-        "dynamicLighting": "Dynamische Beleuchtung",
-        "dynamicLightingDesc": "Fortgeschrittenes Beleuchtungssystem mit Echtzeit-Schatten und atmosphärischen Effekten."
-      }
-    },
-    "retro-rpg-godot": {
-      "title": "Retro RPG",
-      "description": "Klassisches RPG mit Pixel-Art-Grafiken, entwickelt in Godot Engine.",
-      "fullDescription": "Eine Hommage an klassische 16-Bit-RPGs mit rundenbasierten Kämpfen, einem fesselnden Quest-System und wunderschöner Pixel-Art. Komplett in Godot Engine mit GDScript entwickelt, umfasst dieses Spiel ein vollständiges Inventarverwaltungssystem, verzweigte Dialogbäume und mehrere Charakterentwicklungspfade. Die Spielwelt ist voller Geheimnisse, Nebenquests und unvergesslicher Charaktere.",
-      "imageCaptions": {
-        "worldmap": "Ausgedehnte Weltkarte mit vielfältigen Umgebungen",
-        "battle": "Strategisches rundenbasiertes Kampfsystem"
-      },
-      "features": {
-        "turnBasedCombat": "Rundenbasierte Kämpfe",
-        "turnBasedCombatDesc": "Strategisches Kampfsystem mit Elementschwächen, Spezialfähigkeiten und taktischer Positionierung.",
-        "questSystem": "Quest-System",
-        "questSystemDesc": "Verzweigte Quest-Linien mit mehreren Lösungen und bedeutungsvollen Spielerentscheidungen.",
-        "inventoryManagement": "Inventarverwaltung",
-        "inventoryManagementDesc": "Umfassendes Inventarsystem mit Gegenstandsherstellung, Ausrüstungsverbesserungen und Ressourcenverwaltung.",
-        "dialogueSystem": "Dialog-System",
-        "dialogueSystemDesc": "Reichhaltiges Dialogsystem mit Charakterentwicklung und Storyverzweigung basierend auf Spielerentscheidungen."
-      }
-    },
     "shooty": {
       "title": "Shooty",
       "description": "Ein schnelles Arcade-Shooter-Spiel, das in Zig mit Raylib geschrieben wurde.",
@@ -257,6 +201,29 @@
         "creativeChallengesDesc": "Innovative Lösungen für Designherausforderungen und kreative Interpretation von Game-Jam-Themen.",
         "timeConstraints": "Zeitmanagement",
         "timeConstraintsDesc": "Effizienter Entwicklungsworkflow und Priorisierung zur Lieferung eines vollständigen Spiels innerhalb der Jam-Beschränkungen."
+      }
+    },
+    "spitting-sugar": {
+      "title": "Spitting Sugar",
+      "description": "Ein von Portal inspiriertes Ego-Rätselspiel, in dem du verschiedene Süßigkeiten spuckst, um Herausforderungen zu lösen.",
+      "fullDescription": "Spitting Sugar ist ein innovatives Ego-Rätselspiel, das von Portals Mechaniken inspiriert ist. Spieler nutzen einzigartige Süßigkeiten-Spuck-Fähigkeiten, um Brücken zu bauen, Feinde zu besiegen und komplexe Rätsel zu lösen. Während eines Game Jams mit Unity entwickelt, zeigt dieses kreative Projekt erfinderische Gameplay-Mechaniken und cleveres Level-Design, das einfache Projektile in vielseitige Problemlösungswerkzeuge verwandelt. Leider ist der Quellcode mit der Zeit verloren gegangen.",
+      "imageCaptions": {
+        "gameplay": "Spitting Sugar Rätsellösung in Aktion",
+        "mechanics": "Süße Projektilmechaniken und Interaktionen",
+        "puzzles": "Kreatives Rätseldesign und Level-Layout",
+        "development": "Game-Jam-Entwicklungsprozess und Iteration"
+      },
+      "features": {
+        "sweetProjectiles": "Süße Projektile",
+        "sweetProjectilesDesc": "Spucke verschiedene Arten von Süßigkeiten mit einzigartigen Eigenschaften und Effekten zur Umgebungsinteraktion.",
+        "bridgeBuilding": "Brückenbau",
+        "bridgeBuildingDesc": "Erstelle Wege und Strukturen mit süßen Projektilen, um neue Bereiche zu erreichen und Rätsel zu lösen.",
+        "enemyCombat": "Gegnerkampf",
+        "enemyCombatDesc": "Besiege Feinde mit strategischen süßigkeitenbasierten Angriffen und Umgebungsinteraktionen.",
+        "portalInspiredPuzzles": "Portal-inspirierte Rätsel",
+        "portalInspiredPuzzlesDesc": "Komplexe Umgebungsrätsel, die kreatives Denken und innovative Nutzung der Süßigkeitenmechaniken erfordern.",
+        "gameJamCreativity": "Game-Jam-Innovation",
+        "gameJamCreativityDesc": "Einzigartige Mechaniken und kreative Lösungen, die unter den Beschränkungen und der Kreativität eines Game Jams entwickelt wurden."
       }
     }
   }
