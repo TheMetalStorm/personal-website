@@ -45,8 +45,20 @@ export default function GameDetail({ game }: GameDetailProps) {
                     {game.genre}
                   </span>
                 )}
-                {game.releaseDate && (
+                {game.playUrl && (
                   <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full flex items-center gap-1">
+                    <Play className="w-4 h-4" />
+                    {t('games.playableInBrowser')}
+                  </span>
+                )}
+                {game.itchUrl && (
+                  <span className="px-3 py-1 bg-pink-600 text-white text-sm rounded-full flex items-center gap-1">
+                    <ExternalLink className="w-4 h-4" />
+                    {t('games.downloadOnItch')}
+                  </span>
+                )}
+                {game.releaseDate && (
+                  <span className="px-3 py-1 bg-orange-600 text-white text-sm rounded-full flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     {game.releaseDate}
                   </span>

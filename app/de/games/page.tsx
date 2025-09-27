@@ -46,13 +46,23 @@ export default async function GamesPageDE() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-4 right-4 flex gap-2">
+                <div className="absolute top-4 right-4 flex flex-wrap justify-end gap-2">
                   <span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">
                     {game.engine}
                   </span>
                   {game.genre && (
                     <span className="px-2 py-1 bg-purple-600 text-white text-xs rounded-full">
                       {game.genre}
+                    </span>
+                  )}
+                  {game.playUrl && (
+                    <span className="px-2 py-1 bg-green-600 text-white text-xs rounded-full">
+                      {translations.games.playableInBrowser}
+                    </span>
+                  )}
+                  {game.itchUrl && (
+                    <span className="px-2 py-1 bg-pink-600 text-white text-xs rounded-full">
+                      {translations.games.downloadOnItch}
                     </span>
                   )}
                 </div>
