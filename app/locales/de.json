@@ -14,7 +14,8 @@
   "projects": {
     "viewCode": "Code ansehen",
     "viewAll": "Alle Projekte ansehen",
-    "title": "Projekte",
+    "title": "Ausgewählte Projekte",
+    "allProjectsTitle": "Alle Projekte",
     "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe",
     "viewProject": "Projekt ansehen",
     "technologies": "Technologien",
@@ -24,7 +25,8 @@
   "games": {
     "viewCode": "Code ansehen",
     "viewAll": "Alle Spiele ansehen",
-    "title": "Spiele",
+    "title": "Ausgewählte Spiele",
+    "allGamesTitle": "Alle Spiele",
     "description": "Spiele, die ich in verschiedenen Engines entwickelt habe",
     "viewGame": "Spiel ansehen",
     "playGame": "Spiel spielen",
