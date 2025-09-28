@@ -63,10 +63,10 @@
       "title": "Zilo Text Editor",
       "description": "Eine Neuimplementierung des kilo Text Editors, geschrieben in der Zig Programmiersprache.",
       "fullDescription": "Zilo ist ein Terminal-Texteditor. Er beinhaltet Syntaxhervorhebung und Suchfunktionalität, alles angetrieben von der Zig Programmiersprache.",
-      "imagesCaptions": {
-        "main": "Hauptoberfläche des Editors mit Syntaxhervorhebung",
-        "search": "Integrierte Such- und Ersetzungsfunktionalität",
-        "terminal": "Nahtlose Terminal-Integration"
+      "imageCaptions": {
+        "welcome": "Zilo Texteditor Willkommensbildschirm",
+        "syntax": "Syntaxhervorhebung implementiert für C und Zig Programmiersprachen",
+        "search": "Suchfunktionalität in Aktion"
       },
       "features": {
         "syntaxHighlighting": "Syntaxhervorhebung",
@@ -83,10 +83,11 @@
       "title": "CHIP-8 Emulator für SerenityOS",
       "description": "Eine CHIP-8 Emulator-Implementierung, die speziell für das SerenityOS-Betriebssystem entwickelt wurde.",
       "fullDescription": "Dieses Projekt ist ein vollständiger CHIP-8 Emulator, der für SerenityOS entwickelt wurde und präzise CPU-Emulation, Grafik-Rendering und Sound-Unterstützung bietet. CHIP-8 ist eine einfache virtuelle Maschine, die in den 1970er Jahren für die Programmierung von Spielen entworfen wurde, und dieser Emulator bringt diese klassischen Spiele mit pixelgenauer Genauigkeit auf die moderne SerenityOS-Plattform.",
-      "imagesCaptions": {
-        "emulator": "CHIP-8 Emulator Hauptoberfläche mit ROM-Auswahl",
-        "gameplay": "Klassisches CHIP-8 Spiel läuft mit flüssigem Rendering",
-        "debugger": "Eingebauter Debugger zeigt CPU-Zustand und Speicher"
+      "imageCaptions": {
+        "title": "ROM läuft und zeigt CHIP-8",
+        "flightrunner": "FlightRunner Spiel läuft auf dem CHIP-8 Emulator",
+        "tetris": "Tetris von Fran Dachille läuft auf dem Emulator",
+        "particleDemo": "Partikel-Demo von zeroZshadow zeigt Grafik-Fähigkeiten"
       },
       "features": {
         "cpuEmulation": "Präzise CPU-Emulation",
@@ -103,10 +104,11 @@
       "title": "Spring Bibliotheksverwaltungs-API",
       "description": "Eine umfassende REST-API für Bibliotheksverwaltung, entwickelt mit Spring Boot und Java.",
       "fullDescription": "Dieses Projekt ist ein vollständiges Backend-System für Bibliotheksverwaltung, das mit Spring Boot entwickelt wurde. Es bietet REST-API-Endpunkte für die Verwaltung von Büchern, Autoren, Ausleihern und Leihvorgängen. Das System umfasst ordnungsgemäße Datenvalidierung, Ausnahmebehandlung und folgt REST-Prinzipien für sauberes API-Design. Perfekt zum Erlernen von Spring Boot-Konzepten oder als Grundlage für größere Bibliotheksverwaltungssysteme.",
-      "imagesCaptions": {
-        "apiEndpoints": "REST-API-Endpunkte für Buch- und Benutzerverwaltung",
-        "database": "Entity-Relationship-Diagramm der Datenstruktur",
-        "documentation": "Interaktive API-Dokumentation mit Swagger"
+      "imageCaptions": {
+        "techStack": "Im Projekt verwendeter Technologie-Stack",
+        "architecture": "Systemarchitektur-Diagramm mit Komponentenbeziehungen",
+        "erDiagram": "Entity-Relationship-Diagramm des Datenbankschemas",
+        "documentation": "API-Dokumentationsschnittstelle und Endpunkte"
       },
       "features": {
         "restfulApi": "RESTful API Design",
@@ -120,14 +122,13 @@
       }
     },
     "socket-fun": {
-      "title": "SocketFun",
+      "title": "Socket-Experimente",
       "description": "Experimente mit Sockets in C unter Linux, mit Echo- und Chat-Servern mit gleichzeitiger Verbindungsbehandlung.",
-      "fullDescription": "SocketFun ist ein Lernprojekt, das Socket-Programmierung in C unter Linux erforscht. Es umfasst sowohl eine Echo-Server/Client- als auch eine Chat-Server/Client-Implementierung und demonstriert die gleichzeitige Verbindungsbehandlung mit epoll(). Das Projekt zeigt Low-Level-Netzwerkprogrammierungskonzepte und effiziente I/O-Multiplexing-Techniken für die Behandlung mehrerer Client-Verbindungen gleichzeitig.",
+      "fullDescription": "Socket-Experimente ist ein Lernprojekt, das Socket-Programmierung in C unter Linux erforscht. Es umfasst sowohl eine Echo-Server/Client- als auch eine Chat-Server/Client-Implementierung und demonstriert die gleichzeitige Verbindungsbehandlung mit epoll(). Das Projekt zeigt Low-Level-Netzwerkprogrammierungskonzepte und effiziente I/O-Multiplexing-Techniken für die Behandlung mehrerer Client-Verbindungen gleichzeitig.",
       "imageCaptions": {
-        "implementation": "C Socket-Programmierung Implementierung",
-        "echo": "Echo-Server reflektiert Client-Nachrichten",
-        "chat": "Multi-Client-Chat-Server in Aktion",
-        "concurrent": "epoll() behandelt gleichzeitige Verbindungen"
+        "title": "Socket-Experimente Projekttitel und Übersicht",
+        "echoServer": "Echo-Server und Client-Kommunikations-Demonstration",
+        "chatServer": "Chat-Server behandelt mehrere Clients gleichzeitig"
       },
       "features": {
         "echoServer": "Echo-Server",
@@ -145,10 +146,9 @@
       "description": "Ein Windows-Launcher für Super Mario World ROM-Hacks mit integrierten Patching-Funktionen mit Floating IPS.",
       "fullDescription": "World-Launcher ist eine umfassende Windows-Anwendung für Super Mario World ROM-Hack-Enthusiasten. Sie kombiniert ROM-Patching-Funktionalität mit einer benutzerfreundlichen Launcher-Oberfläche, die es Benutzern ermöglicht, ROM-Dateien einfach mit .bps- oder .ips-Patches zu patchen und sie direkt in ihrem bevorzugten SNES-Emulator zu starten. Die Anwendung integriert Floating IPS von Alcaro für zuverlässiges ROM-Patching und bietet nahtlose Emulator-Integration für ein verbessertes Spielerlebnis.",
       "imageCaptions": {
-        "interface": "Saubere Windows Forms-Oberfläche für ROM-Verwaltung",
-        "patching": "Automatisiertes ROM-Patching mit Floating IPS-Integration",
-        "launcher": "Spiele-Launcher zeigt verfügbare ROM-Hacks an",
-        "emulator": "Direkte Emulator-Integration mit Vollbild-Optionen"
+        "title": "World-Launcher Anwendungstitel und Logo",
+        "mainMenu": "Hauptmenü-Oberfläche von World-Launcher",
+        "patchingAndLaunching": "ROM-Patching-Prozess und Spiel-Start-Demonstration"
       },
       "features": {
         "romPatching": "ROM-Patching",
@@ -168,10 +168,10 @@
       "description": "Ein schnelles Arcade-Shooter-Spiel, das in Zig mit Raylib geschrieben wurde.",
       "fullDescription": "Shooty ist ein schnelles Arcade-Shooter-Spiel, das mit Zig und Raylib entwickelt wurde. Die Spieler steuern ein Raumschiff und kämpfen gegen Wellen von Feinden in intensiven Arcade-Kämpfen. Mit flüssigen Sprite-Animationen, präziser Kollisionserkennung und fesselnden Gameplay-Mechaniken.",
       "imageCaptions": {
-        "gameplay": "Intensive Arcade-Shooter-Action",
-        "shooting": "Spieler-Raumschiff feuert auf Feinde",
-        "enemies": "Herausfordernde Gegner-KI-Muster",
-        "gameover": "Game-Over-Bildschirm mit Endpunktzahl"
+        "title": "Shooty Spiel-Titelbildschirm",
+        "mainMenu": "Hauptmenü-Oberfläche",
+        "tutorial": "Tutorial-Bildschirm mit Erklärung der Spielmechaniken",
+        "bombItem": "Bomben-Item Power-Up im Spiel"
       },
       "features": {
         "spriteAnimation": "Sprite-Animation",
@@ -189,10 +189,11 @@
       "description": "Ein Unity WebGL-Spiel, das für den Pirate Software Game Jam 2025 entwickelt wurde und direkt im Browser spielbar ist.",
       "fullDescription": "Living Armory ist ein aufregendes Game-Jam-Projekt, das für den Pirate Software Game Jam 2025 erstellt wurde. Dieses Unity WebGL-Projekt demonstriert die Fähigkeit, schnell Prototypen zu erstellen und ein vollständiges Spielkonzept innerhalb der Beschränkungen eines Game-Jam-Zeitrahmens zu entwickeln. Das Spiel ist vollständig im Browser spielbar und zeigt kreative Problemlösung, effiziente Entwicklungspraktiken und polierte Gameplay-Mechaniken.",
       "imageCaptions": {
-        "gameplay": "Schnelle Gameplay-Mechaniken für den Jam entwickelt",
-        "mechanics": "Einzigartige Spielmechaniken und Spielerinteraktionen",
-        "development": "Unity-Entwicklungsprozess und Arbeitsablauf",
-        "submission": "Finale Game-Jam-Einreichung und Präsentation"
+        "name": "Living Armory Spieltitel und Name",
+        "introAnimation": "Spiel-Intro-Animations-Screenshot",
+        "beTheWeapon": "Sei die Waffe Gameplay-Mechanik in Aktion",
+        "fastestRoute": "Den schnellsten Weg durch herausfordernde Level finden",
+        "fightBoss": "Intensive Boss-Kampf-Gameplay-Sequenz"
       },
       "features": {
         "gameJamDevelopment": "Game-Jam-Entwicklung",
@@ -210,10 +211,11 @@
       "description": "Ein von Portal inspiriertes Ego-Rätselspiel, in dem du verschiedene Süßigkeiten spuckst, um Herausforderungen zu lösen.",
       "fullDescription": "Spitting Sugar ist ein innovatives Ego-Rätselspiel, das von Portals Mechaniken inspiriert ist. Spieler nutzen einzigartige Süßigkeiten-Spuck-Fähigkeiten, um Brücken zu bauen, Feinde zu besiegen und komplexe Rätsel zu lösen. Während eines Game Jams mit Unity entwickelt, zeigt dieses kreative Projekt erfinderische Gameplay-Mechaniken und cleveres Level-Design, das einfache Projektile in vielseitige Problemlösungswerkzeuge verwandelt. Leider ist der Quellcode mit der Zeit verloren gegangen.",
       "imageCaptions": {
-        "gameplay": "Spitting Sugar Rätsellösung in Aktion",
-        "mechanics": "Süße Projektilmechaniken und Interaktionen",
-        "puzzles": "Kreatives Rätseldesign und Level-Layout",
-        "development": "Game-Jam-Entwicklungsprozess und Iteration"
+        "title": "Spitting Sugar Spiel-Titelbildschirm",
+        "startArea": "Startbereich",
+        "bouncyBears": "Springender Bär Power-Up lässt dich neue Höhen erreichen",
+        "buildBridges": "Brücken bauen mit Zucker-Projektilen zum Überqueren von Lücken",
+        "solvePuzzles": "Komplexe Rätsel lösen mit insgesamt vier süßen Mechaniken"
       },
       "features": {
         "sweetProjectiles": "Süße Projektile",
@@ -226,6 +228,28 @@
         "portalInspiredPuzzlesDesc": "Komplexe Umgebungsrätsel, die kreatives Denken und innovative Nutzung der Süßigkeitenmechaniken erfordern.",
         "gameJamCreativity": "Game-Jam-Innovation",
         "gameJamCreativityDesc": "Einzigartige Mechaniken und kreative Lösungen, die unter den Beschränkungen und der Kreativität eines Game Jams entwickelt wurden."
+      }
+    },
+    "bachelor-thesis": {
+      "title": "Rendering klassischer handgezeichneter Zeichentrickanimationen",
+      "description": "Meine Bachelorarbeit: Eine technische Erforschung der 3D-Nachbildung klassischer 2D-Animationen mit benutzerdefinierten Unity-Shadern und Render-Pipeline.",
+      "fullDescription": "Dieses Bachelorarbeitsprojekt erforscht die technischen Herausforderungen und künstlerischen Möglichkeiten bei der Nachbildung klassischer handgezeichneter Zeichentrickanimationen in einer 3D-Umgebung. Unter Verwendung von Unitys programmierbarer Render-Pipeline und benutzerdefinierten HLSL-Shadern demonstriert das Projekt innovative Ansätze zur Beibehaltung des charakteristischen visuellen Stils traditioneller 2D-Animation bei gleichzeitiger Nutzung der Vorteile des 3D-Renderings. Die Arbeit umfasst detaillierte Analysen von Animationsprinzipien, Shader-Entwicklung und Render-Pipeline-Anpassung, um authentische Cartoon-Ästhetik im dreidimensionalen Raum zu erreichen.",
+      "imageCaptions": {
+        "title": "Projekttitel und Übersicht",
+        "disneyRecreation": "3D-Nachbildung des klassischen Disney-Animationsstils mit benutzerdefinierten Shadern",
+        "gertieRecreation": "Gertie der Dinosaurier in 3D neu interpretiert unter Beibehaltung des ursprünglichen handgezeichneten Charmes",
+        "mononokeRecreation": "Prinzessin Mononoke-Umgebung mit benutzerdefinierten Cartoon-Shadern gerendert",
+        "thesisPdf": "Vollständiges Bachelorarbeitsdokument mit technischen Details und Forschungsergebnissen"
+      },
+      "features": {
+        "customShaders": "Benutzerdefinierte HLSL-Shader",
+        "customShadersDesc": "Handgefertigte Shader, die darauf ausgelegt sind, die einzigartigen visuellen Eigenschaften traditioneller handgezeichneter Animation zu replizieren.",
+        "renderPipeline": "Benutzerdefinierte Render-Pipeline",
+        "renderPipelineDesc": "Modifizierte Unity-Render-Pipeline, optimiert für Cartoon-Stil-Rendering mit spezialisierten Beleuchtungs- und Schattierungstechniken.",
+        "animationRecreation": "Klassische Animations-Nachbildung",
+        "animationRecreationDesc": "Originalgetreue 3D-Nachbildungen ikonischer Cartoon-Charaktere und -Szenen unter Beibehaltung ihrer ursprünglichen künstlerischen Absicht.",
+        "technicalResearch": "Technische Forschung",
+        "technicalResearchDesc": "Umfassende Analyse von Animationsprinzipien, Rendering-Techniken und der Schnittstelle zwischen 2D- und 3D-Grafiken."
       }
     }
   }

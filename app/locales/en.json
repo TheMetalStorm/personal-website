@@ -63,10 +63,10 @@
       "title": "Zilo Text Editor",
       "description": "A reimplementation of the kilo Text Editor, written in the Zig Programming language.",
       "fullDescription": "Zilo is a terminal text editor. It includes syntax highlighting and search functionality, all powered by the Zig programming language.",
-      "imagesCaptions": {
-        "main": "Main editor interface with syntax highlighting",
-        "search": "Built-in search and replace functionality",
-        "terminal": "Seamless terminal integration"
+      "imageCaptions": {
+        "welcome": "Zilo text editor welcome screen",
+        "syntax": "Syntax highlighting implemented for C and Zig programming languages",
+        "search": "Search functionality in action"
       },
       "features": {
         "syntaxHighlighting": "Syntax Highlighting",
@@ -83,10 +83,11 @@
       "title": "CHIP-8 Emulator for SerenityOS",
       "description": "A CHIP-8 emulator implementation built specifically for the SerenityOS operating system.",
       "fullDescription": "This project is a complete CHIP-8 emulator developed for SerenityOS, featuring accurate CPU emulation, graphics rendering, and sound support. CHIP-8 is a simple virtual machine designed in the 1970s for programming games, and this emulator brings those classic games to the modern SerenityOS platform with pixel-perfect accuracy.",
-      "imagesCaptions": {
-        "emulator": "CHIP-8 emulator main interface showing ROM selection",
-        "gameplay": "Classic CHIP-8 game running with smooth rendering",
-        "debugger": "Built-in debugger showing CPU state and memory"
+      "imageCaptions": {
+        "title": "Running a ROM displaying CHIP-8",
+        "flightrunner": "FlightRunner game running on the CHIP-8 emulator",
+        "tetris": "Tetris by Fran Dachille running on the emulator",
+        "particleDemo": "Particle demo by zeroZshadow showcasing graphics capabilities"
       },
       "features": {
         "cpuEmulation": "Accurate CPU Emulation",
@@ -103,10 +104,11 @@
       "title": "Spring Library Management API",
       "description": "A comprehensive REST API for library management built with Spring Boot and Java.",
       "fullDescription": "This project is a full-featured library management system backend built with Spring Boot. It provides REST API endpoints for managing books, authors, borrowers, and lending operations. The system includes proper data validation, exception handling, and follows REST principles for clean API design. Perfect for learning Spring Boot concepts or as a foundation for larger library management systems.",
-      "imagesCaptions": {
-        "apiEndpoints": "REST API endpoints for book and user management",
-        "database": "Entity relationship diagram showing data structure",
-        "documentation": "Interactive API documentation with Swagger"
+      "imageCaptions": {
+        "techStack": "Technology stack used in the project",
+        "architecture": "System architecture diagram showing component relationships",
+        "erDiagram": "Entity relationship diagram of the database schema",
+        "documentation": "API documentation interface and endpoints"
       },
       "features": {
         "restfulApi": "RESTful API Design",
@@ -120,14 +122,13 @@
       }
     },
     "socket-fun": {
-      "title": "SocketFun",
+      "title": "Socket Experiments",
       "description": "Experimenting with sockets in C on Linux, featuring echo and chat servers with concurrent connection handling.",
-      "fullDescription": "SocketFun is a learning project that explores socket programming in C on Linux. It includes both an Echo Server/Client and Chat Server/Client implementation, demonstrating concurrent connection handling using epoll(). The project showcases low-level network programming concepts and efficient I/O multiplexing techniques for handling multiple client connections simultaneously.",
+      "fullDescription": "Socket Experiments is a learning project that explores socket programming in C on Linux. It includes both an Echo Server/Client and Chat Server/Client implementation, demonstrating concurrent connection handling using epoll(). The project showcases low-level network programming concepts and efficient I/O multiplexing techniques for handling multiple client connections simultaneously.",
       "imageCaptions": {
-        "implementation": "C socket programming implementation",
-        "echo": "Echo server reflecting client messages",
-        "chat": "Multi-client chat server in action",
-        "concurrent": "epoll() handling concurrent connections"
+        "title": "Socket Experiments project title and overview",
+        "echoServer": "Echo server and client communication demonstration",
+        "chatServer": "Chat server handling multiple clients simultaneously"
       },
       "features": {
         "echoServer": "Echo Server",
@@ -145,10 +146,9 @@
       "description": "A Windows launcher for Super Mario World ROM hacks with integrated patching capabilities using Floating IPS.",
       "fullDescription": "World-Launcher is a comprehensive Windows application designed for Super Mario World ROM hack enthusiasts. It combines ROM patching functionality with a user-friendly launcher interface, allowing users to easily patch ROM files with .bps or .ips patches and launch them directly in their preferred SNES emulator. The application integrates Floating IPS by Alcaro for reliable ROM patching and provides seamless emulator integration for an enhanced gaming experience.",
       "imageCaptions": {
-        "interface": "Clean Windows Forms interface for ROM management",
-        "patching": "Automated ROM patching with Floating IPS integration",
-        "launcher": "Game launcher displaying available ROM hacks",
-        "emulator": "Direct emulator integration with fullscreen options"
+        "title": "World-Launcher application title and logo",
+        "mainMenu": "Main menu interface of World-Launcher",
+        "patchingAndLaunching": "ROM patching process and game launching demonstration"
       },
       "features": {
         "romPatching": "ROM Patching",
@@ -168,10 +168,10 @@
       "description": "A fast-paced arcade shooter game written in Zig using Raylib.",
       "fullDescription": "Shooty is a fast-paced arcade shooter game built with Zig and Raylib. Players control a spaceship, battling against waves of enemies in intense arcade-style combat. Features smooth sprite animations, precise collision detection, and engaging gameplay mechanics.",
       "imageCaptions": {
-        "gameplay": "Intense arcade shooting action",
-        "shooting": "Player spaceship firing at enemies",
-        "enemies": "Challenging enemy AI patterns",
-        "gameover": "Game over screen with final score"
+        "title": "Shooty game title screen",
+        "mainMenu": "Main menu interface",
+        "tutorial": "Tutorial screen explaining game mechanics",
+        "bombItem": "Bomb item power-up in the game"
       },
       "features": {
         "spriteAnimation": "Sprite Animation",
@@ -189,10 +189,11 @@
       "description": "A Unity WebGL game developed for the Pirate Software Game Jam 2025, playable directly in your browser.",
       "fullDescription": "Living Armory is an exciting game jam entry created for the Pirate Software Game Jam 2025. This Unity WebGL project demonstrates the ability to rapidly prototype and develop a complete game concept within the constraints of a game jam timeline. The game is fully playable in your browser and showcases creative problem-solving, efficient development practices, and polished gameplay mechanics.",
       "imageCaptions": {
-        "gameplay": "Fast-paced gameplay mechanics developed for the jam",
-        "mechanics": "Unique game mechanics and player interactions",
-        "development": "Unity development process and workflow",
-        "submission": "Final game jam submission and presentation"
+        "name": "Living Armory game title and name",
+        "introAnimation": "Game intro animation screenshot",
+        "beTheWeapon": "Be the weapon gameplay mechanic in action",
+        "fastestRoute": "Finding the fastest route through challenging levels",
+        "fightBoss": "Intense boss fight gameplay sequence"
       },
       "features": {
         "gameJamDevelopment": "Game Jam Development",
@@ -210,10 +211,11 @@
       "description": "A Portal-inspired first person puzzle game where you spit different sweets to solve challenges.",
       "fullDescription": "Spitting Sugar is an innovative first-person puzzle game inspired by Portal's mechanics. Players use unique sweet-spitting abilities to build bridges, defeat enemies, and solve complex puzzles. Developed during a game jam using Unity, this creative project showcases inventive gameplay mechanics and clever level design that transforms simple projectiles into versatile problem-solving tools. Sadly, the source code has been lost to time.",
       "imageCaptions": {
-        "gameplay": "Spitting Sugar puzzle solving in action",
-        "mechanics": "Sweet projectile mechanics and interactions",
-        "puzzles": "Creative puzzle design and level layout",
-        "development": "Game jam development process and iteration"
+        "title": "Spitting Sugar game title screen",
+        "startArea": "Starting area",
+        "bouncyBears": "Bouncing Bear Power Up lets you reach new heights",
+        "buildBridges": "Building bridges with sugar projectiles to cross gaps",
+        "solvePuzzles": "Solving complex puzzles using a total of four sweet mechanics"
       },
       "features": {
         "sweetProjectiles": "Sweet Projectiles",
@@ -226,6 +228,28 @@
         "portalInspiredPuzzlesDesc": "Complex environmental puzzles requiring creative thinking and innovative use of sweet mechanics.",
         "gameJamCreativity": "Game Jam Innovation",
         "gameJamCreativityDesc": "Unique mechanics and creative solutions developed under the constraints and creativity of a game jam."
+      }
+    },
+    "bachelor-thesis": {
+      "title": "Rendering classic hand-drawn cartoon animations",
+      "description": "My Bachelor's thesis: A technical exploration of 3D recreation of classic 2D animations using custom Unity shaders and render pipeline.",
+      "fullDescription": "This Bachelor's thesis project explores the technical challenges and artistic possibilities of recreating classic hand-drawn cartoon animations in a 3D environment. Using Unity's programmable render pipeline and custom HLSL shaders, the project demonstrates innovative approaches to maintaining the distinctive visual style of traditional 2D animation while leveraging the advantages of 3D rendering. The work includes detailed analysis of animation principles, shader development, and render pipeline customization to achieve authentic cartoon aesthetics in three-dimensional space.",
+      "imageCaptions": {
+        "title": "Project title and overview",
+        "disneyRecreation": "3D recreation of classic Disney animation style with custom shaders",
+        "gertieRecreation": "Gertie the Dinosaur reimagined in 3D while preserving original hand-drawn charm",
+        "mononokeRecreation": "Princess Mononoke environment rendered with custom cartoon shaders",
+        "thesisPdf": "Complete Bachelor's thesis document with technical details and research findings"
+      },
+      "features": {
+        "customShaders": "Custom HLSL Shaders",
+        "customShadersDesc": "Hand-crafted shaders designed to replicate the unique visual characteristics of traditional hand-drawn animation.",
+        "renderPipeline": "Custom Render Pipeline",
+        "renderPipelineDesc": "Modified Unity render pipeline optimized for cartoon-style rendering with specialized lighting and shading techniques.",
+        "animationRecreation": "Classic Animation Recreation",
+        "animationRecreationDesc": "Faithful 3D recreations of iconic cartoon characters and scenes while preserving their original artistic intent.",
+        "technicalResearch": "Technical Research",
+        "technicalResearchDesc": "Comprehensive analysis of animation principles, rendering techniques, and the intersection of 2D and 3D graphics."
       }
     }
   }
