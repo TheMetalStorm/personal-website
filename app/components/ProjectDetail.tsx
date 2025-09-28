@@ -41,7 +41,7 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
         {/* Project Header */}
         <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl mb-8">
           <div className="relative h-64 md:h-80">
-            <Image src={project.image} alt={project.title} fill className="object-cover" />
+            <Image src={project.headerImage || project.image} alt={project.title} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="flex flex-wrap gap-2 mb-4">
