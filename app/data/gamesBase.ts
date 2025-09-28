@@ -3,6 +3,9 @@ export interface GameImage {
   alt: string;
   caption?: string;
   captionKey?: string;
+  type?: 'image' | 'video' | 'pdf';
+  poster?: string; // For video thumbnails
+  pdfThumbnail?: string; // For PDF first page thumbnails
 }
 
 export interface GameFeature {
@@ -16,7 +19,8 @@ export interface Game {
   title: string;
   description: string;
   fullDescription: string;
-  image: string;
+  image: string; // Preview card image
+  headerImage?: string; // Detail page header image (falls back to image if not specified)
   images?: GameImage[];
   engine: string;
   technologies: string[];
@@ -24,39 +28,110 @@ export interface Game {
   playUrl?: string;
   githubUrl?: string;
   itchUrl?: string;
+  downloadUrl?: string;
   slug: string;
   featured?: boolean;
   genre?: string;
   releaseDate?: string;
 }
 
-// TODO: Add ISPN game and Bachelor Thesis project
+// TODO: Add ISPN game 
 // Base games data (language-neutral) - Server-side safe
 const baseGames = [
   {
-    id: "spitting-sugar",
-    name: "Spitting Sugar",
-    image: "/code.jpg",
+    id: "bachelor-thesis",
+    name: "Bachelor Thesis - 3D Animation Rendering",
+    image: "/media/ba/title.png",
     images: [
       {
-        src: "/code.jpg",
-        alt: "Spitting Sugar gameplay",
-        captionKey: "gameplay"
+        src: "/media/ba/NachbildungGertie.png",
+        alt: "Gertie the Dinosaur recreation in 3D",
+        captionKey: "gertieRecreation",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Sweet projectile mechanics",
-        captionKey: "mechanics"
+        src: "/media/ba/NachbildungMononoke.png",
+        alt: "Princess Mononoke recreation in 3D",
+        captionKey: "mononokeRecreation",
+        type: "image"
       },
       {
-        src: "/code.jpg",
-        alt: "Puzzle level design",
-        captionKey: "puzzles"
+        src: "/media/ba/NachbildungDisney.png",
+        alt: "Disney animation recreation in 3D",
+        captionKey: "disneyRecreation",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Game jam development",
-        captionKey: "development"
+        src: "/media/ba/Bachelorarbeit.pdf",
+        alt: "Bachelor thesis PDF document",
+        pdfThumbnail: "/media/ba/pdf_preview.png",
+        captionKey: "thesisPdf",
+        type: "pdf"
+      }
+    ],
+    engine: "Unity",
+    technologies: ["Unity", "C#", "HLSL", "Custom Render Pipeline", "3D Graphics", "Shader Development"],
+    features: [
+      {
+        title: "customShaders",
+        description: "customShadersDesc"
+      },
+      {
+        title: "renderPipeline",
+        description: "renderPipelineDesc"
+      },
+      {
+        title: "animationRecreation",
+        description: "animationRecreationDesc"
+      },
+      {
+        title: "technicalResearch",
+        description: "technicalResearchDesc"
+      }
+    ],
+    githubUrl: "https://github.com/TheMetalStorm/Rendering-classic-hand-drawn-cartoon-animations",
+    downloadUrl: "https://github.com/TheMetalStorm/Rendering-classic-hand-drawn-cartoon-animations/releases/tag/v1.0.0",
+    playUrl: "/unity/ba/index.html",
+    slug: "bachelor-thesis",
+    featured: true,
+    genre: "Technical Demo",
+    releaseDate: "2023"
+  },
+  {
+    id: "spitting-sugar",
+    name: "Spitting Sugar",
+    image: "/media/spitting_sugar/title.jpg",
+    headerImage: "/media/spitting_sugar/start_area.png",
+    images: [
+      {
+        src: "/media/spitting_sugar/title.jpg",
+        alt: "Spitting Sugar game title screen",
+        captionKey: "title",
+        type: "image"
+      },
+      {
+        src: "/media/spitting_sugar/start_area.png",
+        alt: "Starting area of the game",
+        captionKey: "startArea",
+        type: "image"
+      },
+      {
+        src: "/media/spitting_sugar/bouncy_bears.mp4",
+        alt: "Bouncy bear enemies in action",
+        captionKey: "bouncyBears",
+        type: "video"
+      },
+      {
+        src: "/media/spitting_sugar/build_bridges.mp4",
+        alt: "Building bridges with sugar projectiles",
+        captionKey: "buildBridges", 
+        type: "video"
+      },
+      {
+        src: "/media/spitting_sugar/solve_puzzles.mp4",
+        alt: "Solving puzzles in the game",
+        captionKey: "solvePuzzles",
+        type: "video"
       }
     ],
     engine: "Unity",
@@ -75,27 +150,32 @@ const baseGames = [
   {
     id: "pirate-game-jam-2025",
     name: "Living Armory",
-    image: "/code.jpg",
+    image: "/media/living_armory/intro_animation.png",
+    headerImage: "/media/living_armory/header.jpeg",
     images: [
       {
-        src: "/code.jpg",
-        alt: "Living Armory gameplay",
-        captionKey: "gameplay"
+        src: "/media/living_armory/intro_animation.png",
+        alt: "Game intro animation screenshot",
+        captionKey: "introAnimation",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Game mechanics and features",
-        captionKey: "mechanics"
+        src: "/media/living_armory/be_the_weapon.mp4",
+        alt: "Be the weapon gameplay mechanic",
+        captionKey: "beTheWeapon",
+        type: "video"
       },
       {
-        src: "/code.jpg",
-        alt: "Unity development environment",
-        captionKey: "development"
+        src: "/media/living_armory/find_the_fastest_route.mp4",
+        alt: "Finding the fastest route through levels",
+        captionKey: "fastestRoute",
+        type: "video"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Game jam submission interface",
-        captionKey: "submission"
+        src: "/media/living_armory/fight_boss.mp4",
+        alt: "Boss fight gameplay sequence",
+        captionKey: "fightBoss",
+        type: "video"
       }
     ],
     engine: "Unity",
@@ -116,27 +196,32 @@ const baseGames = [
   {
     id: "shooty",
     name: "Shooty",
-    image: "/portrait.jpg",
+    image: "/media/shooty/title.png",
+    headerImage: "/media/shooty/title.png",
     images: [
       {
-        src: "/portrait.jpg",
-        alt: "Shooty gameplay screenshot",
-        captionKey: "gameplay"
+        src: "/media/shooty/title.png",
+        alt: "Shooty game title screen",
+        captionKey: "title",
+        type: "image"
       },
       {
-        src: "/code.jpg",
-        alt: "Player shooting mechanics",
-        captionKey: "shooting"
+        src: "/media/shooty/main_menu.png",
+        alt: "Main menu interface",
+        captionKey: "mainMenu",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Enemy AI system",
-        captionKey: "enemies"
+        src: "/media/shooty/tutorial.png",
+        alt: "Tutorial screen explaining game mechanics",
+        captionKey: "tutorial",
+        type: "image"
       },
       {
-        src: "/code.jpg",
-        alt: "Game over screen",
-        captionKey: "gameover"
+        src: "/media/shooty/bomb_item.png",
+        alt: "Bomb item power-up in the game",
+        captionKey: "bombItem",
+        type: "image"
       }
     ],
     engine: "Raylib",

@@ -2,6 +2,9 @@ export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
+  type?: 'image' | 'video' | 'pdf';
+  poster?: string; // For video thumbnails
+  pdfThumbnail?: string; // For PDF first page thumbnails
 }
 
 export interface ProjectFeature {
@@ -15,7 +18,8 @@ export interface Project {
   title: string;
   description: string;
   fullDescription: string;
-  image: string;
+  image: string; // Preview card image
+  headerImage?: string; // Detail page header image (falls back to image if not specified)
   images?: ProjectImage[];
   technologies: string[];
   features?: ProjectFeature[];
@@ -30,21 +34,27 @@ const baseProjects = [
       {
     id: "spring-library-api",
     name: "Spring Library Management API",
-    image: "/code.jpg",
+    image: "/media/spring_library/TechStack.svg",
+    //headerImage: "/media/spring_library/ArchitectureChart.svg",
     images: [
       {
-        src: "/code.jpg",
-        alt: "REST API endpoints overview",
-        captionKey: "apiEndpoints"
+        src: "/media/spring_library/TechStack.svg",
+        alt: "Technology stack used in the project",
+        captionKey: "techStack"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Database schema design",
-        captionKey: "database"
+        src: "/media/spring_library/ArchitectureChart.svg",
+        alt: "System architecture diagram showing component relationships",
+        captionKey: "architecture"
       },
       {
-        src: "/code.jpg",
-        alt: "API documentation interface",
+        src: "/media/spring_library/ERChart.svg",
+        alt: "Entity relationship diagram of the database schema",
+        captionKey: "erDiagram"
+      },
+      {
+        src: "/media/spring_library/Docs.PNG",
+        alt: "API documentation interface and endpoints",
         captionKey: "documentation"
       }
     ],
@@ -62,22 +72,32 @@ const baseProjects = [
   {
     id: "c8-serenityos",
     name: "C8 SerenityOS",
-    image: "/code.jpg",
+    image: "/media/c8_serenity/title.png",
+    headerImage: "/media/c8_serenity/title.png",
     images: [
       {
-        src: "/code.jpg",
-        alt: "CHIP-8 emulator main interface",
-        captionKey: "emulator"
+        src: "/media/c8_serenity/title.png",
+        alt: "CHIP-8 emulator for SerenityOS title screen",
+        captionKey: "title",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Game running on emulator",
-        captionKey: "gameplay"
+        src: "/media/c8_serenity/flightrunner.mp4",
+        alt: "FlightRunner game running on the CHIP-8 emulator",
+        captionKey: "flightrunner",
+        type: "video"
       },
       {
-        src: "/code.jpg",
-        alt: "Debugger interface",
-        captionKey: "debugger"
+        src: "/media/c8_serenity/tetris_by_fran_dachille.mp4",
+        alt: "Tetris by Fran Dachille running on the emulator",
+        captionKey: "tetris",
+        type: "video"
+      },
+      {
+        src: "/media/c8_serenity/particle_demo_by_zeroZshadow.mp4",
+        alt: "Particle demo by zeroZshadow showcasing graphics capabilities",
+        captionKey: "particleDemo",
+        type: "video"
       }
     ],
     technologies: ["C++", "SerenityOS", "CHIP-8", "Emulation"],
@@ -94,22 +114,27 @@ const baseProjects = [
   {
     id: "zilo",
     name: "Zilo",
-    image: "/code.jpg",
+    image: "/media/zilo/card_preview.png",
+    headerImage: "/media/zilo/header_image.png",
+
     images: [
       {
-        src: "/code.jpg",
-        alt: "Zilo text editor main interface",
-        captionKey: "main"
+        src: "/media/zilo/welcome_screen.png",
+        alt: "Zilo text editor welcome screen",
+        captionKey: "welcome",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Zilo search functionality", 
-        captionKey: "search"
+        src: "/media/zilo/syntax_highlighting.png",
+        alt: "Syntax highlighting for C and Zig programming languages",
+        captionKey: "syntax",
+        type: "image"
       },
       {
-        src: "/code.jpg",
-        alt: "Zilo terminal integration",
-        captionKey: "terminal"
+        src: "/media/zilo/search.mp4",
+        alt: "Search functionality in action",
+        captionKey: "search",
+        type: "video"
       }
     ],
     technologies: ["Zig", "Ubuntu", "Linux", "Terminal"],
@@ -126,27 +151,26 @@ const baseProjects = [
   {
     id: "socket-fun",
     name: "SocketFun",
-    image: "/code.jpg",
+    image: "/media/socket_fun/title.png",
+    headerImage: "/media/socket_fun/title.png",
     images: [
       {
-        src: "/code.jpg",
-        alt: "Socket programming code implementation",
-        captionKey: "implementation"
+        src: "/media/socket_fun/title.png",
+        alt: "SocketFun project title and overview",
+        captionKey: "title",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "Echo server and client communication",
-        captionKey: "echo"
+        src: "/media/socket_fun/echo_server.mp4",
+        alt: "Echo server and client communication demonstration",
+        captionKey: "echoServer",
+        type: "video"
       },
       {
-        src: "/code.jpg",
-        alt: "Chat server handling multiple clients",
-        captionKey: "chat"
-      },
-      {
-        src: "/portrait.jpg",
-        alt: "epoll() concurrent connection handling",
-        captionKey: "concurrent"
+        src: "/media/socket_fun/chat_server.mp4",
+        alt: "Chat server handling multiple clients simultaneously",
+        captionKey: "chatServer",
+        type: "video"
       }
     ],
     technologies: ["C", "Linux", "Sockets", "epoll", "TCP", "Makefile"],
@@ -163,27 +187,26 @@ const baseProjects = [
   {
     id: "world-launcher",
     name: "World-Launcher",
-    image: "/code.jpg",
+    image: "/media/world_launcher/title.svg",
+    headerImage: "/media/world_launcher/title.svg",
     images: [
       {
-        src: "/code.jpg",
-        alt: "World Launcher main interface",
-        captionKey: "interface"
+        src: "/media/world_launcher/title.svg",
+        alt: "World-Launcher application title and logo",
+        captionKey: "title",
+        type: "image"
       },
       {
-        src: "/portrait.jpg",
-        alt: "ROM patching process in action",
-        captionKey: "patching"
+        src: "/media/world_launcher/main_menu.PNG",
+        alt: "Main menu interface of World-Launcher",
+        captionKey: "mainMenu",
+        type: "image"
       },
       {
-        src: "/code.jpg",
-        alt: "Game launcher with ROM hack list",
-        captionKey: "launcher"
-      },
-      {
-        src: "/portrait.jpg",
-        alt: "Emulator integration and settings",
-        captionKey: "emulator"
+        src: "/media/world_launcher/patching_and_starting_game.mp4",
+        alt: "ROM patching process and game launching demonstration",
+        captionKey: "patchingAndLaunching",
+        type: "video"
       }
     ],
     technologies: ["C#", "C++", "Windows Forms", ".NET", "Floating IPS"],
