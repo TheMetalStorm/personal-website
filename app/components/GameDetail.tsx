@@ -31,7 +31,7 @@ export default function GameDetail({ game }: GameDetailProps) {
         {/* Game Header */}
         <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl mb-8">
           <div className="relative h-64 md:h-80">
-            <Image src={game.image} alt={game.title} fill className="object-cover" />
+            <Image src={game.headerImage || game.image} alt={game.title} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="flex flex-wrap gap-2 mb-4">
@@ -142,6 +142,18 @@ export default function GameDetail({ game }: GameDetailProps) {
                   </a>
                 )}
 
+                {game.downloadUrl && (
+                  <a
+                    href={game.downloadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 font-medium"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Download Release
+                  </a>
+                )}
+
                 {game.itchUrl && (
                   <a
                     href={game.itchUrl}
@@ -150,7 +162,7 @@ export default function GameDetail({ game }: GameDetailProps) {
                     className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 font-medium"
                   >
                     <ExternalLink className="w-5 h-5" />
-                    View on itch.io
+                    Download on itch.io
                   </a>
                 )}
               </div>

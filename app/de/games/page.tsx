@@ -69,13 +69,21 @@ export default async function GamesPageDE() {
                 isExternal: true,
                 title: translations.games.viewCode
               }] : []),
+              ...(game.downloadUrl ? [{
+                href: game.downloadUrl,
+                label: '',
+                icon: 'ExternalLink' as const,
+                isPrimary: false,
+                isExternal: true,
+                title: 'Download Release'
+              }] : []),
               ...(game.itchUrl ? [{
                 href: game.itchUrl,
                 label: '',
                 icon: 'ExternalLink' as const,
                 isPrimary: false,
                 isExternal: true,
-                title: 'View on itch.io'
+                title: 'Download on itch.io'
               }] : [])
             ];
 
