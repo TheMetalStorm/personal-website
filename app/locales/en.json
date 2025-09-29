@@ -21,7 +21,11 @@
     "viewProject": "View Project",
     "technologies": "Technologies",
     "gallery": "Project Gallery",
-    "about": "About This Project"
+    "about": "About This Project",
+    "development": "Development",
+    "developmentType": "Type",
+    "soloDevelopment": "Solo Development",
+    "teamDevelopment": "Team Development"
   },
   "games": {
     "viewCode": "View Code",
@@ -32,12 +36,17 @@
     "viewGame": "View Game",
     "playGame": "Play Game",
     "playableInBrowser": "Playable in browser",
-    "downloadOnItch": "Download on itch",
+    "download": "Download",
     "engine": "Engine",
     "genre": "Genre",
     "technologies": "Technologies",
     "gallery": "Game Gallery",
-    "about": "About This Game"
+    "about": "About This Game",
+    "development": "Development",
+    "developmentType": "Type",
+    "soloDevelopment": "Solo Development",
+    "teamDevelopment": "Team Development",
+    "creditsInGame": "Credits are found in the game"
   },
   "skills": {
     "title": "Skills & Technologies",
@@ -71,7 +80,8 @@
     "description": "Feel free to reach out if you'd like to collaborate or just want to say hello!",
     "email": "Get in Touch",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "messageLinkedIn": "Message me on LinkedIn"
   },
   "common": {
     "loading": "Loading...",
@@ -94,8 +104,8 @@
       "features": {
         "syntaxHighlighting": "Syntax Highlighting",
         "syntaxHighlightingDesc": "Syntax highlighting for C and Zig.",
-        "searchReplace": "Search & Replace",
-        "searchReplaceDesc": "Powerful search and replace functionality with regex support and case-sensitive options.",
+        "searchReplace": "Search Functionality",
+        "searchReplaceDesc": "Powerful search functionality with case-sensitive options for efficient text navigation.",
         "terminalIntegration": "Terminal Integration",
         "terminalIntegrationDesc": "Seamless integration with terminal environment for efficient workflow.",
         "lightweightFast": "Lightweight & Fast",
@@ -114,13 +124,13 @@
       },
       "features": {
         "cpuEmulation": "Accurate CPU Emulation",
-        "cpuEmulationDesc": "Precise implementation of the CHIP-8 instruction set with cycle-accurate timing and proper register handling.",
+        "cpuEmulationDesc": "Precise implementation of the CHIP-8 instruction set with adjustable timing controls and proper register handling.",
         "graphicsRendering": "Graphics Rendering",
-        "graphicsRenderingDesc": "Pixel-perfect 64x32 monochrome display rendering with proper sprite collision detection.",
+        "graphicsRenderingDesc": "Pixel-perfect 64x32 monochrome display rendering with scalable resolution support for crisp visuals at any size.",
         "soundSystem": "Sound System",
         "soundSystemDesc": "Authentic beep sound generation matching the original CHIP-8 specifications.",
-        "debuggerTools": "Debugging Tools",
-        "debuggerToolsDesc": "Built-in debugger with disassembly view, register inspection, and step-by-step execution."
+        "crossPlatformDev": "Cross-Platform Development",
+        "crossPlatformDevDesc": "Developed specifically for SerenityOS, demonstrating adaptability to esoteric operating systems and diverse development environments."
       }
     },
     "spring-library-api": {
@@ -198,7 +208,7 @@
       },
       "features": {
         "spriteAnimation": "Sprite Animation",
-        "spriteAnimationDesc": "Smooth and fluid sprite animations for characters, projectiles, and visual effects.",
+        "spriteAnimationDesc": "Custom-developed animation system providing smooth and fluid sprite animations for characters, projectiles, and visual effects.",
         "collisionDetection": "Collision Detection",
         "collisionDetectionDesc": "Precise collision detection system for accurate hit detection and gameplay interactions.",
         "scoreSystem": "Scoring System",
@@ -210,7 +220,7 @@
     "pirate-game-jam-2025": {
       "title": "Living Armory",
       "description": "A Unity WebGL game developed for the Pirate Software Game Jam 2025, playable directly in your browser.",
-      "fullDescription": "Living Armory is an exciting game jam entry created for the Pirate Software Game Jam 2025. This Unity WebGL project demonstrates the ability to rapidly prototype and develop a complete game concept within the constraints of a game jam timeline. The game is fully playable in your browser and showcases creative problem-solving, efficient development practices, and polished gameplay mechanics.",
+      "fullDescription": "Living Armory puts you in control of weapons themselves as you navigate a mysterious dungeon. Built around the game jam theme 'You are the weapon', you possess and control different weapons to fight enemies and interact with the environment. As a metroidbrainia game, your progression speed is limited by your knowledge of the game world - can you find the fastest way out of the dungeon? Created for Pirate Software Game Jam 2025, this Unity WebGL experience challenges players to master both combat and puzzle-solving through weapon possession.",
       "imageCaptions": {
         "name": "Living Armory game title and name",
         "introAnimation": "Game intro animation screenshot",
@@ -219,14 +229,14 @@
         "fightBoss": "Intense boss fight gameplay sequence"
       },
       "features": {
-        "gameJamDevelopment": "Game Jam Development",
-        "gameJamDevelopmentDesc": "Complete game development cycle compressed into a game jam timeframe with focus on core mechanics.",
-        "rapidPrototyping": "Rapid Prototyping",
-        "rapidPrototypingDesc": "Quick iteration and testing of game concepts to validate ideas and refine gameplay mechanics.",
-        "creativeChallenges": "Creative Problem Solving",
-        "creativeChallengesDesc": "Innovative solutions to design challenges and creative interpretation of game jam themes.",
-        "timeConstraints": "Time Management",
-        "timeConstraintsDesc": "Efficient development workflow and prioritization to deliver a complete game within jam constraints."
+        "gameJamDevelopment": "Weapon Possession Mechanics",
+        "gameJamDevelopmentDesc": "Take control of different weapons to fight enemies and interact with the environment, embodying the 'You are the weapon' theme.",
+        "rapidPrototyping": "Metroidbrainia Progression",
+        "rapidPrototypingDesc": "Progress speed is limited by your knowledge of the game world - discover shortcuts and optimal paths through the dungeon.",
+        "creativeChallenges": "Escape Challenge",
+        "creativeChallengesDesc": "Navigate the dungeon's mysteries and find the fastest route to freedom through strategic weapon use and environmental mastery.",
+        "timeConstraints": "Speedrun Potential",
+        "timeConstraintsDesc": "Master the weapon mechanics and dungeon layout to achieve faster completion times and discover optimal strategies."
       }
     },
     "spitting-sugar": {

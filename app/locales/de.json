@@ -21,7 +21,11 @@
     "viewProject": "Projekt ansehen",
     "technologies": "Technologien",
     "gallery": "Projektgalerie",
-    "about": "Über dieses Projekt"
+    "about": "Über dieses Projekt",
+    "development": "Entwicklung",
+    "developmentType": "Art",
+    "soloDevelopment": "Einzelentwicklung",
+    "teamDevelopment": "Teamentwicklung"
   },
   "games": {
     "viewCode": "Code ansehen",
@@ -32,12 +36,17 @@
     "viewGame": "Spiel ansehen",
     "playGame": "Spiel spielen",
     "playableInBrowser": "Im Browser spielbar",
-    "downloadOnItch": "Auf itch herunterladen",
+    "download": "Herunterladen",
     "engine": "Engine",
     "genre": "Genre",
     "technologies": "Technologien",
     "gallery": "Spielegalerie",
-    "about": "Über dieses Spiel"
+    "about": "Über dieses Spiel",
+    "development": "Entwicklung",
+    "developmentType": "Art",
+    "soloDevelopment": "Einzelentwicklung",
+    "teamDevelopment": "Teamentwicklung",
+    "creditsInGame": "Credits sind im Spiel zu finden"
   },
   "skills": {
     "title": "Fähigkeiten & Technologien",
@@ -71,7 +80,8 @@
     "description": "Zögern Sie nicht, sich zu melden, wenn Sie zusammenarbeiten möchten oder einfach nur Hallo sagen wollen!",
     "email": "Kontakt aufnehmen",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "messageLinkedIn": "Nachricht auf LinkedIn senden"
   },
   "common": {
     "loading": "Lädt...",
@@ -94,8 +104,8 @@
       "features": {
         "syntaxHighlighting": "Syntaxhervorhebung",
         "syntaxHighlightingDesc": "Syntaxhervorhebung für C und Zig.",
-        "searchReplace": "Suchen & Ersetzen",
-        "searchReplaceDesc": "Mächtige Such- und Ersetzungsfunktionalität mit Regex-Unterstützung und Groß-/Kleinschreibungsoptionen.",
+        "searchReplace": "Suchfunktionalität",
+        "searchReplaceDesc": "Mächtige Suchfunktionalität mit Groß-/Kleinschreibungsoptionen für effiziente Textnavigation.",
         "terminalIntegration": "Terminal-Integration",
         "terminalIntegrationDesc": "Nahtlose Integration in die Terminal-Umgebung für effizienten Arbeitsablauf.",
         "lightweightFast": "Leichtgewichtig & Schnell",
@@ -114,13 +124,13 @@
       },
       "features": {
         "cpuEmulation": "Präzise CPU-Emulation",
-        "cpuEmulationDesc": "Genaue Implementierung des CHIP-8 Befehlssatzes mit zyklusgenauen Timing und ordnungsgemäßer Register-Behandlung.",
+        "cpuEmulationDesc": "Genaue Implementierung des CHIP-8 Befehlssatzes mit einstellbaren Timing-Kontrollen und ordnungsgemäßer Register-Behandlung.",
         "graphicsRendering": "Grafik-Rendering",
-        "graphicsRenderingDesc": "Pixelgenaue 64x32 Monochrom-Display-Darstellung mit ordnungsgemäßer Sprite-Kollisionserkennung.",
+        "graphicsRenderingDesc": "Pixelgenaue 64x32 Monochrom-Display-Darstellung mit skalierbarer Auflösungsunterstützung für gestochen scharfe Bilder in jeder Größe.",
         "soundSystem": "Sound-System",
         "soundSystemDesc": "Authentische Piep-Ton-Generierung entsprechend den ursprünglichen CHIP-8 Spezifikationen.",
-        "debuggerTools": "Debugging-Tools",
-        "debuggerToolsDesc": "Eingebauter Debugger mit Disassembly-Ansicht, Register-Inspektion und schrittweiser Ausführung."
+        "crossPlatformDev": "Plattformübergreifende Entwicklung",
+        "crossPlatformDevDesc": "Speziell für SerenityOS entwickelt, zeigt Anpassungsfähigkeit an esoterische Betriebssysteme und vielfältige Entwicklungsumgebungen."
       }
     },
     "spring-library-api": {
@@ -198,7 +208,7 @@
       },
       "features": {
         "spriteAnimation": "Sprite-Animation",
-        "spriteAnimationDesc": "Fließende und flüssige Sprite-Animationen für Charaktere, Projektile und visuelle Effekte.",
+        "spriteAnimationDesc": "Selbst entwickeltes Animationssystem mit fließenden und flüssigen Sprite-Animationen für Charaktere, Projektile und visuelle Effekte.",
         "collisionDetection": "Kollisionserkennung",
         "collisionDetectionDesc": "Präzises Kollisionserkennungssystem für genaue Treffererkennung und Gameplay-Interaktionen.",
         "scoreSystem": "Punktesystem",
@@ -210,7 +220,7 @@
     "pirate-game-jam-2025": {
       "title": "Living Armory",
       "description": "Ein Unity WebGL-Spiel, das für den Pirate Software Game Jam 2025 entwickelt wurde und direkt im Browser spielbar ist.",
-      "fullDescription": "Living Armory ist ein aufregendes Game-Jam-Projekt, das für den Pirate Software Game Jam 2025 erstellt wurde. Dieses Unity WebGL-Projekt demonstriert die Fähigkeit, schnell Prototypen zu erstellen und ein vollständiges Spielkonzept innerhalb der Beschränkungen eines Game-Jam-Zeitrahmens zu entwickeln. Das Spiel ist vollständig im Browser spielbar und zeigt kreative Problemlösung, effiziente Entwicklungspraktiken und polierte Gameplay-Mechaniken.",
+      "fullDescription": "Living Armory versetzt Sie in die Kontrolle über Waffen selbst, während Sie durch einen mysteriösen Dungeon navigieren. Basierend auf dem Game-Jam-Thema 'Du bist die Waffe' besitzen und kontrollieren Sie verschiedene Waffen, um Feinde zu bekämpfen und mit der Umgebung zu interagieren. Als Metroidbrainia-Spiel ist Ihre Fortschrittsgeschwindigkeit durch Ihr Wissen über die Spielwelt begrenzt - können Sie den schnellsten Weg aus dem Dungeon finden? Erstellt für den Pirate Software Game Jam 2025, fordert diese Unity WebGL-Erfahrung Spieler heraus, sowohl Kampf als auch Rätsellösung durch Waffenbesitz zu meistern.",
       "imageCaptions": {
         "name": "Living Armory Spieltitel und Name",
         "introAnimation": "Spiel-Intro-Animations-Screenshot",
@@ -219,14 +229,14 @@
         "fightBoss": "Intensive Boss-Kampf-Gameplay-Sequenz"
       },
       "features": {
-        "gameJamDevelopment": "Game-Jam-Entwicklung",
-        "gameJamDevelopmentDesc": "Vollständiger Spielentwicklungszyklus komprimiert in einen Game-Jam-Zeitrahmen mit Fokus auf Kernmechaniken.",
-        "rapidPrototyping": "Schnelles Prototyping",
-        "rapidPrototypingDesc": "Schnelle Iteration und Testen von Spielkonzepten zur Validierung von Ideen und Verfeinerung von Gameplay-Mechaniken.",
-        "creativeChallenges": "Kreative Problemlösung",
-        "creativeChallengesDesc": "Innovative Lösungen für Designherausforderungen und kreative Interpretation von Game-Jam-Themen.",
-        "timeConstraints": "Zeitmanagement",
-        "timeConstraintsDesc": "Effizienter Entwicklungsworkflow und Priorisierung zur Lieferung eines vollständigen Spiels innerhalb der Jam-Beschränkungen."
+        "gameJamDevelopment": "Waffenbesitz-Mechaniken",
+        "gameJamDevelopmentDesc": "Übernehmen Sie die Kontrolle über verschiedene Waffen, um Feinde zu bekämpfen und mit der Umgebung zu interagieren, verkörpern Sie das Thema 'Du bist die Waffe'.",
+        "rapidPrototyping": "Metroidbrainia-Fortschritt",
+        "rapidPrototypingDesc": "Die Fortschrittsgeschwindigkeit ist durch Ihr Wissen über die Spielwelt begrenzt - entdecken Sie Abkürzungen und optimale Pfade durch den Dungeon.",
+        "creativeChallenges": "Flucht-Herausforderung",
+        "creativeChallengesDesc": "Navigieren Sie durch die Geheimnisse des Dungeons und finden Sie den schnellsten Weg zur Freiheit durch strategischen Waffeneinsatz und Umgebungsbeherrschung.",
+        "timeConstraints": "Speedrun-Potenzial",
+        "timeConstraintsDesc": "Meistern Sie die Waffenmechaniken und das Dungeon-Layout, um schnellere Abschlusszeiten zu erreichen und optimale Strategien zu entdecken."
       }
     },
     "spitting-sugar": {

@@ -77,15 +77,24 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       // Switch to German
       if (currentPath.startsWith('/de')) {
         newPath = currentPath; // Already on German path
+      } else if (currentPath.startsWith('/en')) {
+        // Convert /en/path to /de/path
+        newPath = currentPath.replace('/en', '/de');
       } else {
+        // Convert root path to German
         newPath = `/de${currentPath === '/' ? '' : currentPath}`;
       }
     } else {
       // Switch to English
       if (currentPath.startsWith('/de')) {
-        newPath = currentPath.replace('/de', '') || '/';
+        // Convert /de/path to /en/path
+        const pathWithoutDe = currentPath.replace('/de', '') || '';
+        newPath = `/en${pathWithoutDe}`;
+      } else if (currentPath.startsWith('/en')) {
+        newPath = currentPath; // Already on explicit English path
       } else {
-        newPath = currentPath; // Already on English path
+        // Convert root path to explicit English
+        newPath = `/en${currentPath === '/' ? '' : currentPath}`;
       }
     }
 
