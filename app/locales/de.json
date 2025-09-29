@@ -2,13 +2,14 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software-Entwickler",
-    "description": "Ich entwickle Software und Videospiele. Ich experimentiere gerne mit neuen Technologien und probiere verschiedene Ansätze aus, um die bestmögliche Lösung zu finden. Schauen Sie sich um und spielen Sie einige Spiele direkt in Ihrem Browser!"
+    "description": "Ich bin ein Backend-Entwickler und baue APIs, Emulatoren und interaktive Spielsysteme. Beruflich habe ich Java/Spring-Reporting-Lösungen entwickelt, relationale und NoSQL-Datenbanken verwaltet und CI/CD-Workflows implementiert. Ich erstelle auch Echtzeit-Gameplay-Systeme und Shader, die Sie direkt in Ihrem Browser erleben können."
   },
   "navigation": {
     "home": "Startseite",
     "projects": "Projekte",
     "games": "Spiele",
     "skills": "Fähigkeiten",
+    "about": "Über mich",
     "contact": "Kontakt"
   },
   "projects": {
@@ -41,6 +42,28 @@
   "skills": {
     "title": "Fähigkeiten & Technologien",
     "description": "Technologien, mit denen ich arbeite"
+  },
+  "about": {
+    "title": "Über mich",
+    "description": "Ich bin ein Backend-Entwickler und Systemprogrammierer mit einer Leidenschaft für die Entwicklung von APIs, Emulatoren bis hin zu interaktiven Spielerfahrungen. Bei anevis solutions habe ich umfassend mit Java und dem Spring-Framework gearbeitet, um Reporting-Plattformen zu entwickeln, PostgreSQL- und MongoDB-Datenbanken zu verwalten und CI/CD-Pipelines zu optimieren. Über die berufliche Arbeit hinaus entwerfe ich komplexe Backend-Systeme für Spiele, einschließlich benutzerdefinierter Rendering-Pipelines, Echtzeit-Shadern und Narrativ-Engines in Unity und WebGL. Meine persönlichen Projekte umfassen eine Vielzahl von Technologien, darunter C/C++, Zig, HLSL und systemnahe Programmierung, die sowohl meine Vielseitigkeit als auch meine technische Tiefe zeigen. Ich genieße es, leistungskritische Probleme anzugehen, mit neuen Technologien zu experimentieren und Erfahrungen zu schaffen, die technische Strenge mit ansprechender Interaktivität verbinden. Entdecken Sie meine Projekte und sehen Sie, wie meine Backend-Expertise Gameplay, Simulationen und interaktive Anwendungen direkt im Browser antreibt.",
+    "sections": {
+      "professional": {
+        "title": "Beruflicher Hintergrund",
+        "description": "Ich bin ein Backend-Entwickler und Systemprogrammierer mit einer Leidenschaft für die Entwicklung von APIs, Emulatoren bis hin zu interaktiven Spielerfahrungen."
+      },
+      "experience": {
+        "title": "Berufserfahrung",
+        "description": "Bei anevis solutions habe ich umfassend mit Java und dem Spring-Framework gearbeitet, um Reporting-Plattformen zu entwickeln, PostgreSQL- und MongoDB-Datenbanken zu verwalten und CI/CD-Pipelines zu optimieren."
+      },
+      "projects": {
+        "title": "Persönliche Projekte",
+        "description": "Über die berufliche Arbeit hinaus entwerfe ich komplexe Backend-Systeme für Spiele, einschließlich benutzerdefinierter Rendering-Pipelines, Echtzeit-Shadern und Narrativ-Engines in Unity und WebGL. Meine persönlichen Projekte umfassen eine Vielzahl von Technologien, darunter C/C++, Zig, HLSL und systemnahe Programmierung."
+      },
+      "philosophy": {
+        "title": "Technische Philosophie",
+        "description": "Ich genieße es, leistungskritische Probleme anzugehen, mit neuen Technologien zu experimentieren und Erfahrungen zu schaffen, die technische Strenge mit ansprechender Interaktivität verbinden. Entdecken Sie meine Projekte und sehen Sie, wie meine Backend-Expertise Gameplay, Simulationen und interaktive Anwendungen direkt im Browser antreibt."
+      }
+    }
   },
   "contact": {
     "resume": "Lebenslauf ansehen",
@@ -250,6 +273,30 @@
         "animationRecreationDesc": "Originalgetreue 3D-Nachbildungen ikonischer Cartoon-Charaktere und -Szenen unter Beibehaltung ihrer ursprünglichen künstlerischen Absicht.",
         "technicalResearch": "Technische Forschung",
         "technicalResearchDesc": "Umfassende Analyse von Animationsprinzipien, Rendering-Techniken und der Schnittstelle zwischen 2D- und 3D-Grafiken."
+      }
+    },
+    "kalos": {
+      "title": "KALOS",
+      "description": "Ein interaktives Narrativ-Spiel, das für das Universitätsmodul 'Interactive Stories and Playable Narratives' entwickelt wurde.",
+      "fullDescription": "KALOS erzählt die fesselnde Geschichte der jungen Nuria, die von dem Gott des Tempels, den ihre Familie bewacht, auf eine göttliche Mission geschickt wird. Doch während sich die Erzählung entfaltet, ist nicht alles so, wie es scheint. Diese interaktive Geschichte wurde als Teil des Universitätsmoduls 'Interactive Stories and Playable Narratives' entwickelt und zeigt fortgeschrittenes Narrativ-Design, Sprachausgabe und mehrere verzweigte Handlungsstränge, die auf Spielerentscheidungen reagieren.",
+      "imageCaptions": {
+        "title": "KALOS Spiel-Titelbildschirm mit atmosphärischem Design",
+        "cutscene": "Sprachausgabe-animierte Zwischensequenz mit einzigartigem Kunststil",
+        "environment": "Atmosphärische Low-Poly-Umgebung mit detaillierter Beleuchtung",
+        "minigame": "Schlösser-knacken-Minispiel mit Geschicklichkeit und Timing",
+        "rhythmGame": "Gebet-Rhythmus-Spiel für göttliche Kommunikation"
+      },
+      "features": {
+        "voiceActedCutscenes": "Sprachausgabe-Zwischensequenzen",
+        "voiceActedCutscenesDesc": "Vollständig sprachausgabeanimierte Zwischensequenzen mit einem einzigartigen Kunststil, der Charaktere und Geschichte zum Leben erweckt.",
+        "multiplePaths": "Mehrere Handlungspfade",
+        "multiplePathsDesc": "Mehrere verzweigte Pfade, die zu verschiedenen Enden führen, basierend auf Spielerentscheidungen und Interaktionen.",
+        "inkScripting": "Ink-Narrativ-Scripting",
+        "inkScriptingDesc": "Implementierte Unterstützung für die Ink-Narrativ-Scripting-Sprache, die es Nicht-Programmierern ermöglicht, Szenen einfach zu erstellen und zu modifizieren.",
+        "lowPolyEnvironments": "Atmosphärische Umgebungen",
+        "lowPolyEnvironmentsDesc": "Wunderschöne Low-Poly-Umgebungen mit atmosphärischen Soundeffekten, die das immersive Storytelling-Erlebnis verstärken.",
+        "miniGames": "Interaktive Minispiele",
+        "miniGamesDesc": "Fesselnde Minispiele einschließlich Schlösser-knacken-Mechaniken und rhythmusbasierte Gebetssequenzen, die sich nahtlos in die Erzählung integrieren."
       }
     }
   }

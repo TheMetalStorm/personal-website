@@ -35,7 +35,6 @@ export interface Game {
   releaseDate?: string;
 }
 
-// TODO: Add ISPN game 
 // Base games data (language-neutral) - Server-side safe
 const baseGames = [
   {
@@ -97,7 +96,7 @@ const baseGames = [
     genre: "Technical Demo",
     releaseDate: "2023"
   },
-  {
+   {
     id: "spitting-sugar",
     name: "Spitting Sugar",
     image: "/media/spitting_sugar/title.jpg",
@@ -146,6 +145,72 @@ const baseGames = [
     playUrl: "/unity/spitting-sugar/index.html",
     slug: "spitting-sugar",
     featured: true
+  },
+  {
+    id: "kalos",
+    name: "KALOS",
+    image: "/media/kalos/environment.png",
+    images: [
+      {
+        src: "/media/kalos/title.png",
+        alt: "KALOS game title screen",
+        captionKey: "title",
+        type: "image"
+      },
+      {
+        src: "/media/kalos/cutscene.mp4",
+        alt: "Voice acted animated cutscene",
+        captionKey: "cutscene",
+        type: "video"
+      },
+      {
+        src: "/media/kalos/environment.png",
+        alt: "Atmospheric low poly environment",
+        captionKey: "environment",
+        type: "image"
+      },
+      {
+        src: "/media/kalos/minigame.png",
+        alt: "Lock picking minigame",
+        captionKey: "minigame",
+        type: "image"
+      },
+      {
+        src: "/media/kalos/rythm_game.mp4",
+        alt: "Prayer rhythm game mechanics",
+        captionKey: "rhythmGame",
+        type: "video"
+      }
+    ],
+    engine: "Unity",
+    technologies: ["Unity", "C#", "Ink Narrative Scripting", "Voice Acting", "3D Modeling", "Audio Design"],
+    features: [
+      {
+        title: "voiceActedCutscenes",
+        description: "voiceActedCutscenesDesc"
+      },
+      {
+        title: "multiplePaths",
+        description: "multiplePathsDesc"
+      },
+      {
+        title: "inkScripting",
+        description: "inkScriptingDesc"
+      },
+      {
+        title: "lowPolyEnvironments",
+        description: "lowPolyEnvironmentsDesc"
+      },
+      {
+        title: "miniGames",
+        description: "miniGamesDesc"
+      }
+    ],
+    //githubUrl: "https://github.com/TheMetalStorm/KALOS",
+    slug: "kalos",
+    featured: true,
+    genre: "Interactive Narrative",
+    releaseDate: "2024"
   },
   {
     id: "pirate-game-jam-2025",
@@ -236,7 +301,7 @@ const baseGames = [
     githubUrl: "https://github.com/TheMetalStorm/shooty",
     itchUrl: "https://themetalstorm.itch.io/shooty",
     slug: "shooty",
-    featured: true
+    featured: false
   }
 ];
 

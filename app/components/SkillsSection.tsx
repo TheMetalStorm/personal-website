@@ -4,7 +4,7 @@ import { useI18n } from '../hooks/useI18n';
 
 export default function SkillsSection() {
 	const { t } = useI18n();
-	const skills = ['Java', 'Spring Boot', 'OOP', 'MongoDB', 'PostgreSQL', 'Git/GitHub', 'Ubuntu', 'Bash', 'PowerShell', 'C#',  'Unity', 'CI/CD', ];
+	const skills = ['Java', 'Spring Boot', 'OOP', 'MongoDB', 'PostgreSQL', 'Git/GitHub', 'Ubuntu', 'Bash', 'PowerShell', 'C#',  'Unity', 'HLSL' ,'CI/CD', "C/C++", "Zig", "Docker"];
 
 	return (
 		<section className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 py-16 sm:py-24 backdrop-blur-sm">

@@ -2,13 +2,14 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software Developer",
-    "description": "I develop software and video games. I like to experiment with new technologies and try different approaches to find the best possible solution. Take a look around and play some games directly in your browser!"
+    "description": "I'm a backend developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser."
   },
   "navigation": {
     "home": "Home",
     "projects": "Projects",
     "games": "Games",
     "skills": "Skills",
+    "about": "About",
     "contact": "Contact"
   },
   "projects": {
@@ -41,6 +42,28 @@
   "skills": {
     "title": "Skills & Technologies",
     "description": "Technologies I work with"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a backend developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences. At anevis solutions, I worked extensively with Java and the Spring framework to develop reporting platforms, maintain PostgreSQL and MongoDB databases, and optimize CI/CD pipelines. Beyond professional work, I design complex backend systems for games, including custom rendering pipelines, real-time shaders, and narrative engines in Unity and WebGL. My personal projects span a variety of technologies, including C/C++, Zig, HLSL, and low-level system programming, showcasing both my versatility and technical depth. I enjoy tackling performance-critical problems, experimenting with new technologies, and creating experiences that blend technical rigor with engaging interactivity. Explore my projects to see how my backend expertise powers gameplay, simulations, and interactive applications directly in the browser.",
+    "sections": {
+      "professional": {
+        "title": "Professional Background",
+        "description": "I'm a backend developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences."
+      },
+      "experience": {
+        "title": "Industry Experience",
+        "description": "At anevis solutions, I worked extensively with Java and the Spring framework to develop reporting platforms, maintain PostgreSQL and MongoDB databases, and optimize CI/CD pipelines."
+      },
+      "projects": {
+        "title": "Personal Projects",
+        "description": "Beyond professional work, I design complex backend systems for games, including custom rendering pipelines, real-time shaders, and narrative engines in Unity and WebGL. My personal projects span a variety of technologies, including C/C++, Zig, HLSL, and low-level system programming."
+      },
+      "philosophy": {
+        "title": "Technical Philosophy",
+        "description": "I enjoy tackling performance-critical problems, experimenting with new technologies, and creating experiences that blend technical rigor with engaging interactivity. Explore my projects to see how my backend expertise powers gameplay, simulations, and interactive applications directly in the browser."
+      }
+    }
   },
   "contact": {
     "resume": "View Resume",
@@ -250,6 +273,30 @@
         "animationRecreationDesc": "Faithful 3D recreations of iconic cartoon characters and scenes while preserving their original artistic intent.",
         "technicalResearch": "Technical Research",
         "technicalResearchDesc": "Comprehensive analysis of animation principles, rendering techniques, and the intersection of 2D and 3D graphics."
+      }
+    },
+    "kalos": {
+      "title": "KALOS",
+      "description": "An interactive narrative game created for the 'Interactive Stories and Playable Narratives' university module.",
+      "fullDescription": "KALOS tells the compelling story of young Nuria, who is sent on a divine mission by the god of the temple her family guards. But as the narrative unfolds, not everything is as it seems. This interactive story was developed as part of the university module 'Interactive Stories and Playable Narratives', showcasing advanced narrative design, voice acting, and multiple branching storylines that respond to player choices.",
+      "imageCaptions": {
+        "title": "KALOS game title screen with atmospheric design",
+        "cutscene": "Voice acted animated cutscene showcasing the unique art style",
+        "environment": "Atmospheric low poly environment with detailed lighting",
+        "minigame": "Lock picking minigame requiring skill and timing",
+        "rhythmGame": "Prayer rhythm game for divine communication"
+      },
+      "features": {
+        "voiceActedCutscenes": "Voice Acted Cutscenes",
+        "voiceActedCutscenesDesc": "Fully voice acted animated cutscenes with a unique art style that brings characters and story to life.",
+        "multiplePaths": "Multiple Story Paths",
+        "multiplePathsDesc": "Multiple branching paths leading to different endings based on player choices and interactions.",
+        "inkScripting": "Ink Narrative Scripting",
+        "inkScriptingDesc": "Implemented support for Ink narrative scripting language, allowing non-programmers to create and modify scenes easily.",
+        "lowPolyEnvironments": "Atmospheric Environments",
+        "lowPolyEnvironmentsDesc": "Beautiful low poly environments with atmospheric sound effects that enhance the immersive storytelling experience.",
+        "miniGames": "Interactive Minigames",
+        "miniGamesDesc": "Engaging minigames including lock picking mechanics and rhythm-based prayer sequences that integrate seamlessly with the narrative."
       }
     }
   }

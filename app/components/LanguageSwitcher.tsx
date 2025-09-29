@@ -9,7 +9,7 @@ export default function LanguageSwitcher() {
     {
       code: 'en' as Locale,
       name: 'English',
-      flag: '🇺🇸'
+      flag: '🇬🇧'
     },
     {
       code: 'de' as Locale,

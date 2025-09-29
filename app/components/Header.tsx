@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useI18n } from '../hooks/useI18n';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Home, Code2, Gamepad2, FileText } from 'lucide-react';
+import { Home, Code2, Gamepad2, FileText, User } from 'lucide-react';
 
 export default function Header() {
 	const { t, locale } = useI18n();
@@ -42,6 +42,14 @@ export default function Header() {
 						>
 							<Gamepad2 className="w-4 h-4" />
 							<span className="hidden sm:inline">{t('navigation.games')}</span>
+						</Link>
+
+						<Link 
+							href={`${homeUrl}#about`}
+							className="flex items-center gap-2 text-gray-300 hover:text-white hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium"
+						>
+							<User className="w-4 h-4" />
+							<span className="hidden sm:inline">{t('navigation.about')}</span>
 						</Link>
 
 						<a
