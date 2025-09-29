@@ -236,3 +236,33 @@ export function getAllProjectSlugs(): string[] {
 export function getBaseProjects() {
   return baseProjects;
 }
+
+export function getBaseProjectBySlug(slug: string) {
+  return baseProjects.find(project => project.slug === slug);
+}
+
+// Server-safe localization function
+export function localizeProject(baseProject: any, projectTranslations: any): Project {
+  if (!projectTranslations) {
+    return {
+      ...baseProject,
+      title: baseProject.name,
+      description: "Missing translation",
+      fullDescription: "Missing translation"
+    };
+  }
+
+  // Localize features
+  const localizedFeatures = baseProject.features?.map((feature: any) => ({
+    title: projectTranslations.features?.[feature.title] || feature.title,
+    description: projectTranslations.features?.[feature.description] || feature.description
+  })) || [];
+
+  return {
+    ...baseProject,
+    title: projectTranslations.title || baseProject.name,
+    description: projectTranslations.description || "Missing translation",
+    fullDescription: projectTranslations.fullDescription || "Missing translation",
+    features: localizedFeatures
+  };
+}

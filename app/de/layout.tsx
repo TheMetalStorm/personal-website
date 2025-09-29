@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import { I18nProvider } from './hooks/useI18n';
-import Header from './components/Header';
+import '../globals.css';
+import { I18nProvider } from '../hooks/useI18n';
+import Header from '../components/Header';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -16,15 +16,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
-		template: '%s | Simon Arapoglu - Developer Portfolio',
+		default: 'Simon Arapoglu - Full-Stack-Entwickler & Spieleentwickler',
+		template: '%s | Simon Arapoglu - Entwickler Portfolio',
 	},
-	description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development. Explore my projects including web applications, games, and software solutions.',
+	description: 'Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung. Entdecken Sie meine Projekte mit Webanwendungen, Spielen und Softwarelösungen.',
 	keywords: [
 		'Simon Arapoglu',
-		'Full-Stack Developer',
-		'Software Engineer',
-		'Game Developer',
+		'Full-Stack-Entwickler',
+		'Software-Ingenieur',
+		'Spieleentwickler',
 		'Java',
 		'Spring Boot',
 		'React',
@@ -32,45 +32,45 @@ export const metadata: Metadata = {
 		'Next.js',
 		'Unity',
 		'C#',
-		'Web Development',
-		'Game Development',
+		'Webentwicklung',
+		'Spieleentwicklung',
 		'Portfolio',
-		'Backend Development',
-		'Frontend Development',
-		'API Development',
+		'Backend-Entwicklung',
+		'Frontend-Entwicklung',
+		'API-Entwicklung',
 		'Clean Code',
-		'Software Architecture',
+		'Software-Architektur',
 	],
 	authors: [{ name: 'Simon Arapoglu' }],
 	creator: 'Simon Arapoglu',
 	metadataBase: new URL('https://themetalstorm.github.io/personal-website'),
 	alternates: {
-		canonical: '/',
+		canonical: '/de',
 		languages: {
 			'en': '/en',
 			'de': '/de',
 		},
 	},
 	openGraph: {
-		title: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
-		description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development. Explore my projects including web applications, games, and software solutions.',
-		url: 'https://themetalstorm.github.io/personal-website',
-		siteName: 'Simon Arapoglu - Developer Portfolio',
+		title: 'Simon Arapoglu - Full-Stack-Entwickler & Spieleentwickler',
+		description: 'Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung. Entdecken Sie meine Projekte mit Webanwendungen, Spielen und Softwarelösungen.',
+		url: 'https://themetalstorm.github.io/personal-website/de',
+		siteName: 'Simon Arapoglu - Entwickler Portfolio',
 		images: [
 			{
 				url: '/portrait.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
+				alt: 'Simon Arapoglu - Full-Stack-Entwickler & Spieleentwickler',
 			},
 		],
-		locale: 'en_US',
+		locale: 'de_DE',
 		type: 'website',
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
-		description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development.',
+		title: 'Simon Arapoglu - Full-Stack-Entwickler & Spieleentwickler',
+		description: 'Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung.',
 		images: ['/portrait.jpg'],
 	},
 	robots: {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
+export default function GermanLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -95,9 +95,9 @@ export default function RootLayout({
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Simon Arapoglu",
-		"jobTitle": "Full-Stack Developer",
-		"description": "Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development.",
-		"url": "https://themetalstorm.github.io/personal-website",
+		"jobTitle": "Full-Stack-Entwickler",
+		"description": "Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung.",
+		"url": "https://themetalstorm.github.io/personal-website/de",
 		"image": "https://themetalstorm.github.io/personal-website/portrait.jpg",
 		"sameAs": [
 			"https://github.com/TheMetalStorm",
@@ -110,22 +110,22 @@ export default function RootLayout({
 			"TypeScript",
 			"Unity",
 			"C#",
-			"Web Development",
-			"Game Development",
-			"Software Engineering"
+			"Webentwicklung",
+			"Spieleentwicklung",
+			"Software-Engineering"
 		],
 		"hasOccupation": {
 			"@type": "Occupation",
-			"name": "Software Developer",
+			"name": "Software-Entwickler",
 			"occupationLocation": {
 				"@type": "Country",
-				"name": "Germany"
+				"name": "Deutschland"
 			}
 		}
 	};
 
 	return (
-		<html lang="en">
+		<html lang="de">
 			<head>
 				<script
 					type="application/ld+json"
