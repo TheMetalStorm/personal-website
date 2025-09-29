@@ -27,20 +27,23 @@ export interface Game {
   features?: GameFeature[];
   playUrl?: string;
   githubUrl?: string;
-  itchUrl?: string;
   downloadUrl?: string;
   slug: string;
   featured?: boolean;
   genre?: string;
   releaseDate?: string;
+  developmentType?: 'solo' | 'team';
 }
 
+// Define a type for base games without translated content
+type BaseGame = Omit<Game, 'title' | 'description' | 'fullDescription'>;
+
 // Base games data (language-neutral) - Server-side safe
-const baseGames = [
+const baseGames: BaseGame[] = [
   {
     id: "bachelor-thesis",
     name: "Bachelor Thesis - 3D Animation Rendering",
-    image: "/media/ba/title.png",
+    image: "/media/ba/title.jpg",
     images: [
       {
         src: "/media/ba/NachbildungGertie.png",
@@ -90,11 +93,11 @@ const baseGames = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/Rendering-classic-hand-drawn-cartoon-animations",
     downloadUrl: "https://github.com/TheMetalStorm/Rendering-classic-hand-drawn-cartoon-animations/releases/tag/v1.0.0",
-    playUrl: "/unity/ba/index.html",
     slug: "bachelor-thesis",
     featured: true,
     genre: "Technical Demo",
-    releaseDate: "2023"
+    releaseDate: "2023",
+    developmentType: 'solo'
   },
    {
     id: "spitting-sugar",
@@ -142,9 +145,10 @@ const baseGames = [
       { title: "enemyCombat", description: "enemyCombatDesc" },
       { title: "portalInspiredPuzzles", description: "portalInspiredPuzzlesDesc" }
     ],
-    playUrl: "/unity/spitting-sugar/index.html",
+    playUrl: "https://themetalstorm.itch.io/spitting-sugar?secret=264OgofN46PWjfnYykV246nbfdo",
     slug: "spitting-sugar",
-    featured: true
+    featured: true,
+    developmentType: 'team'
   },
   {
     id: "kalos",
@@ -210,7 +214,8 @@ const baseGames = [
     slug: "kalos",
     featured: true,
     genre: "Interactive Narrative",
-    releaseDate: "2024"
+    releaseDate: "2024",
+    developmentType: 'team'
   },
   {
     id: "pirate-game-jam-2025",
@@ -253,10 +258,10 @@ const baseGames = [
       { title: "timeConstraints", description: "timeConstraintsDesc" }
     ],
     githubUrl: "https://github.com/Nashi1337/pirategamejam25",
-    itchUrl: "https://nashi1337.itch.io/living-armory",
-    playUrl: "/unity/living-armory/index.html",
+    playUrl: "https://themetalstorm.itch.io/living-armory",
     slug: "pirate-game-jam-2025",
-    featured: true
+    featured: true,
+    developmentType: 'team'
   },
   {
     id: "shooty",
@@ -299,9 +304,10 @@ const baseGames = [
       { title: "soundEffects", description: "soundEffectsDesc" }
     ],
     githubUrl: "https://github.com/TheMetalStorm/shooty",
-    itchUrl: "https://themetalstorm.itch.io/shooty",
+    downloadUrl: "https://themetalstorm.itch.io/shooty",
     slug: "shooty",
-    featured: false
+    featured: false,
+    developmentType: 'solo'
   }
 ];
 
@@ -310,16 +316,16 @@ export function getAllGameSlugs(): string[] {
   return baseGames.map(game => game.slug);
 }
 
-export function getBaseGames() {
+export function getBaseGames(): BaseGame[] {
   return baseGames;
 }
 
-export function getBaseGameBySlug(slug: string) {
+export function getBaseGameBySlug(slug: string): BaseGame | undefined {
   return baseGames.find(game => game.slug === slug);
 }
 
 // Server-safe localization function
-export function localizeGame(baseGame: any, gameTranslations: any): Game {
+export function localizeGame(baseGame: BaseGame, gameTranslations: any): Game {
   if (!gameTranslations) {
     return {
       ...baseGame,

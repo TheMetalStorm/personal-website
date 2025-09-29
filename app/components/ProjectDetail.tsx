@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Code2, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Code2, Calendar, Tag, Home, User, Users } from 'lucide-react';
 import { Project } from '../data/projectsBase';
 import { getProjectBySlug } from '../data/projectsClient';
 import ImageGallery from './ImageGallery';
@@ -27,40 +27,42 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
   
   return (
     <main className="min-h-screen bg-gray-900 pt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-12">
         
         {/* Back Button */}
         <Link 
           href={backUrl} 
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8 transition-colors"
+          className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-2 sm:mb-8 transition-colors"
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          {t('projects.viewAll')}
+          <ArrowLeft className="w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" />
+          <span className="hidden sm:inline">{t('projects.viewAll')}</span>
+          <span className="sm:hidden text-sm">{t('navigation.projects')}</span>
         </Link>
 
         {/* Project Header */}
-        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl mb-8">
-          <div className="relative h-64 md:h-80">
+        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl mb-6 sm:mb-8">
+          <div className="relative h-48 sm:h-64 md:h-80">
             <Image src={project.headerImage || project.image} alt={project.title} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.slice(0, 4).map((tech, index) => (
-                  <span key={index} className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full flex items-center gap-1">
-                    <Code2 className="w-4 h-4" />
+            <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6">
+              <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
+                {project.technologies.slice(0, 3).map((tech, index) => (
+                  <span key={index} className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-600 text-white text-xs sm:text-sm rounded-full flex items-center gap-1">
+                    <Code2 className="w-3 sm:w-4 h-3 sm:h-4" />
                     {tech}
                   </span>
                 ))}
-                {project.technologies.length > 4 && (
-                  <span className="px-3 py-1 bg-gray-600 text-white text-sm rounded-full">
-                    +{project.technologies.length - 4} more
+                {project.technologies.length > 3 && (
+                  <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gray-600 text-white text-xs sm:text-sm rounded-full">
+                    <span className="hidden sm:inline">+{project.technologies.length - 3} more</span>
+                    <span className="sm:hidden">+{project.technologies.length - 3}</span>
                   </span>
                 )}
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2 line-clamp-2">
                 {project.title}
               </h1>
-              <p className="text-lg text-gray-200 max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-200 max-w-2xl line-clamp-3">
                 {project.description}
               </p>
             </div>
@@ -149,6 +151,22 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
                 <div>
                   <span className="text-sm font-medium text-gray-400">Type:</span>
                   <p className="text-white">Software Project</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Development Section */}
+            <div className="bg-gray-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                {project.developmentType === 'team' ? <Users className="w-5 h-5" /> : <User className="w-5 h-5" />}
+                {t('projects.development')}
+              </h3>
+              <div className="space-y-2">
+                <div>
+                  <span className="text-sm font-medium text-gray-400">{t('projects.developmentType')}:</span>
+                  <p className="text-white">
+                    {project.developmentType === 'team' ? t('projects.teamDevelopment') : t('projects.soloDevelopment')}
+                  </p>
                 </div>
               </div>
             </div>

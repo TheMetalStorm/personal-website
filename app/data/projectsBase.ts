@@ -27,6 +27,7 @@ export interface Project {
   githubUrl?: string;
   slug: string;
   featured?: boolean;
+  developmentType?: 'solo' | 'team';
 }
 
 // Base project data (language-neutral) - Server-side safe
@@ -67,7 +68,8 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/Spring-Library-Management-API",
     slug: "spring-library-api",
-    featured: true
+    featured: true,
+    developmentType: 'solo'
   },
   {
     id: "c8-serenityos",
@@ -105,11 +107,12 @@ const baseProjects = [
       { title: "cpuEmulation", description: "cpuEmulationDesc" },
       { title: "graphicsRendering", description: "graphicsRenderingDesc" },
       { title: "soundSystem", description: "soundSystemDesc" },
-      { title: "debuggerTools", description: "debuggerToolsDesc" }
+      { title: "crossPlatformDev", description: "crossPlatformDevDesc" }
     ],
     githubUrl: "https://github.com/TheMetalStorm/c8-serenityOS",
     slug: "c8-serenityos",
-    featured: true
+    featured: true,
+    developmentType: 'solo'
   },
   {
     id: "zilo",
@@ -146,7 +149,8 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/zilo",
     slug: "zilo",
-    featured: true
+    featured: true,
+    developmentType: 'solo'
   },
   {
     id: "socket-fun",
@@ -182,7 +186,8 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/SocketFun",
     slug: "socket-fun",
-    featured: false
+    featured: false,
+    developmentType: 'solo'
   },
   {
     id: "world-launcher",
@@ -218,7 +223,8 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/World-Launcher",
     slug: "world-launcher",
-    featured: false
+    featured: false,
+    developmentType: 'solo'
   }
 ];
 
