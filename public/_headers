@@ -1,0 +1,27 @@
+# Netlify _headers file
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Allow video and PDF files
+/*.mp4
+  Content-Type: video/mp4
+  Cache-Control: public, max-age=31536000
+
+/*.webm
+  Content-Type: video/webm
+  Cache-Control: public, max-age=31536000
+
+/*.pdf
+  Content-Type: application/pdf
+  Cache-Control: public, max-age=31536000
+  Content-Disposition: inline
+
+# Specific headers for media directory
+/media/*
+  Cache-Control: public, max-age=31536000
+
+/resume/*
+  Cache-Control: public, max-age=31536000
