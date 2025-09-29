@@ -29,7 +29,7 @@ export default function GamesSection() {
 							{ text: game.engine, color: 'blue' as const },
 							...(game.genre ? [{ text: game.genre, color: 'purple' as const }] : []),
 							...(game.playUrl ? [{ text: t('games.playableInBrowser'), color: 'green' as const }] : []),
-							...(game.itchUrl ? [{ text: t('games.downloadOnItch'), color: 'pink' as const }] : [])
+							...(game.downloadUrl ? [{ text: t('games.download'), color: 'pink' as const }] : [])
 						];
 
 						const actions = [
@@ -62,15 +62,7 @@ export default function GamesSection() {
 								icon: 'ExternalLink' as const,
 								isPrimary: false,
 								isExternal: true,
-								title: 'Download Release'
-							}] : []),
-							...(game.itchUrl ? [{
-								href: game.itchUrl,
-								label: '',
-								icon: 'ExternalLink' as const,
-								isPrimary: false,
-								isExternal: true,
-								title: 'Download on itch.io'
+								title: t('games.download')
 							}] : [])
 						];
 

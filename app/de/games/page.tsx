@@ -42,7 +42,7 @@ export default async function GamesPageDE() {
               { text: game.engine, color: 'blue' as const },
               ...(game.genre ? [{ text: game.genre, color: 'purple' as const }] : []),
               ...(game.playUrl ? [{ text: translations.games.playableInBrowser, color: 'green' as const }] : []),
-              ...(game.itchUrl ? [{ text: translations.games.downloadOnItch, color: 'pink' as const }] : [])
+              ...(game.downloadUrl ? [{ text: translations.games.download, color: 'pink' as const }] : [])
             ];
 
             const actions = [
@@ -75,15 +75,7 @@ export default async function GamesPageDE() {
                 icon: 'ExternalLink' as const,
                 isPrimary: false,
                 isExternal: true,
-                title: 'Download Release'
-              }] : []),
-              ...(game.itchUrl ? [{
-                href: game.itchUrl,
-                label: '',
-                icon: 'ExternalLink' as const,
-                isPrimary: false,
-                isExternal: true,
-                title: 'Download on itch.io'
+                title: translations.games.download
               }] : [])
             ];
 

@@ -68,7 +68,7 @@ export default function ItemCard({
   const titleHoverGradient = hoverGradients[hoverColor];
 
   return (
-    <div className={`group bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl ${shadowColor} transform hover:scale-[1.02] transition-all duration-300 flex flex-col h-full`}>
+    <div className={`group bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/70 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl ${shadowColor} transition-all duration-300 flex flex-col h-full`}>
       <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 relative overflow-hidden">
         <Image 
           src={image} 
@@ -79,11 +79,11 @@ export default function ItemCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         
         {/* Badges */}
-        <div className="absolute top-3 right-3 flex flex-wrap justify-end gap-2">
+        <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex flex-wrap justify-end gap-1 sm:gap-2">
           {badges.map((badge, index) => (
             <span 
               key={index}
-              className={`px-3 py-1 bg-gradient-to-r ${badgeColors[badge.color]} text-white text-xs rounded-full font-medium shadow-lg backdrop-blur-sm`}
+              className={`px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r ${badgeColors[badge.color]} text-white text-xs rounded-full font-medium shadow-lg backdrop-blur-sm`}
             >
               {badge.text}
             </span>
@@ -91,26 +91,26 @@ export default function ItemCard({
         </div>
       </div>
       
-      <div className="p-4 sm:p-6 flex flex-col flex-grow">
-        <h3 className={`text-lg sm:text-xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent mb-3 ${titleHoverGradient} transition-all duration-300`}>
+      <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-grow">
+        <h3 className={`text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent mb-2 sm:mb-3 ${titleHoverGradient} transition-all duration-300 line-clamp-2`}>
           {title}
         </h3>
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+        <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-4 line-clamp-3">
           {description}
         </p>
         
         {/* Technology tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
           {technologies.slice(0, 3).map((tech, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-gradient-to-r from-gray-700 to-gray-800 text-gray-200 text-xs rounded-full font-medium shadow-sm"
+              className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gradient-to-r from-gray-700 to-gray-800 text-gray-200 text-xs rounded-full font-medium shadow-sm"
             >
               {tech}
             </span>
           ))}
           {technologies.length > 3 && (
-            <span className="px-2 py-1 bg-gradient-to-r from-gray-600 to-gray-700 text-gray-300 text-xs rounded-full font-medium shadow-sm">
+            <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gradient-to-r from-gray-600 to-gray-700 text-gray-300 text-xs rounded-full font-medium shadow-sm">
               +{technologies.length - 3}
             </span>
           )}
@@ -120,7 +120,7 @@ export default function ItemCard({
         <div className="flex-grow"></div>
         
         {/* Action buttons - Always at the bottom */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {actions.map((action, index) => {
             const Icon = iconMap[action.icon];
             
