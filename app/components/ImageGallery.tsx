@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { X, ChevronLeft, ChevronRight, Play, FileText, Download } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Play, FileText, Download, AlertCircle } from 'lucide-react';
 import { ProjectImage } from '../data/projectsBase';
 
 // Utility function to detect if a file is a video
@@ -22,6 +22,58 @@ const getMediaType = (item: ProjectImage): 'image' | 'video' | 'pdf' => {
   if (isPdfFile(item.src)) return 'pdf';
   if (isVideoFile(item.src)) return 'video';
   return 'image';
+};
+
+// Component for handling video with fallback
+const VideoPlayer = ({ src, poster, className, controls = false, muted = true, autoPlay = false, style, onError }: {
+  src: string;
+  poster?: string;
+  className?: string;
+  controls?: boolean;
+  muted?: boolean;
+  autoPlay?: boolean;
+  style?: React.CSSProperties;
+  onError?: () => void;
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  const handleError = () => {
+    setHasError(true);
+    onError?.();
+  };
+
+  if (hasError) {
+    return (
+      <div className={`${className} flex items-center justify-center bg-gray-200 dark:bg-gray-700`} style={style}>
+        <div className="text-center text-gray-500">
+          <AlertCircle className="w-8 h-8 mx-auto mb-2" />
+          <p className="text-sm">Video unavailable</p>
+          <a 
+            href={src} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 text-xs underline"
+          >
+            Try direct link
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <video
+      src={src}
+      poster={poster}
+      className={className}
+      controls={controls}
+      muted={muted}
+      autoPlay={autoPlay}
+      preload="metadata"
+      style={style}
+      onError={handleError}
+    />
+  );
 };
 
 interface ImageGalleryProps {
@@ -102,12 +154,11 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
             >
               {mediaType === 'video' ? (
                 <>
-                  <video
+                  <VideoPlayer
                     src={item.src}
                     poster={item.poster}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     muted
-                    preload="metadata"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -173,28 +224,14 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
-          {/* Header Buttons */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-            {/* Download Button for PDFs */}
-            {getMediaType(images[selectedImageIndex]) === 'pdf' && (
-              <a
-                href={images[selectedImageIndex].src}
-                download
-                className="text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-2"
-                onClick={(e) => e.stopPropagation()}
-                title="Download PDF"
-              >
-                <Download size={24} />
-              </a>
-            )}
-            {/* Close Button */}
-            <button
-              className="text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-2"
-              onClick={closeLightbox}
-            >
-              <X size={24} />
-            </button>
-          </div>
+          {/* Close Button - Positioned below header */}
+          <button
+            className="fixed top-20 right-4 z-[60] text-white hover:text-red-400 transition-all duration-200 bg-black bg-opacity-80 hover:bg-opacity-95 rounded-full p-3 shadow-lg border border-gray-500 hover:border-red-400"
+            onClick={closeLightbox}
+            title="Close (ESC)"
+          >
+            <X size={20} strokeWidth={2.5} />
+          </button>
 
           {/* Navigation Buttons */}
           {selectedImageIndex > 0 && (
@@ -224,22 +261,29 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           {/* Image Container */}
           <div
             className="relative w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-            style={{ maxHeight: 'calc(100vh - 8rem)', maxWidth: 'calc(100vw - 2rem)' }}
+            style={{ 
+              maxHeight: 'calc(100vh - 8rem)', /* Reduced space for smaller caption */
+              maxWidth: 'calc(100vw - 2rem)',
+              marginTop: 'calc(4rem + 1rem)', /* Account for header height */
+              marginBottom: '1rem' /* Reduced margin for caption */
+            }}
           >
             {getMediaType(images[selectedImageIndex]) === 'video' ? (
-              <video
-                src={images[selectedImageIndex].src}
-                controls
-                autoPlay
-                className="max-w-full max-h-full object-contain"
-                style={{ 
-                  maxHeight: 'calc(100vh - 8rem)', 
-                  maxWidth: 'calc(100vw - 2rem)'
-                }}
-              />
+              <div onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+                <VideoPlayer
+                  src={images[selectedImageIndex].src}
+                  controls
+                  autoPlay
+                  muted={false}
+                  className="max-w-full max-h-full object-contain"
+                  style={{ 
+                    maxHeight: 'calc(100vh - 10rem)', /* Reduced reserved space */
+                    maxWidth: 'calc(100vw - 2rem)'
+                  }}
+                />
+              </div>
             ) : getMediaType(images[selectedImageIndex]) === 'pdf' ? (
-              <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg p-8 max-w-2xl">
+              <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg p-8 max-w-2xl" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
                 {images[selectedImageIndex].pdfThumbnail ? (
                   <Image
                     src={images[selectedImageIndex].pdfThumbnail!}
@@ -262,15 +306,27 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 <div className="text-center">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">PDF Document</h3>
                   <p className="text-gray-600 mb-4">{images[selectedImageIndex].alt}</p>
-                  <a
-                    href={images[selectedImageIndex].src}
-                    download
-                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Download className="w-5 h-5" />
-                    Download PDF
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                      href={images[selectedImageIndex].src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FileText className="w-5 h-5" />
+                      View PDF
+                    </a>
+                    <a
+                      href={images[selectedImageIndex].src}
+                      download
+                      className="inline-flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Download className="w-5 h-5" />
+                      Download PDF
+                    </a>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -281,26 +337,27 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 height={800}
                 className="object-contain"
                 style={{ 
-                  maxHeight: 'calc(100vh - 8rem)', 
+                  maxHeight: 'calc(100vh - 10rem)', /* Reduced reserved space */
                   maxWidth: 'calc(100vw - 2rem)',
                   width: 'auto',
                   height: 'auto'
                 }}
                 priority
+                onClick={(e: React.MouseEvent) => e.stopPropagation()}
               />
             )}
 
-            {/* Image Caption */}
+            {/* Image Caption - More compact */}
             {images[selectedImageIndex].caption && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                <p className="text-white text-lg text-center">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3">
+                <p className="text-white text-sm text-center leading-tight">
                   {images[selectedImageIndex].caption}
                 </p>
               </div>
             )}
 
-            {/* Image Counter */}
-            <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+            {/* Image Counter - Aligned with center of close button */}
+            <div className="fixed top-[88px] left-4 z-[60] bg-black bg-opacity-80 text-white px-3 py-1 rounded-full text-sm border border-gray-500">
               {selectedImageIndex + 1} / {images.length}
             </div>
           </div>
