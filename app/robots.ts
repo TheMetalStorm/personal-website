@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://themetalstorm.github.io/personal-website';
+  const baseUrl = 'https://simonarapoglu.com';
   
   return {
     rules: {

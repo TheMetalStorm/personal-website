@@ -5,7 +5,7 @@ import { getAllGameSlugs } from './data/gamesBase';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://themetalstorm.github.io/personal-website';
+  const baseUrl = 'https://simonarapoglu.com';
   const currentDate = new Date().toISOString();
 
   // Get all project and game slugs

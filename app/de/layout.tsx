@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 	],
 	authors: [{ name: 'Simon Arapoglu' }],
 	creator: 'Simon Arapoglu',
-	metadataBase: new URL('https://themetalstorm.github.io/personal-website'),
+	metadataBase: new URL('https://simonarapoglu.com'),
 	alternates: {
 		canonical: '/de',
 		languages: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Simon Arapoglu - Full-Stack-Entwickler & Spieleentwickler',
 		description: 'Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung. Entdecken Sie meine Projekte mit Webanwendungen, Spielen und Softwarelösungen.',
-		url: 'https://themetalstorm.github.io/personal-website/de',
+		url: 'https://simonarapoglu.com/de',
 		siteName: 'Simon Arapoglu - Entwickler Portfolio',
 		images: [
 			{
@@ -97,8 +97,8 @@ export default function GermanLayout({
 		"name": "Simon Arapoglu",
 		"jobTitle": "Full-Stack-Entwickler",
 		"description": "Leidenschaftlicher Full-Stack-Entwickler spezialisiert auf Java Spring Boot, React und Unity-Spieleentwicklung.",
-		"url": "https://themetalstorm.github.io/personal-website/de",
-		"image": "https://themetalstorm.github.io/personal-website/portrait.jpg",
+		"url": "https://simonarapoglu.com/de",
+		"image": "https://simonarapoglu.com/portrait.jpg",
 		"sameAs": [
 			"https://github.com/TheMetalStorm",
 			"https://linkedin.com/in/simon-arapoglu"
