@@ -40,74 +40,49 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(getCurrentLocale());
   const [translations, setTranslations] = useState<Translations>(translationsMap[locale]);
 
-  // Update locale when pathname changes
+  // Update locale when pathname changes - critical for language switching
   useEffect(() => {
     const currentLocale = getCurrentLocale();
+    console.log('Pathname changed:', { pathname, currentLocale, previousLocale: locale });
     setLocaleState(currentLocale);
     setTranslations(translationsMap[currentLocale]);
-  }, [pathname]);
-
-  // Restore scroll position after language change
-  useEffect(() => {
-    // Only run on client side
-    if (typeof window !== 'undefined') {
-      const savedScrollPosition = sessionStorage.getItem('scrollPosition');
-      if (savedScrollPosition) {
-        // Wait for the page to fully render before scrolling
-        const scrollY = parseInt(savedScrollPosition, 10);
-        const restoreScroll = () => {
-          window.scrollTo(0, scrollY);
-          sessionStorage.removeItem('scrollPosition');
-        };
-        
-        // Try immediate restore first
-        restoreScroll();
-        
-        // Also try after a short delay to ensure content is loaded
-        setTimeout(restoreScroll, 50);
-      }
-    }
-  }, [pathname]);
+  }, [pathname]); // Only depend on pathname
 
   const setLocale = (newLocale: Locale) => {
     const currentPath = pathname;
     let newPath: string;
 
+    // Determine the new path based on locale
     if (newLocale === 'de') {
-      // Switch to German
       if (currentPath.startsWith('/de')) {
-        newPath = currentPath; // Already on German path
+        return; // Already on German
       } else if (currentPath.startsWith('/en')) {
-        // Convert /en/path to /de/path
-        newPath = currentPath.replace('/en', '/de');
+        // /en/something -> /de/something
+        // /en -> /de
+        newPath = currentPath.replace(/^\/en/, '/de');
       } else {
-        // Convert root path to German
-        newPath = `/de${currentPath === '/' ? '' : currentPath}`;
+        // / -> /de
+        // /something -> /de/something
+        newPath = currentPath === '/' ? '/de' : `/de${currentPath}`;
       }
     } else {
-      // Switch to English
-      if (currentPath.startsWith('/de')) {
-        // Convert /de/path to /en/path
-        const pathWithoutDe = currentPath.replace('/de', '') || '';
-        newPath = `/en${pathWithoutDe}`;
-      } else if (currentPath.startsWith('/en')) {
-        newPath = currentPath; // Already on explicit English path
+      if (currentPath.startsWith('/en')) {
+        return; // Already on English
+      } else if (currentPath.startsWith('/de')) {
+        // /de/something -> /en/something
+        // /de -> /en
+        newPath = currentPath.replace(/^\/de/, '/en');
       } else {
-        // Convert root path to explicit English
-        newPath = `/en${currentPath === '/' ? '' : currentPath}`;
+        // / -> /en
+        // /something -> /en/something
+        newPath = currentPath === '/' ? '/en' : `/en${currentPath}`;
       }
     }
 
-    if (newPath !== currentPath) {
-      // Store current scroll position in sessionStorage (client-side only)
-      if (typeof window !== 'undefined') {
-        const scrollY = window.scrollY;
-        sessionStorage.setItem('scrollPosition', scrollY.toString());
-      }
-      
-      // Navigate to new path
-      router.push(newPath);
-    }
+    console.log('Language switch:', { from: currentPath, to: newPath, locale: newLocale });
+    
+    // Navigate to new path (will scroll to top automatically)
+    router.push(newPath);
   };
 
   // Helper function to get nested translation
@@ -128,7 +103,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   return (
     <I18nContext.Provider value={{ locale, translations, setLocale, t }}>
-      {children}
+      <div key={pathname} suppressHydrationWarning>
+        {children}
+      </div>
     </I18nContext.Provider>
   );
 }

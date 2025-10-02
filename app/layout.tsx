@@ -16,18 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
+		default: 'Simon Arapoglu - Backend Developer & Game Developer',
 		template: '%s | Simon Arapoglu - Developer Portfolio',
 	},
-	description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development. Explore my projects including web applications, games, and software solutions.',
+	description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
 	keywords: [
 		'Simon Arapoglu',
-		'Full-Stack Developer',
+		'Backend Developer',
 		'Software Engineer',
 		'Game Developer',
 		'Java',
 		'Spring Boot',
-		'React',
+		'REST API',
 		'TypeScript',
 		'Next.js',
 		'Unity',
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 		},
 	},
 	openGraph: {
-		title: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
-		description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development. Explore my projects including web applications, games, and software solutions.',
+		title: 'Simon Arapoglu - Backend Developer & Game Developer',
+		description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
 		url: 'https://simonarapoglu.com',
 		siteName: 'Simon Arapoglu - Developer Portfolio',
 		images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 				url: '/portrait.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
+				alt: 'Simon Arapoglu - Backend Developer & Game Developer',
 			},
 		],
 		locale: 'en_US',
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Simon Arapoglu - Full-Stack Developer & Game Developer',
-		description: 'Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development.',
+		title: 'Simon Arapoglu - Backend Developer & Game Developer',
+		description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development.',
 		images: ['/portrait.jpg'],
 	},
 	robots: {
@@ -95,8 +95,8 @@ export default function RootLayout({
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Simon Arapoglu",
-		"jobTitle": "Full-Stack Developer",
-		"description": "Passionate full-stack developer specializing in Java Spring Boot, React, and Unity game development.",
+		"jobTitle": "Backend Developer",
+		"description": "Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development.",
 		"url": "https://simonarapoglu.com",
 		"image": "https://simonarapoglu.com/portrait.jpg",
 		"sameAs": [
@@ -106,7 +106,7 @@ export default function RootLayout({
 		"knowsAbout": [
 			"Java",
 			"Spring Boot",
-			"React",
+			"REST APIs",
 			"TypeScript",
 			"Unity",
 			"C#",
