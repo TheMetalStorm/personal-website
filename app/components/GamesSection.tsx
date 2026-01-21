@@ -3,40 +3,47 @@
 import Link from 'next/link';
 import { getFeaturedGames } from '../data/gamesClient';
 import { useI18n } from '../hooks/useI18n';
-import { Gamepad2, Play, Github, ExternalLink } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import ItemCard from './ItemCard';
 
 export default function GamesSection() {
 	const { t, locale, translations } = useI18n();
 	const gamesUrl = locale === 'de' ? '/de/games' : '/games';
 	const featuredGames = getFeaturedGames(locale, translations);
-	
+
 	return (
-		<section id="games" className="py-12 sm:py-20">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-between items-center mb-6 sm:mb-8">
-					<h2 className="text-xl sm:text-2xl font-bold text-white">{t('games.title')}</h2>
-					<Link 
-						href={gamesUrl} 
-						className="text-blue-400 hover:text-blue-300 font-medium text-sm sm:text-base"
+		<section id="games" className="relative py-24 bg-brand-navy/30">
+			<div className="max-w-7xl mx-auto px-6 lg:px-8">
+				<div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+					<div>
+						<h2 className="text-3xl lg:text-5xl font-outfit font-bold text-white mb-4">
+							{t('games.title')}
+						</h2>
+						<p className="text-slate-400 max-w-xl text-lg">
+							Experimental and jam games exploring mechanics and shaders.
+						</p>
+					</div>
+					<Link
+						href={gamesUrl}
+						className="group flex items-center gap-2 text-brand-blue font-bold px-6 py-3 bento-glass hover:bg-white/10 transition-all rounded-2xl border-brand-blue/10"
 					>
-						{t('games.viewAll')} →
+						{t('games.viewAll')}
+						<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 					</Link>
 				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					{featuredGames.map((game) => {
 						const badges = [
 							{ text: game.engine, color: 'blue' as const },
-							...(game.genre ? [{ text: game.genre, color: 'purple' as const }] : []),
-							...(game.playUrl ? [{ text: t('games.playableInBrowser'), color: 'green' as const }] : []),
-							...(game.downloadUrl ? [{ text: t('games.download'), color: 'pink' as const }] : [])
+							...(game.playUrl ? [{ text: t('games.playableInBrowser'), color: 'green' as const }] : [])
 						];
 
 						const actions = [
 							{
 								href: `${gamesUrl}/${game.slug}`,
 								label: t('games.viewGame'),
-								icon: 'Gamepad2' as const,
+								icon: 'ArrowRight' as any,
 								isPrimary: true,
 								isExternal: false
 							},
@@ -55,14 +62,6 @@ export default function GamesSection() {
 								isPrimary: false,
 								isExternal: true,
 								title: t('games.viewCode')
-							}] : []),
-							...(game.downloadUrl ? [{
-								href: game.downloadUrl,
-								label: '',
-								icon: 'ExternalLink' as const,
-								isPrimary: false,
-								isExternal: true,
-								title: t('games.download')
 							}] : [])
 						];
 

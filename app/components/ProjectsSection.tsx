@@ -3,27 +3,36 @@
 import Link from 'next/link';
 import { getFeaturedProjects } from '../data/projectsClient';
 import { useI18n } from '../hooks/useI18n';
-import { Code2, Github, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ItemCard from './ItemCard';
 
 export default function ProjectsSection() {
 	const { t, locale, translations } = useI18n();
 	const projectsUrl = locale === 'de' ? '/de/projects' : '/projects';
 	const featuredProjects = getFeaturedProjects(translations);
-	
+
 	return (
-		<section id="projects" className="py-12 sm:py-20">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-between items-center mb-6 sm:mb-8">
-					<h2 className="text-xl sm:text-2xl font-bold text-white">{t('projects.title')}</h2>
-					<Link 
-						href={projectsUrl} 
-						className="text-blue-400 hover:text-blue-300 font-medium text-sm sm:text-base"
+		<section id="projects" className="relative py-24 overflow-hidden">
+			<div className="max-w-7xl mx-auto px-6 lg:px-8">
+				<div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+					<div>
+						<h2 className="text-3xl lg:text-5xl font-outfit font-bold text-white mb-4">
+							{t('projects.title')}
+						</h2>
+						<p className="text-slate-400 max-w-xl text-lg">
+							Selection of featured work spanning backend systems and creative tech.
+						</p>
+					</div>
+					<Link
+						href={projectsUrl}
+						className="group flex items-center gap-2 text-brand-blue font-bold px-6 py-3 bento-glass hover:bg-white/10 transition-all rounded-2xl"
 					>
-						{t('projects.viewAll')} →
+						{t('projects.viewAll')}
+						<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 					</Link>
 				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					{featuredProjects.map((project) => {
 						const badges = [
 							{ text: project.technologies[0], color: 'blue' as const }
@@ -33,18 +42,10 @@ export default function ProjectsSection() {
 							{
 								href: `${projectsUrl}/${project.slug}`,
 								label: t('projects.viewProject'),
-								icon: 'Code2' as const,
+								icon: 'ArrowRight' as any, // Using ArrowRight locally in ItemCard logic adjustments
 								isPrimary: true,
 								isExternal: false
 							},
-							...(project.demoUrl ? [{
-								href: project.demoUrl,
-								label: '',
-								icon: 'ExternalLink' as const,
-								isPrimary: false,
-								isExternal: true,
-								title: 'Live Demo'
-							}] : []),
 							...(project.githubUrl ? [{
 								href: project.githubUrl,
 								label: '',
