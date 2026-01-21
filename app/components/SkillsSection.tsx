@@ -2,35 +2,41 @@
 
 import { useI18n } from '../hooks/useI18n';
 import { motion } from 'framer-motion';
-import { Code2, Database, Gamepad2, Layers } from 'lucide-react';
+import { Code2, Database, Gamepad2, Layers, Monitor } from 'lucide-react';
 
 export default function SkillsSection() {
 	const { t } = useI18n();
 
 	const categories = [
 		{
-			title: 'Backend',
+			title: t('skills.backend'),
 			icon: <Database className="w-6 h-6 text-brand-blue" />,
-			skills: ['Java', 'Spring Boot', 'OOP', 'MongoDB', 'PostgreSQL', 'Docker'],
+			skills: ['Java', 'C#', 'Spring Boot', 'OOP', 'MongoDB', 'PostgreSQL', 'Docker'],
 			className: 'lg:col-span-2 bento-glow-blue',
 		},
 		{
-			title: 'Game Dev',
+			title: t('skills.frontend'),
+			icon: <Monitor className="w-6 h-6 text-brand-blue" />,
+			skills: ['HTML', 'CSS', 'Svelte', 'React', 'TypeScript'],
+			className: 'lg:col-span-1 bento-glow-blue',
+		},
+		{
+			title: t('skills.gameDev'),
 			icon: <Gamepad2 className="w-6 h-6 text-brand-lime" />,
-			skills: ['Unity', 'C#', 'HLSL', 'Shader Graph'],
+			skills: ['Unity', 'HLSL', 'Shader Graph', 'Godot'],
 			className: 'lg:col-span-1 border-brand-lime/10',
 		},
 		{
-			title: 'Systems & Tools',
+			title: t('skills.systems'),
 			icon: <Code2 className="w-6 h-6 text-brand-violet" />,
 			skills: ['C/C++', 'Zig', 'Git', 'CI/CD', 'Bash'],
 			className: 'lg:col-span-1 bento-glow-violet',
 		},
 		{
-			title: 'Other',
+			title: t('skills.other'),
 			icon: <Layers className="w-6 h-6 text-white" />,
 			skills: ['Ubuntu', 'PowerShell', 'REST APIs', 'Cloud'],
-			className: 'lg:col-span-2',
+			className: 'lg:col-span-1',
 		}
 	];
 
@@ -42,7 +48,7 @@ export default function SkillsSection() {
 						{t('skills.title')}
 					</h2>
 					<p className="text-slate-400 max-w-xl text-lg">
-						Professional expertise and technical tools I use to bring ideas to life.
+						{t('skills.description')}
 					</p>
 				</div>
 

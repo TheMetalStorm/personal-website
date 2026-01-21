@@ -62,7 +62,12 @@
   },
   "skills": {
     "title": "Fähigkeiten & Technologien",
-    "description": "Technologien, mit denen ich arbeite"
+    "description": "Professionelles Fachwissen und technische Werkzeuge, mit denen ich Ideen zum Leben erwecke.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "gameDev": "Game-Entwicklung",
+    "systems": "Systeme & Tools",
+    "other": "Sonstiges"
   },
   "about": {
     "title": "Über mich",

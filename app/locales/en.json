@@ -62,7 +62,12 @@
   },
   "skills": {
     "title": "Skills & Technologies",
-    "description": "Technologies I work with"
+    "description": "Professional expertise and technical tools I use to bring ideas to life.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "gameDev": "Game Dev",
+    "systems": "Systems & Tools",
+    "other": "Other"
   },
   "about": {
     "title": "About Me",
