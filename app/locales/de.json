@@ -2,7 +2,13 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software-Entwickler",
-    "description": "Ich bin ein Backend-Entwickler und baue APIs, Emulatoren und interaktive Spielsysteme. Beruflich habe ich Java/Spring-Reporting-Lösungen entwickelt, relationale und NoSQL-Datenbanken verwaltet und CI/CD-Workflows implementiert. Ich erstelle auch Echtzeit-Gameplay-Systeme und Shader, die Sie direkt in Ihrem Browser erleben können."
+    "description": "Ich bin ein Backend-Entwickler und baue APIs, Emulatoren und interaktive Spielsysteme. Beruflich habe ich Java/Spring-Reporting-Lösungen entwickelt, relationale und NoSQL-Datenbanken verwaltet und CI/CD-Workflows implementiert. Ich erstelle auch Echtzeit-Gameplay-Systeme und Shader, die Sie direkt in Ihrem Browser erleben können.",
+    "stats": {
+      "professional": "+1 Jahr",
+      "professionalLabel": "Berufserfahrung",
+      "personal": "+5 Jahre",
+      "personalLabel": "Private Projekte"
+    }
   },
   "navigation": {
     "home": "Startseite",
@@ -25,7 +31,13 @@
     "development": "Entwicklung",
     "developmentType": "Art",
     "soloDevelopment": "Einzelentwicklung",
-    "teamDevelopment": "Teamentwicklung"
+    "teamDevelopment": "Teamentwicklung",
+    "projectInfo": "Projekt-Informationen",
+    "type": "Art",
+    "projectTypes": {
+      "website": "Webseite",
+      "software": "Software-Projekt"
+    }
   },
   "games": {
     "viewCode": "Code ansehen",
@@ -148,7 +160,7 @@
         "restfulApiDesc": "Saubere und intuitive REST-API nach Industriestandards mit ordnungsgemäßen HTTP-Methoden und Statuscodes.",
         "databaseIntegration": "Datenbank-Integration",
         "databaseIntegrationDesc": "Nahtlose Integration mit MongoDB unter Verwendung von JPA und Hibernate für effizientes Datenmanagement.",
-        "crudOperations": "Vollständige CRUD-Operationen", 
+        "crudOperations": "Vollständige CRUD-Operationen",
         "crudOperationsDesc": "Vollständige Erstellen-, Lesen-, Aktualisieren-, Löschen-Funktionalität für Bücher, Autoren und Ausleihaufzeichnungen.",
         "apiDocumentation": "API-Dokumentation",
         "apiDocumentationDesc": "Umfassende API-Dokumentation."
@@ -168,7 +180,7 @@
         "echoServerDesc": "TCP Echo-Server, der Client-Nachrichten zurücksendet und grundlegende Client-Server-Kommunikationsmuster demonstriert.",
         "chatServer": "Chat-Server",
         "chatServerDesc": "Multi-Client-Chat-Server ermöglicht Echtzeitkommunikation zwischen verbundenen Clients.",
-        "concurrentConnections": "Gleichzeitige Verbindungen", 
+        "concurrentConnections": "Gleichzeitige Verbindungen",
         "concurrentConnectionsDesc": "Unterstützung für bis zu 128 gleichzeitige Client-Verbindungen mit effizientem I/O-Multiplexing.",
         "epollHandling": "epoll() Implementierung",
         "epollHandlingDesc": "Hochleistungs-ereignisgesteuertes I/O unter Verwendung von Linux epoll() für skalierbare Netzwerkanwendungen."
@@ -192,6 +204,24 @@
         "emulatorIntegrationDesc": "Nahtlose Integration mit SNES-Emulatoren wie Snes9x, mit Vollbild-Start-Optionen.",
         "userFriendlyInterface": "Benutzerfreundliche Oberfläche",
         "userFriendlyInterfaceDesc": "Intuitive Windows Forms-Oberfläche macht ROM-Hack-Verwaltung für alle Benutzer zugänglich."
+      }
+    },
+    "shared-aesthetic": {
+      "title": "Shared Aesthetic",
+      "description": "KI-gestützte medienübergreifende Empfehlungs-Webseite basierend auf 'Vibes' und künstlerischer Ästhetik.",
+      "fullDescription": "Shared Aesthetic ist eine medienübergreifende Discovery Web-Anwendung, die Bücher, Filme und Spiele durch gemeinsame künstlerische 'Vibes' verbindet. Durch den Einsatz von Vektor-Embeddings (PostgreSQL) und semantischer Analyse (Gemini KI) findet die Plattform versteckte Verbindungen zwischen verschiedenen Medientypen. So können Nutzer zum Beispiel einen Film finden, der sich wie ihr Lieblingsbuch anfühlt, oder ein Spiel, das einer spezifischen Ästhetik entspricht.",
+      "features": {
+        "vectorSearch": "Vektor-Suche",
+        "vectorSearchDesc": "PostgreSQL (pgvector)-Implementierung für tiefes semantisches und ästhetisches Similarity-Mapping.",
+        "multimodalAi": "Multimodale KI",
+        "multimodalAiDesc": "Gemini KI-Integration zur Inhaltsanalyse und 'Vibe'-Extraktion aus verschiedenen Medienformaten.",
+        "crossMedia": "Medienübergreifend",
+        "crossMediaDesc": "Einzigartige Engine, die Bücher, Filme und Spiele basierend auf künstlerischer Identität verbindet.",
+        "modernStack": "Skalierbarer Stack",
+        "modernStackDesc": "Entwickelt mit Node.js, Express und Prisma für eine robuste, produktionsreife Architektur.",
+        "selectMedia": "Erstellen Sie Ihre Ästhetik durch Auswahl von Medien aus verschiedenen Kategorien.",
+        "getRecommendations": "Erhalten Sie KI-gestützte Empfehlungen, die zu Ihrem Vibe passen.",
+        "saveCollections": "Speichern und organisieren Sie Ihre liebsten ästhetischen Sammlungen."
       }
     }
   },

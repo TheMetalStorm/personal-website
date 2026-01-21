@@ -2,7 +2,13 @@
   "hero": {
     "name": "Simon Arapoglu",
     "title": "Software Developer",
-    "description": "I'm a backend developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser."
+    "description": "I'm a backend developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser.",
+    "stats": {
+      "professional": "+1 Year",
+      "professionalLabel": "Professional Experience",
+      "personal": "+5 Years",
+      "personalLabel": "Personal Experience"
+    }
   },
   "navigation": {
     "home": "Home",
@@ -25,7 +31,13 @@
     "development": "Development",
     "developmentType": "Type",
     "soloDevelopment": "Solo Development",
-    "teamDevelopment": "Team Development"
+    "teamDevelopment": "Team Development",
+    "projectInfo": "Project Information",
+    "type": "Type",
+    "projectTypes": {
+      "website": "Website",
+      "software": "Software Project"
+    }
   },
   "games": {
     "viewCode": "View Code",
@@ -166,7 +178,7 @@
       "features": {
         "echoServer": "Echo Server",
         "echoServerDesc": "TCP Echo Server that reflects client messages back, demonstrating basic client-server communication patterns.",
-        "chatServer": "Chat Server", 
+        "chatServer": "Chat Server",
         "chatServerDesc": "Multi-client chat server enabling real-time communication between connected clients.",
         "concurrentConnections": "Concurrent Connections",
         "concurrentConnectionsDesc": "Support for up to 128 simultaneous client connections using efficient I/O multiplexing.",
@@ -192,6 +204,24 @@
         "emulatorIntegrationDesc": "Seamless integration with SNES emulators like Snes9x, with fullscreen launch options.",
         "userFriendlyInterface": "User-Friendly Interface",
         "userFriendlyInterfaceDesc": "Intuitive Windows Forms interface making ROM hack management accessible to all users."
+      }
+    },
+    "shared-aesthetic": {
+      "title": "Shared Aesthetic",
+      "description": "AI-powered cross-media recommendation website based on 'vibes' and artistic aesthetics.",
+      "fullDescription": "Shared Aesthetic is a cross-media discovery web application that bridges Books, Movies, and Games using shared artistic 'vibes'. By leveraging vector embeddings (PostgreSQL) and semantic analysis (Gemini AI), the platform finds hidden connections between different media types, allowing users to find a movie that feels like their favorite book or a game that matches a specific aesthetic.",
+      "features": {
+        "vectorSearch": "Vector Search",
+        "vectorSearchDesc": "PostgreSQL (pgvector) implementation for deep semantic and aesthetic similarity mapping.",
+        "multimodalAi": "Multimodal AI",
+        "multimodalAiDesc": "Gemini AI integration for content analysis and 'vibe' extraction across different media formats.",
+        "crossMedia": "Cross-Media Discovery",
+        "crossMediaDesc": "Unique engine bridging Books, Movies, and Games based on artistic identity.",
+        "modernStack": "Production-Ready Stack",
+        "modernStackDesc": "Built with Node.js, Express, and Prisma for a robust, production-ready architecture.",
+        "selectMedia": "Build your aesthetic by selecting media across categories.",
+        "getRecommendations": "Get AI-powered recommendations that match your vibe.",
+        "saveCollections": "Save and organize your favorite aesthetic collections."
       }
     }
   },

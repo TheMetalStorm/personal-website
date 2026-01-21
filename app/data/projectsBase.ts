@@ -28,11 +28,47 @@ export interface Project {
   slug: string;
   featured?: boolean;
   developmentType?: 'solo' | 'team';
+  type?: string;
 }
 
 // Base project data (language-neutral) - Server-side safe
 const baseProjects = [
+  {
+    id: "shared-aesthetic",
+    name: "Shared Aesthetic",
+    headerImage: "/media/shared_aesthetic/header.jpeg",
+    image: "/media/shared_aesthetic/preview.jpeg",
+    images: [
       {
+        src: "/media/shared_aesthetic/front_page_media_select.png",
+        alt: "Select Movies, TV Shows, Games and Books to create your aesthetic",
+        captionKey: "selectMedia"
+      },
+      {
+        src: "/media/shared_aesthetic/front_page_recommendations.png",
+        alt: "Get Recommendations",
+        captionKey: "getRecommendations"
+      },
+      {
+        src: "/media/shared_aesthetic/collection_view.png",
+        alt: "Save collections of aesthetics you just can not get enough of",
+        captionKey: "saveCollections"
+      }
+    ],
+    technologies: ["Web Application", "Node.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "Gemini AI"],
+    features: [
+      { title: "vectorSearch", description: "vectorSearchDesc" },
+      { title: "multimodalAi", description: "multimodalAiDesc" },
+      { title: "crossMedia", description: "crossMediaDesc" },
+      { title: "modernStack", description: "modernStackDesc" }
+    ],
+    demoUrl: "https://shared-aesthetic.vercel.app",
+    slug: "shared-aesthetic",
+    featured: true,
+    developmentType: 'solo',
+    type: 'website'
+  },
+  {
     id: "spring-library-api",
     name: "Spring Library Management API",
     image: "/media/spring_library/TechStack.svg",
@@ -69,7 +105,8 @@ const baseProjects = [
     githubUrl: "https://github.com/TheMetalStorm/Spring-Library-Management-API",
     slug: "spring-library-api",
     featured: true,
-    developmentType: 'solo'
+    developmentType: 'solo',
+    type: 'software'
   },
   {
     id: "c8-serenityos",
@@ -112,7 +149,8 @@ const baseProjects = [
     githubUrl: "https://github.com/TheMetalStorm/c8-serenityOS",
     slug: "c8-serenityos",
     featured: true,
-    developmentType: 'solo'
+    developmentType: 'solo',
+    type: 'software'
   },
   {
     id: "zilo",
@@ -150,7 +188,8 @@ const baseProjects = [
     githubUrl: "https://github.com/TheMetalStorm/zilo",
     slug: "zilo",
     featured: true,
-    developmentType: 'solo'
+    developmentType: 'solo',
+    type: 'software'
   },
   {
     id: "socket-fun",
@@ -187,7 +226,8 @@ const baseProjects = [
     githubUrl: "https://github.com/TheMetalStorm/SocketFun",
     slug: "socket-fun",
     featured: false,
-    developmentType: 'solo'
+    developmentType: 'solo',
+    type: 'software'
   },
   {
     id: "world-launcher",
@@ -221,10 +261,10 @@ const baseProjects = [
       { title: "emulatorIntegration", description: "emulatorIntegrationDesc" },
       { title: "userFriendlyInterface", description: "userFriendlyInterfaceDesc" }
     ],
-    githubUrl: "https://github.com/TheMetalStorm/World-Launcher",
     slug: "world-launcher",
     featured: false,
-    developmentType: 'solo'
+    developmentType: 'solo',
+    type: 'software'
   }
 ];
 
@@ -263,6 +303,7 @@ export function localizeProject(baseProject: any, projectTranslations: any): Pro
     title: projectTranslations.title || baseProject.name,
     description: projectTranslations.description || "Missing translation",
     fullDescription: projectTranslations.fullDescription || "Missing translation",
-    features: localizedFeatures
+    features: localizedFeatures,
+    type: projectTranslations.type || baseProject.type
   };
 }
