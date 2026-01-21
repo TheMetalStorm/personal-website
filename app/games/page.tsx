@@ -1,7 +1,7 @@
 import { getBaseGames, localizeGame } from '../data/gamesBase';
 import type { Game } from '../data/gamesBase';
 import Link from 'next/link';
-import { Github, ExternalLink, Play, Gamepad2 } from 'lucide-react';
+import { Github, Play, ArrowLeft, ArrowRight } from 'lucide-react';
 import ItemCard from '../components/ItemCard';
 import type { Metadata } from 'next';
 
@@ -41,38 +41,55 @@ async function loadTranslations(locale: string) {
 export default async function GamesPage() {
   const locale = 'en';
   const translations = await loadTranslations(locale);
-  
+
   const baseGames = getBaseGames();
-  const games = baseGames.map(baseGame => 
+  const games = baseGames.map(baseGame =>
     localizeGame(baseGame, translations?.gamesData?.[baseGame.id])
   );
 
   return (
-    <main className="min-h-screen bg-gray-900 pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <main className="min-h-screen bg-brand-navy relative overflow-hidden pt-24 pb-20">
+      {/* Background Patterns */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,242,255,0.05)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        {/* Animated Scanline */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-brand-blue/20 to-transparent animate-scanline" />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <header className="mb-20">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 text-brand-blue font-outfit font-bold px-4 py-2 bento-glass rounded-xl mb-12 hover:bg-white/5 transition-all"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+
+          <h1 className="text-5xl md:text-7xl font-outfit font-bold text-white mb-6 tracking-tight">
             {translations.games.allGamesTitle}
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
             {translations.games.description}
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {games.map((game: Game) => {
             const badges = [
               { text: game.engine, color: 'blue' as const },
               ...(game.genre ? [{ text: game.genre, color: 'purple' as const }] : []),
-              ...(game.playUrl ? [{ text: translations.games.playableInBrowser, color: 'green' as const }] : []),
-              ...(game.downloadUrl ? [{ text: translations.games.download, color: 'pink' as const }] : [])
+              ...(game.playUrl ? [{ text: translations.games.playableInBrowser, color: 'green' as const }] : [])
             ];
 
             const actions = [
               {
                 href: `/games/${game.slug}`,
                 label: translations.games.viewGame,
-                icon: 'Gamepad2' as const,
+                icon: 'ArrowRight' as any,
                 isPrimary: true,
                 isExternal: false
               },
@@ -91,14 +108,6 @@ export default async function GamesPage() {
                 isPrimary: false,
                 isExternal: true,
                 title: translations.games.viewCode
-              }] : []),
-              ...(game.downloadUrl ? [{
-                href: game.downloadUrl,
-                label: '',
-                icon: 'ExternalLink' as const,
-                isPrimary: false,
-                isExternal: true,
-                title: translations.games.download
               }] : [])
             ];
 
