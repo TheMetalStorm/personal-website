@@ -1,43 +1,69 @@
+:root {
+	--background: #050a14;
+	--foreground: #ffffff;
+	--brand-blue: #00f2ff;
+	--brand-violet: #7000ff;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-	background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-	min-height: 100vh;
+	background-color: var(--background);
+	color: var(--foreground);
+	overflow-x: hidden;
 }
 
-/* Custom animations */
-@keyframes float {
-	0%, 100% { transform: translateY(0px); }
-	50% { transform: translateY(-5px); }
+@layer components {
+	.bento-glass {
+		@apply bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl shadow-2xl;
+		@apply hover:bg-white/10 hover:border-white/20 transition-all duration-500;
+	}
+
+	.bento-glow-blue {
+		&:hover {
+			box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+		}
+	}
+
+	.bento-glow-violet {
+		&:hover {
+			box-shadow: 0 0 30px rgba(112, 0, 255, 0.2);
+		}
+	}
+
+	.text-balance {
+		text-wrap: balance;
+	}
 }
 
-@keyframes glow {
-	0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.15); }
-	50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); }
+/* Custom background patterns */
+.bg-grid-slate-900 {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.3)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
 }
 
-@keyframes shimmer {
-	0% { background-position: -200% 0; }
-	100% { background-position: 200% 0; }
+.bg-dot-matrix {
+	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+	background-size: 20px 20px;
 }
 
-.animate-float {
-	animation: float 3s ease-in-out infinite;
-}
+@layer utilities {
+	.animate-pulse-slow {
+		animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
 
-.animate-glow {
-	animation: glow 2s ease-in-out infinite;
-}
+	@keyframes pulse-slow {
 
-.shimmer {
-	background: linear-gradient(
-		90deg,
-		transparent,
-		rgba(255, 255, 255, 0.1),
-		transparent
-	);
-	background-size: 200% 100%;
-	animation: shimmer 2s infinite;
+		0%,
+		100% {
+			opacity: 1;
+			transform: translateX(-50%) scale(1);
+		}
+
+		50% {
+			opacity: 0.5;
+			transform: translateX(-50%) scale(1.05);
+		}
+	}
 }
