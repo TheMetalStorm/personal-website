@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, Play, FileText, Download, AlertCircle } from 'lucide-react';
 import { ProjectImage } from '../data/projectsBase';
@@ -48,9 +49,9 @@ const VideoPlayer = ({ src, poster, className, controls = false, muted = true, a
         <div className="text-center text-gray-500">
           <AlertCircle className="w-8 h-8 mx-auto mb-2" />
           <p className="text-sm">Video unavailable</p>
-          <a 
-            href={src} 
-            target="_blank" 
+          <a
+            href={src}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-600 text-xs underline"
           >
@@ -108,7 +109,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImageIndex === null) return;
-      
+
       switch (e.key) {
         case 'Escape':
           closeLightbox();
@@ -218,8 +219,8 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
         })}
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedImageIndex !== null && (
+      {/* Lightbox Modal - Portal to escape bento-glass stacking context */}
+      {selectedImageIndex !== null && createPortal(
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
           onClick={closeLightbox}
@@ -261,7 +262,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           {/* Image Container */}
           <div
             className="relative w-full h-full flex items-center justify-center"
-            style={{ 
+            style={{
               maxHeight: 'calc(100vh - 8rem)', /* Reduced space for smaller caption */
               maxWidth: 'calc(100vw - 2rem)',
               marginTop: 'calc(4rem + 1rem)', /* Account for header height */
@@ -276,7 +277,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                   autoPlay
                   muted={false}
                   className="max-w-full max-h-full object-contain"
-                  style={{ 
+                  style={{
                     maxHeight: 'calc(100vh - 10rem)', /* Reduced reserved space */
                     maxWidth: 'calc(100vw - 2rem)'
                   }}
@@ -291,8 +292,8 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                     width={600}
                     height={800}
                     className="object-contain mb-6 border border-gray-300 rounded shadow-lg"
-                    style={{ 
-                      maxHeight: 'calc(100vh - 16rem)', 
+                    style={{
+                      maxHeight: 'calc(100vh - 16rem)',
                       maxWidth: 'calc(100vw - 4rem)',
                       width: 'auto',
                       height: 'auto'
@@ -336,7 +337,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 width={1200}
                 height={800}
                 className="object-contain"
-                style={{ 
+                style={{
                   maxHeight: 'calc(100vh - 10rem)', /* Reduced reserved space */
                   maxWidth: 'calc(100vw - 2rem)',
                   width: 'auto',
@@ -362,7 +363,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
             </div>
           </div>
         </div>
-      )}
+        , document.body)}
     </>
   );
 }
