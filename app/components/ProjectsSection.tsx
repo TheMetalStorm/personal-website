@@ -20,7 +20,7 @@ export default function ProjectsSection() {
 							{t('projects.title')}
 						</h2>
 						<p className="text-slate-400 max-w-xl text-lg">
-							Selection of featured work spanning backend systems and creative tech.
+							{t('projects.featuredDescription')}
 						</p>
 					</div>
 					<Link

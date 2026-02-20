@@ -88,9 +88,11 @@ export default function ItemCard({
           ))}
         </div>
 
-        <h3 className="text-2xl font-outfit font-bold text-white mb-3 group-hover:text-brand-blue transition-colors">
-          {title}
-        </h3>
+        <Link href={primaryAction?.href || '#'}>
+          <h3 className="text-2xl font-outfit font-bold text-white mb-3 group-hover:text-brand-blue transition-colors">
+            {title}
+          </h3>
+        </Link>
 
         <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
           {description}

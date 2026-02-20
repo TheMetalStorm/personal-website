@@ -4,11 +4,14 @@
     "title": "Software-Entwickler",
     "description": "Ich bin ein Backend-Entwickler und baue APIs, Emulatoren und interaktive Spielsysteme. Beruflich habe ich Java/Spring-Reporting-Lösungen entwickelt, relationale und NoSQL-Datenbanken verwaltet und CI/CD-Workflows implementiert. Ich erstelle auch Echtzeit-Gameplay-Systeme und Shader, die Sie direkt in Ihrem Browser erleben können.",
     "stats": {
-      "professional": "+1 Jahr",
+      "professional": "2 Jahre",
       "professionalLabel": "Berufserfahrung",
       "personal": "+5 Jahre",
       "personalLabel": "Private Projekte"
-    }
+    },
+    "viewProjects": "Projekte ansehen",
+    "viewGames": "Spiele ansehen",
+    "available": "Offen für neue Möglichkeiten"
   },
   "navigation": {
     "home": "Startseite",
@@ -23,7 +26,8 @@
     "viewAll": "Alle Projekte ansehen",
     "title": "Ausgewählte Projekte",
     "allProjectsTitle": "Alle Projekte",
-    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe",
+    "description": "Eine Auswahl meiner Projekte",
+    "featuredDescription": "Ausgewählte Arbeiten zu Backend-Systemen und kreativer Technik.",
     "viewProject": "Projekt ansehen",
     "technologies": "Technologien",
     "gallery": "Projektgalerie",
@@ -44,7 +48,8 @@
     "viewAll": "Alle Spiele ansehen",
     "title": "Ausgewählte Spiele",
     "allGamesTitle": "Alle Spiele",
-    "description": "Spiele, die ich in verschiedenen Engines entwickelt habe",
+    "description": "Spiele in verschiedenen Engines entwickelt",
+    "featuredDescription": "Experimentelle Jam-Spiele zu Mechaniken und Shadern.",
     "viewGame": "Spiel ansehen",
     "playGame": "Spiel spielen",
     "playableInBrowser": "Im Browser spielbar",
@@ -93,6 +98,9 @@
   },
   "contact": {
     "resume": "Lebenslauf ansehen",
+    "downloadResume": "Professionellen Lebenslauf herunterladen",
+    "ctaTitle": "Bereit, etwas Großartiges zu bauen?",
+    "ctaSubtitle": "Ich suche aktuell nach neuen Herausforderungen und Kooperationen.",
     "title": "Kontakt aufnehmen",
     "description": "Zögern Sie nicht, sich zu melden, wenn Sie zusammenarbeiten möchten oder einfach nur Hallo sagen wollen!",
     "email": "Kontakt aufnehmen",

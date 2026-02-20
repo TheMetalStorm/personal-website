@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useI18n } from '../hooks/useI18n';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 
 export default function HeroSection() {
-	const { t } = useI18n();
+	const { t, locale } = useI18n();
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
@@ -47,7 +48,8 @@ export default function HeroSection() {
 								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
 								<span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
 							</span>
-							Available for new opportunities
+							{t('hero.available')}
+
 						</motion.div>
 
 						<motion.h1
@@ -65,14 +67,21 @@ export default function HeroSection() {
 							{t('hero.description')}
 						</motion.p>
 
-						<motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
-							<button className="group relative px-6 py-3 bg-brand-blue text-brand-navy font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95">
-								<span className="relative z-10 flex items-center gap-2">
-									View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-								</span>
-								<div className="absolute inset-0 bg-white group-hover:opacity-20 opacity-0 transition-opacity"></div>
-							</button>
-							<div className="flex gap-2">
+						<motion.div variants={itemVariants} className="flex flex-wrap justify-center sm:justify-start items-center gap-3 pt-4">
+							<div className="flex gap-3">
+								<Link href={`/${locale === 'de' ? 'de/' : ''}projects`} className="group relative px-6 py-3 bg-brand-blue text-brand-navy font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95">
+									<span className="relative z-10 flex items-center gap-2">
+										{t('hero.viewProjects')} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+									</span>
+									<div className="absolute inset-0 bg-white group-hover:opacity-20 opacity-0 transition-opacity"></div>
+								</Link>
+								<Link href={`/${locale === 'de' ? 'de/' : ''}games`} className="group relative px-6 py-3 bento-glass text-white font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95">
+									<span className="relative z-10 flex items-center gap-2">
+										{t('hero.viewGames')} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+									</span>
+								</Link>
+							</div>
+							<div className="flex gap-3">
 								<a href="https://github.com/TheMetalStorm" target="_blank" className="p-3 bento-glass rounded-2xl text-slate-400 hover:text-brand-blue hover:scale-110 transition-all">
 									<Github className="w-6 h-6" />
 								</a>
@@ -111,18 +120,18 @@ export default function HeroSection() {
 								</div>
 							</div>
 
-							{/* Floating Stat Card */}
+							{/* Stat Card — below image, always in-flow */}
 							<motion.div
-								animate={{ y: [0, -10, 0] }}
+								animate={{ y: [0, -6, 0] }}
 								transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-								className="absolute -right-32 top-1/2 p-4 bento-glass border-white/10 hidden md:block"
+								className="mt-4 p-4 bento-glass border-white/10"
 							>
-								<div className="flex flex-col gap-3">
+								<div className="flex gap-6">
 									<div className="flex flex-col">
 										<span className="text-brand-lime text-xl font-bold font-outfit leading-tight">{t('hero.stats.professional')}</span>
 										<span className="text-slate-400 text-[10px] uppercase tracking-widest font-bold">{t('hero.stats.professionalLabel')}</span>
 									</div>
-									<div className="h-px bg-white/5 w-full"></div>
+									<div className="w-px bg-white/10 self-stretch"></div>
 									<div className="flex flex-col">
 										<span className="text-brand-blue text-xl font-bold font-outfit leading-tight">{t('hero.stats.personal')}</span>
 										<span className="text-slate-400 text-[10px] uppercase tracking-widest font-bold">{t('hero.stats.personalLabel')}</span>

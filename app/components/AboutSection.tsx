@@ -38,28 +38,28 @@ export default function AboutSection() {
       icon: <User className="w-6 h-6 text-brand-blue" />,
       title: t('about.sections.professional.title'),
       description: t('about.sections.professional.description'),
-      className: 'md:col-span-2'
+      className: 'md:col-span-2 bento-glow-blue'
     },
     {
       id: 'experience',
       icon: <Database className="w-6 h-6 text-brand-violet" />,
       title: t('about.sections.experience.title'),
       description: t('about.sections.experience.description'),
-      className: 'md:col-span-1'
+      className: 'md:col-span-1 bento-glow-violet'
     },
     {
       id: 'projects',
       icon: <Code className="w-6 h-6 text-brand-lime" />,
       title: t('about.sections.projects.title'),
       description: t('about.sections.projects.description'),
-      className: 'md:col-span-1'
+      className: 'md:col-span-1 bento-glow-lime'
     },
     {
       id: 'philosophy',
       icon: <Cpu className="w-6 h-6 text-white" />,
       title: t('about.sections.philosophy.title'),
       description: t('about.sections.philosophy.description'),
-      className: 'md:col-span-2'
+      className: 'md:col-span-2 bento-glow-white'
     }
   ];
 
@@ -88,10 +88,10 @@ export default function AboutSection() {
           >
             <div className="relative z-10">
               <h3 className="text-2xl lg:text-3xl font-outfit font-bold text-brand-navy mb-2">
-                Ready to build something amazing?
+                {t('contact.ctaTitle')}
               </h3>
               <p className="text-brand-navy/70 font-medium">
-                I'm currently looking for new challenges and collaborations.
+                {t('contact.ctaSubtitle')}
               </p>
             </div>
             <button

@@ -77,7 +77,7 @@ export default function ContactSection() {
 								</div>
 								<div>
 									<h3 className="text-xl font-bold text-white">Curriculum Vitae</h3>
-									<p className="text-slate-400 text-sm">Download professional resume</p>
+									<p className="text-slate-400 text-sm">{t('contact.downloadResume')}</p>
 								</div>
 							</div>
 							<button

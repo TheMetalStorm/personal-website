@@ -33,6 +33,18 @@ body {
 		}
 	}
 
+	.bento-glow-lime {
+		&:hover {
+			box-shadow: 0 0 30px rgba(212, 255, 0, 0.15);
+		}
+	}
+
+	.bento-glow-white {
+		&:hover {
+			box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+		}
+	}
+
 	.text-balance {
 		text-wrap: balance;
 	}

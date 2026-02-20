@@ -56,7 +56,7 @@ export default function SkillsSection() {
 			title: t('skills.gameDev'),
 			icon: <Gamepad2 className="w-6 h-6 text-brand-lime" />,
 			skills: ['Unity', 'HLSL', 'Shader Graph', 'Godot'],
-			className: 'lg:col-span-1 border-brand-lime/10',
+			className: 'lg:col-span-1 border-brand-lime/10 bento-glow-lime',
 		},
 		{
 			title: t('skills.systems'),
@@ -68,7 +68,7 @@ export default function SkillsSection() {
 			title: t('skills.other'),
 			icon: <Layers className="w-6 h-6 text-white" />,
 			skills: ['Ubuntu', 'PowerShell', 'REST APIs', 'Cloud'],
-			className: 'lg:col-span-1',
+			className: 'lg:col-span-1 bento-glow-white',
 		}
 	];
 

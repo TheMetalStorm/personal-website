@@ -4,11 +4,14 @@
     "title": "Software Developer",
     "description": "I'm a backend developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser.",
     "stats": {
-      "professional": "+1 Year",
+      "professional": "2 Years",
       "professionalLabel": "Professional Experience",
       "personal": "+5 Years",
       "personalLabel": "Personal Experience"
-    }
+    },
+    "viewProjects": "View Projects",
+    "viewGames": "View Games",
+    "available": "Available for new opportunities"
   },
   "navigation": {
     "home": "Home",
@@ -24,6 +27,7 @@
     "title": "Featured Projects",
     "allProjectsTitle": "All Projects",
     "description": "Here are some of the projects I've worked on",
+    "featuredDescription": "Selection of featured work spanning backend systems and creative tech.",
     "viewProject": "View Project",
     "technologies": "Technologies",
     "gallery": "Project Gallery",
@@ -45,6 +49,7 @@
     "title": "Featured Games",
     "allGamesTitle": "All Games",
     "description": "Games I've developed in different engines",
+    "featuredDescription": "Experimental and jam games exploring mechanics and shaders.",
     "viewGame": "View Game",
     "playGame": "Play Game",
     "playableInBrowser": "Playable in browser",
@@ -93,6 +98,9 @@
   },
   "contact": {
     "resume": "View Resume",
+    "downloadResume": "Download professional resume",
+    "ctaTitle": "Ready to build something amazing?",
+    "ctaSubtitle": "I'm currently looking for new challenges and collaborations.",
     "title": "Get In Touch",
     "description": "Feel free to reach out if you'd like to collaborate or just want to say hello!",
     "email": "Get in Touch",

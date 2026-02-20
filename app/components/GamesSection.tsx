@@ -20,7 +20,7 @@ export default function GamesSection() {
 							{t('games.title')}
 						</h2>
 						<p className="text-slate-400 max-w-xl text-lg">
-							Experimental and jam games exploring mechanics and shaders.
+							{t('games.featuredDescription')}
 						</p>
 					</div>
 					<Link
