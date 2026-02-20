@@ -48,27 +48,10 @@ export default async function GamesPage() {
   );
 
   return (
-    <main className="min-h-screen bg-brand-navy relative overflow-hidden pt-24 pb-20">
-      {/* Background Patterns */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,242,255,0.05)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        {/* Animated Scanline */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-brand-blue/20 to-transparent animate-scanline" />
-        </div>
-      </div>
+    <main className="min-h-screen bg-gray-900 relative overflow-hidden pt-24 pb-20">
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <header className="mb-20">
-          <Link
-            href="/"
-            className="group inline-flex items-center gap-2 text-brand-blue font-outfit font-bold px-4 py-2 bento-glass rounded-xl mb-12 hover:bg-white/5 transition-all"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
-          </Link>
-
           <h1 className="text-5xl md:text-7xl font-outfit font-bold text-white mb-6 tracking-tight">
             {translations.games.allGamesTitle}
           </h1>

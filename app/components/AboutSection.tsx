@@ -84,7 +84,7 @@ export default function AboutSection() {
           <div
             ref={ctaRef}
             style={ctaStyle}
-            className="p-8 bg-brand-blue rounded-3xl md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-8 h-48 overflow-hidden relative group"
+            className="p-8 bg-brand-blue rounded-3xl md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-8 min-h-48 overflow-hidden relative group"
           >
             <div className="relative z-10">
               <h3 className="text-2xl lg:text-3xl font-outfit font-bold text-brand-navy mb-2">

@@ -24,7 +24,7 @@ export default {
         'float-medium': 'float 5s ease-in-out infinite',
         'float-fast': 'float 3s ease-in-out infinite',
         'reveal': 'reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'scanline': 'scanline 6s linear infinite',
+
       },
       keyframes: {
         float: {
@@ -35,10 +35,7 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0px)' },
         },
-        scanline: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100%)' },
-        },
+
       },
     },
   },

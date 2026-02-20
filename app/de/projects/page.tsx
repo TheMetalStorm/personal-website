@@ -9,18 +9,18 @@ import ItemCard from '../../components/ItemCard';
 export default function GermanProjectsPage() {
   const { t, translations } = useI18n();
   const allProjects = getAllProjects(translations);
-  
+
   return (
-    <main className="min-h-screen bg-gray-900 pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <main className="min-h-screen bg-gray-900 relative overflow-hidden pt-24 pb-20">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <header className="mb-20">
+          <h1 className="text-5xl md:text-7xl font-outfit font-bold text-white mb-6 tracking-tight">
             {t('projects.allProjectsTitle')}
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
             {t('projects.description')}
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allProjects.map((project) => {

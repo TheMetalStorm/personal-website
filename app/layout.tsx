@@ -137,11 +137,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-x-hidden min-h-screen`}>
-				{/* Global Ambient Glow */}
-				<div className="fixed inset-0 pointer-events-none z-0">
-					<div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[100%] h-[60%] bg-brand-blue/5 blur-[120px] rounded-full animate-pulse-slow"></div>
-					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[80%] h-[50%] bg-brand-violet/5 blur-[120px] rounded-full"></div>
-				</div>
+
 
 				<I18nProvider>
 					<Header />
