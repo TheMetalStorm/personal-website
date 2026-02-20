@@ -1,11 +1,36 @@
 'use client';
 
 import { useI18n } from '../hooks/useI18n';
-import { User, Code, Database, Cpu, Gamepad2, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useScrollSlide } from '../hooks/useScrollSlide';
+import { User, Code, Database, Cpu, ArrowRight } from 'lucide-react';
+
+function AboutCard({ section, index }: { section: { id: string; icon: React.ReactNode; title: string; description: string; className: string }; index: number }) {
+  const { ref, style } = useScrollSlide(30, index * 0.08);
+
+  return (
+    <div
+      ref={ref}
+      style={style}
+      className={`p-8 bento-glass group ${section.className}`}
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
+          {section.icon}
+        </div>
+        <h3 className="text-xl font-outfit font-bold text-white uppercase tracking-tight">
+          {section.title}
+        </h3>
+      </div>
+      <p className="text-slate-400 leading-relaxed text-sm lg:text-base">
+        {section.description}
+      </p>
+    </div>
+  );
+}
 
 export default function AboutSection() {
   const { t } = useI18n();
+  const { ref: ctaRef, style: ctaStyle } = useScrollSlide(30, 0.3);
 
   const sections = [
     {
@@ -52,34 +77,13 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sections.map((section, i) => (
-            <motion.div
-              key={section.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`p-8 bento-glass group ${section.className}`}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
-                  {section.icon}
-                </div>
-                <h3 className="text-xl font-outfit font-bold text-white uppercase tracking-tight">
-                  {section.title}
-                </h3>
-              </div>
-              <p className="text-slate-400 leading-relaxed text-sm lg:text-base">
-                {section.description}
-              </p>
-            </motion.div>
+            <AboutCard key={section.id} section={section} index={i} />
           ))}
 
           {/* Quick Highlight Bento Tile */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+          <div
+            ref={ctaRef}
+            style={ctaStyle}
             className="p-8 bg-brand-blue rounded-3xl md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-8 h-48 overflow-hidden relative group"
           >
             <div className="relative z-10">
@@ -102,7 +106,7 @@ export default function AboutSection() {
               Let's Talk <ArrowRight className="w-5 h-5" />
             </button>
             <div className="absolute top-0 right-0 h-full w-1/3 bg-white/10 -skew-x-12 translate-x-1/2 group-hover:translate-x-1/3 transition-transform duration-1000"></div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

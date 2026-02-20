@@ -2,8 +2,6 @@ import os
 import subprocess
 import sys
 
-from openai import project
-
 if __name__ == "__main__":
     if len(sys.argv) <= 3: exit("Usage: python ftp_upload.py [project] [folder] [remote_path]")
 

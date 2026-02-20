@@ -1,8 +1,40 @@
 'use client';
 
 import { useI18n } from '../hooks/useI18n';
-import { motion } from 'framer-motion';
+import { useScrollSlide } from '../hooks/useScrollSlide';
 import { Code2, Database, Gamepad2, Layers, Monitor } from 'lucide-react';
+
+function SkillCard({ cat, index }: { cat: { title: string; icon: React.ReactNode; skills: string[]; className: string }; index: number }) {
+	const { ref, style } = useScrollSlide(30, index * 0.08);
+
+	return (
+		<div
+			ref={ref}
+			style={style}
+			className={`p-8 bento-glass group ${cat.className}`}
+		>
+			<div className="flex items-center gap-4 mb-6">
+				<div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
+					{cat.icon}
+				</div>
+				<h3 className="text-xl font-outfit font-bold text-white uppercase tracking-tight">
+					{cat.title}
+				</h3>
+			</div>
+
+			<div className="flex flex-wrap gap-2">
+				{cat.skills.map(skill => (
+					<span
+						key={skill}
+						className="px-3 py-1.5 bg-white/5 rounded-xl text-sm font-medium text-slate-300 border border-white/5 group-hover:border-white/10 transition-colors"
+					>
+						{skill}
+					</span>
+				))}
+			</div>
+		</div>
+	);
+}
 
 export default function SkillsSection() {
 	const { t } = useI18n();
@@ -54,34 +86,7 @@ export default function SkillsSection() {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{categories.map((cat, i) => (
-						<motion.div
-							key={cat.title}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ delay: i * 0.1, duration: 0.5 }}
-							className={`p-8 bento-glass group ${cat.className}`}
-						>
-							<div className="flex items-center gap-4 mb-6">
-								<div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
-									{cat.icon}
-								</div>
-								<h3 className="text-xl font-outfit font-bold text-white uppercase tracking-tight">
-									{cat.title}
-								</h3>
-							</div>
-
-							<div className="flex flex-wrap gap-2">
-								{cat.skills.map(skill => (
-									<span
-										key={skill}
-										className="px-3 py-1.5 bg-white/5 rounded-xl text-sm font-medium text-slate-300 border border-white/5 group-hover:border-white/10 transition-colors"
-									>
-										{skill}
-									</span>
-								))}
-							</div>
-						</motion.div>
+						<SkillCard key={cat.title} cat={cat} index={i} />
 					))}
 				</div>
 			</div>

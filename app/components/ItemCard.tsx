@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useScrollSlide } from '../hooks/useScrollSlide';
 import { Code2, Gamepad2, Github, ExternalLink, Play, ArrowUpRight } from 'lucide-react';
 
 interface Badge {
@@ -50,14 +50,13 @@ export default function ItemCard({
   hoverColor = 'blue'
 }: ItemCardProps) {
   const glowClass = hoverColor === 'blue' ? 'bento-glow-blue' : 'bento-glow-violet';
-
   const primaryAction = actions.find(a => a.isPrimary);
+  const { ref, style } = useScrollSlide(30);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <div
+      ref={ref}
+      style={style}
       className={`group bento-glass overflow-hidden flex flex-col h-full ${glowClass}`}
     >
       <Link href={primaryAction?.href || '#'} className="relative aspect-[16/10] overflow-hidden block">
@@ -128,6 +127,6 @@ export default function ItemCard({
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
