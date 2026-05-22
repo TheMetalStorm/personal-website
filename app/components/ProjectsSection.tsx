@@ -68,6 +68,7 @@ export default function ProjectsSection() {
 								actions={actions}
 								type="project"
 								hoverColor="purple"
+								imageContain={project.imageContain}
 							/>
 						);
 					})}

@@ -11,7 +11,8 @@
     },
     "viewProjects": "View Projects",
     "viewGames": "View Games",
-    "available": "Available for new opportunities"
+    "available": "Available for new opportunities",
+    "spotlight": "Spotlight"
   },
   "navigation": {
     "home": "Home",
@@ -36,6 +37,7 @@
     "developmentType": "Type",
     "soloDevelopment": "Solo Development",
     "teamDevelopment": "Team Development",
+    "freelanceDevelopment": "Freelance Project",
     "projectInfo": "Project Information",
     "type": "Type",
     "projectTypes": {
@@ -117,6 +119,25 @@
     "title": "Key Features"
   },
   "projectsData": {
+    "ara-commodities": {
+      "title": "ARA Commodities Website",
+      "description": "A high-performance corporate multi-language website built with Astro and Contentful CMS.",
+      "fullDescription": "ARA Commodities is a comprehensive, production-ready corporate website built for an energy and commodity trading firm. Developed during a professional freelance engagement, the website features automatic browser-based language routing between English and German, a modern visual style tailored to the energy sector, and a dynamic integration with Contentful CMS to manage and deliver agricultural/renewable products and company values seamlessly.",
+      "imagesCaptions": {
+        "brandLogo": "ARA Commodities typography and visual logo",
+        "homePage": "ARA Commodities Website Home Page showcasing the modern shipping port theme"
+      },
+      "features": {
+        "i18nRouting": "Intelligent i18n Routing",
+        "i18nRoutingDesc": "Automatic browser language detection paired with manual locale switching and synchronized URL structures.",
+        "contentfulCms": "Contentful CMS Integration",
+        "contentfulCmsDesc": "Structured content schema to dynamically fetch and render articles.",
+        "responsiveDesign": "Premium Responsive UI",
+        "responsiveDesignDesc": "An elegant, bespoke dark-blue visual identity built with custom interactive components and fluid typography.",
+        "netlifySsr": "Netlify SSR & Adaptability",
+        "netlifySsrDesc": "Server-side rendering (SSR) deployment setup on Netlify ensuring highly optimized performance and SEO metrics."
+      }
+    },
     "zilo": {
       "title": "Zilo Text Editor",
       "description": "A reimplementation of the kilo Text Editor, written in the Zig Programming language.",

@@ -31,6 +31,7 @@ interface ItemCardProps {
   actions: ActionButton[];
   type: 'game' | 'project';
   hoverColor?: 'blue' | 'purple';
+  imageContain?: boolean;
 }
 
 const iconMap = {
@@ -47,7 +48,8 @@ export default function ItemCard({
   image,
   technologies,
   actions,
-  hoverColor = 'blue'
+  hoverColor = 'blue',
+  imageContain = false
 }: ItemCardProps) {
   const glowClass = hoverColor === 'blue' ? 'bento-glow-blue' : 'bento-glow-violet';
   const primaryAction = actions.find(a => a.isPrimary);
@@ -59,12 +61,12 @@ export default function ItemCard({
       style={style}
       className={`group bento-glass overflow-hidden flex flex-col h-full ${glowClass}`}
     >
-      <Link href={primaryAction?.href || '#'} className="relative aspect-[16/10] overflow-hidden block">
+      <Link href={primaryAction?.href || '#'} className={`relative aspect-[16/10] overflow-hidden block ${imageContain ? 'bg-slate-950' : ''}`}>
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+          className={`${imageContain ? 'object-contain p-6' : 'object-cover'} group-hover:scale-110 transition-transform duration-700 ease-out`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 

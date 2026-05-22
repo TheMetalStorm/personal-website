@@ -27,12 +27,44 @@ export interface Project {
   githubUrl?: string;
   slug: string;
   featured?: boolean;
-  developmentType?: 'solo' | 'team';
+  developmentType?: 'solo' | 'team' | 'freelance';
+  imageContain?: boolean;
   type?: string;
 }
 
 // Base project data (language-neutral) - Server-side safe
 const baseProjects = [
+  {
+    id: "ara-commodities",
+    name: "ARA Commodities",
+    headerImage: "/media/ara_commodities/AraWebsiteMainPage.png",
+    image: "/media/ara_commodities/Ara Logo with Text.webp",
+    images: [
+      {
+        src: "/media/ara_commodities/Ara Logo with Text.webp",
+        alt: "ARA Commodities Brand Logo",
+        captionKey: "brandLogo"
+      },
+      {
+        src: "/media/ara_commodities/AraWebsiteMainPage.png",
+        alt: "ARA Commodities Website Home Page",
+        captionKey: "homePage"
+      }
+    ],
+    technologies: ["Astro", "Contentful CMS", "TypeScript", "Netlify SSR", "Vanilla CSS"],
+    features: [
+      { title: "i18nRouting", description: "i18nRoutingDesc" },
+      { title: "contentfulCms", description: "contentfulCmsDesc" },
+      { title: "responsiveDesign", description: "responsiveDesignDesc" },
+      { title: "netlifySsr", description: "netlifySsrDesc" }
+    ],
+    demoUrl: "https://ara-commodities.com",
+    slug: "ara-commodities",
+    featured: true,
+    developmentType: 'freelance',
+    imageContain: true,
+    type: 'website'
+  },
   {
     id: "shared-aesthetic",
     name: "Shared Aesthetic",
@@ -187,7 +219,7 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/zilo",
     slug: "zilo",
-    featured: true,
+    featured: false,
     developmentType: 'solo',
     type: 'software'
   },

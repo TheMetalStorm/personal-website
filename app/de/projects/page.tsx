@@ -66,6 +66,7 @@ export default function GermanProjectsPage() {
                 actions={actions}
                 type="project"
                 hoverColor="purple"
+                imageContain={project.imageContain}
               />
             );
           })}

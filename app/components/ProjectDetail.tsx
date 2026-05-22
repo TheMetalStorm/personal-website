@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Code2, Calendar, Tag, Home, User, Users } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Code2, Calendar, Tag, Home, User, Users, Briefcase } from 'lucide-react';
 import { Project } from '../data/projectsBase';
 import { getProjectBySlug } from '../data/projectsClient';
 import ImageGallery from './ImageGallery';
@@ -174,8 +174,18 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
                     {t('projects.development')}
                   </span>
                   <div className="flex items-center gap-2 text-white font-outfit font-semibold text-lg">
-                    {project.developmentType === 'team' ? <Users className="w-5 h-5 text-brand-violet" /> : <User className="w-5 h-5 text-brand-blue" />}
-                    {project.developmentType === 'team' ? t('projects.teamDevelopment') : t('projects.soloDevelopment')}
+                    {project.developmentType === 'freelance' ? (
+                      <Briefcase className="w-5 h-5 text-brand-lime" />
+                    ) : project.developmentType === 'team' ? (
+                      <Users className="w-5 h-5 text-brand-violet" />
+                    ) : (
+                      <User className="w-5 h-5 text-brand-blue" />
+                    )}
+                    {project.developmentType === 'freelance'
+                      ? t('projects.freelanceDevelopment')
+                      : project.developmentType === 'team'
+                      ? t('projects.teamDevelopment')
+                      : t('projects.soloDevelopment')}
                   </div>
                 </div>
               </div>
