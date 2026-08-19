@@ -192,8 +192,8 @@
         "cpuEmulationDesc": "Emulation of the LR35902 CPU (Sharp SM83 core) with a No-MBC 32 KiB cartridge setup.",
         "debugger": "Interactive Debugger",
         "debuggerDesc": "Set breakpoints by clicking memory cells, restart, single-step and fast-step the emulated CPU live, inspect registers and memory, and view the Tile, Background, Window and Object viewers.",
-        "noMbc": "No MBC Cartridge Support",
-        "noMbcDesc": "Direct 32 KiB ROM loading without memory bank controllers.",
+        "joypadInput": "Joypad Input",
+        "joypadInputDesc": "Keyboard controls mapped to the Game Boy joypad: D-pad, A/B buttons, Start and Select.",
         "frameRenderer": "OpenGL Frame Rendering",
         "frameRendererDesc": "Frame rendering in OpenGL via GLFW and Dear ImGui with a windowed display."
       }
