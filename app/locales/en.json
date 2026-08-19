@@ -93,7 +93,8 @@
   "commercial": {
     "description": "Commercially developed work: client projects and products.",
     "visitWebsite": "Visit website",
-    "moreDetails": "More details"
+    "moreDetails": "More details",
+    "moreComingSoon": "More commercial work is coming soon."
   },
   "games": {
     "viewCode": "View Code",

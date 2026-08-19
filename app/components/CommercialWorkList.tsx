@@ -26,7 +26,8 @@ export default function CommercialWorkList() {
 			{projects.length === 0 ? (
 				<p className="term-dim text-[15px]">- {t('landing.commercialSoon')}</p>
 			) : (
-				<div className="space-y-12">
+				<>
+					<div className="space-y-12">
 					{projects.map((project) => (
 						<article key={project.id} className="term-border border">
 							{(project.headerImage || project.image) && (
@@ -52,6 +53,10 @@ export default function CommercialWorkList() {
 						</article>
 					))}
 				</div>
+				<p className="term-dim mt-10 text-[13px]">
+					<span className="term-accent">$</span> {t('commercial.moreComingSoon')}
+				</p>
+				</>
 			)}
 			<LegalFooter />
 		</main>
