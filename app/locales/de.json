@@ -191,11 +191,11 @@
         "cpuEmulation": "CPU-Emulation",
         "cpuEmulationDesc": "Emulation der LR35902-CPU (Sharp SM83-Kern) mit einem No-MBC-32-KiB-Cartridge-Aufbau.",
         "debugger": "Interaktiver Debugger",
-        "debuggerDesc": "Breakpoints per Klick auf Speicherzellen setzen, die emulierte CPU neu starten, im Einzelschritt und Schnellschritt ausführen, Register und Speicher inspizieren sowie Tile-, Background-, Window- und Objekt-Viewer anzeigen.",
-        "ppuTiming": "PPU-Zustandsmaschine",
-        "ppuTimingDesc": "Emuliert die PPU-Scanline-Zustandsmaschine (OAM-Suche, Pixeltransfer, HBlank, VBlank) mit modusbasiertem Timing und STAT- sowie LY=LYC-Interrupt-Handling.",
+        "debuggerDesc": "Breakpoints per Klick auf Speicherzellen setzen, die emulierte CPU neu starten, im Einzelschritt und Schnellschritt ausführen und Register und Speicher inspizieren.",
+        "vramViewers": "Echtzeit-VRAM-Viewer",
+        "vramViewersDesc": "GPU-beschleunigte Tile-, Background-, Window- und Objekt-Viewer (Sprites), die den Live-VRAM-Inhalt direkt in den Debugger rendern.",
         "frameRenderer": "OpenGL-Frame-Rendering",
-        "frameRendererDesc": "Frame-Rendering in OpenGL über GLFW und Dear ImGui mit Fensterdarstellung."
+        "frameRendererDesc": "Rekonstruiert die Background-, Window- und Objekt-Layer und lädt den kompletten Frame bei VBlank hoch, gerendert in OpenGL über GLFW und Dear ImGui."
       }
     },
     "ara-commodities": {
