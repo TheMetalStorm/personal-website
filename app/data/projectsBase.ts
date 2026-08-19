@@ -40,6 +40,20 @@ const baseProjects = [
     id: "joyboy",
     name: "JoyBoy",
     technologies: ["Go", "OpenGL", "GLFW", "Dear ImGui", "Game Boy Emulation"],
+    images: [
+      {
+        src: "/media/joyboy/gb_tetris.mp4",
+        alt: "Tetris running on the JoyBoy emulator",
+        captionKey: "tetris",
+        type: "video"
+      },
+      {
+        src: "/media/joyboy/gb_debugger.mp4",
+        alt: "JoyBoy interactive debugger showing breakpoints and VRAM viewers",
+        captionKey: "debugger",
+        type: "video"
+      }
+    ],
     features: [
       { title: "cpuEmulation", description: "cpuEmulationDesc" },
       { title: "debugger", description: "debuggerDesc" },

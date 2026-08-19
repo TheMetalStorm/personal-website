@@ -183,11 +183,15 @@
       "title": "JoyBoy",
       "description": "Ein Game-Boy-Emulator in Go geschrieben, mit interaktivem Debugger und OpenGL-Rendering.",
       "fullDescription": "JoyBoy ist ein in Go geschriebener Game-Boy-Emulator, veröffentlicht als Version 0.1. Er emuliert die LR35902-CPU mit einem No-MBC-Aufbau (32 KiB) und rendert Frames in OpenGL mit GLFW und Dear ImGui. Ein interaktiver Debugger erlaubt es, die emulierte CPU zu pausieren, Schritt für Schritt auszuführen und neu zu starten; das Joypad wird auf Tastatursteuerung abgebildet. JoyBoy wurde mit handgetesteten Tetris- und Dr.-Mario-ROMs verifiziert und lädt sein ROM über einen fest verdrahteten Pfad - eine vollständige Cartridge- und Sound-Implementierung ist für zukünftige Versionen geplant.",
+      "imagesCaptions": {
+        "tetris": "Tetris läuft auf dem JoyBoy-Emulator",
+        "debugger": "Der interaktive Debugger: Breakpoints per Klick auf Speicherzellen setzen, Neustart (F7), Einzelschritt (F5) und Schnellschritt (F6), CPU-Register und Speicherbereiche inspizieren sowie Tile-Viewer, Background- und Window-Maps und den Objekt-Viewer (Sprites) anzeigen."
+      },
       "features": {
         "cpuEmulation": "CPU-Emulation",
         "cpuEmulationDesc": "Emulation der LR35902-CPU (Sharp SM83-Kern) mit einem No-MBC-32-KiB-Cartridge-Aufbau.",
         "debugger": "Interaktiver Debugger",
-        "debuggerDesc": "Pause, Einzelschritt, Schnellschritt und Neustart der emulierten CPU live, mit Ansicht von Speicher und Registern.",
+        "debuggerDesc": "Breakpoints per Klick auf Speicherzellen setzen, die emulierte CPU neu starten, im Einzelschritt und Schnellschritt ausführen, Register und Speicher inspizieren sowie Tile-, Background-, Window- und Objekt-Viewer anzeigen.",
         "noMbc": "No-MBC-Cartridge-Support",
         "noMbcDesc": "Direktes Laden von 32-KiB-ROMs ohne Memory-Bank-Controller.",
         "frameRenderer": "OpenGL-Frame-Rendering",
