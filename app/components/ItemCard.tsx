@@ -25,7 +25,7 @@ interface ItemCardProps {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   badges: Badge[];
   technologies: string[];
   actions: ActionButton[];
@@ -61,22 +61,24 @@ export default function ItemCard({
       style={style}
       className={`group bento-glass overflow-hidden flex flex-col h-full ${glowClass}`}
     >
-      <Link href={primaryAction?.href || '#'} className={`relative aspect-[16/10] overflow-hidden block ${imageContain ? 'bg-slate-950' : ''}`}>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className={`${imageContain ? 'object-contain p-6' : 'object-cover'} group-hover:scale-110 transition-transform duration-700 ease-out`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      {image && (
+        <Link href={primaryAction?.href || '#'} className={`relative aspect-[16/10] overflow-hidden block ${imageContain ? 'bg-slate-950' : ''}`}>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className={`${imageContain ? 'object-contain p-6' : 'object-cover'} group-hover:scale-110 transition-transform duration-700 ease-out`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-90 group-hover:scale-100">
-          <div className="p-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">
-            <ArrowUpRight className="w-8 h-8 text-white" />
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-90 group-hover:scale-100">
+            <div className="p-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">
+              <ArrowUpRight className="w-8 h-8 text-white" />
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      )}
 
       <div className="p-8 flex flex-col flex-grow">
         <div className="flex flex-wrap gap-2 mb-4">

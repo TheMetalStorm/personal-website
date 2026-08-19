@@ -33,6 +33,8 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const translations = await loadTranslations(locale);
   const project = localizeProject(baseProject, translations?.projectsData?.[baseProject.id]);
 
+  const projectImage = project.headerImage || project.image;
+
   return {
     title: project.title,
     description: project.description,
@@ -46,14 +48,18 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     openGraph: {
       title: `${project.title} - Simon Arapoglu`,
       description: project.description,
-      images: [
-        {
-          url: project.headerImage || project.image,
-          width: 1200,
-          height: 630,
-          alt: project.title,
-        },
-      ],
+      ...(projectImage
+        ? {
+            images: [
+              {
+                url: projectImage,
+                width: 1200,
+                height: 630,
+                alt: project.title,
+              },
+            ],
+          }
+        : {}),
       type: 'article',
     },
   };

@@ -18,8 +18,8 @@ export interface Project {
   title: string;
   description: string;
   fullDescription: string;
-  image: string; // Preview card image
-  headerImage?: string; // Detail page header image (falls back to image if not specified)
+  image?: string; // Optional preview card image (card omits media block when absent)
+  headerImage?: string; // Optional detail page header image (falls back to image if not specified)
   images?: ProjectImage[];
   technologies: string[];
   features?: ProjectFeature[];
@@ -36,6 +36,22 @@ export interface Project {
 
 // Base project data (language-neutral) - Server-side safe
 const baseProjects = [
+  {
+    id: "joyboy",
+    name: "JoyBoy",
+    technologies: ["Go", "OpenGL", "GLFW", "Dear ImGui", "Game Boy Emulation"],
+    features: [
+      { title: "cpuEmulation", description: "cpuEmulationDesc" },
+      { title: "debugger", description: "debuggerDesc" },
+      { title: "noMbc", description: "noMbcDesc" },
+      { title: "frameRenderer", description: "frameRendererDesc" }
+    ],
+    githubUrl: "https://github.com/TheMetalStorm/joyboy",
+    slug: "joyboy",
+    featured: true,
+    developmentType: "solo",
+    type: "software"
+  },
   {
     id: "ara-commodities",
     name: "ARA Commodities",

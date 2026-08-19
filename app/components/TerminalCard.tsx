@@ -9,8 +9,8 @@ export interface TerminalCardAction {
 
 interface TerminalCardProps {
 	href: string;
-	image: string;
-	imageAlt: string;
+	image?: string;
+	imageAlt?: string;
 	imageContain?: boolean;
 	title: string;
 	description: string;
@@ -32,16 +32,18 @@ export default function TerminalCard({
 }: TerminalCardProps) {
 	return (
 		<article className="term-border flex h-full flex-col border">
-			<Link href={href} className="term-border block overflow-hidden border-b">
-				<div className={`relative aspect-[16/10] ${imageContain ? 'p-4' : ''}`} style={{ background: 'var(--terminal-bg)' }}>
-					{/* eslint-disable-next-line @next/next/no-img-element */}
-					<img
-						src={image}
-						alt={imageAlt}
-						className={`h-full w-full ${imageContain ? 'object-contain' : 'object-cover'}`}
-					/>
-				</div>
-			</Link>
+			{image && (
+				<Link href={href} className="term-border block overflow-hidden border-b">
+					<div className={`relative aspect-[16/10] ${imageContain ? 'p-4' : ''}`} style={{ background: 'var(--terminal-bg)' }}>
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img
+							src={image}
+							alt={imageAlt || title}
+							className={`h-full w-full ${imageContain ? 'object-contain' : 'object-cover'}`}
+						/>
+					</div>
+				</Link>
+			)}
 
 			<div className="flex flex-1 flex-col p-5">
 				<Link href={href} className="term-title text-lg font-semibold sm:text-xl">{title}</Link>

@@ -29,10 +29,12 @@ export default function CommercialWorkList() {
 				<div className="space-y-12">
 					{projects.map((project) => (
 						<article key={project.id} className="term-border border">
-							<div className="term-border border-b">
-								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src={project.headerImage || project.image} alt={project.title} className="w-full" />
-							</div>
+							{(project.headerImage || project.image) && (
+								<div className="term-border border-b">
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img src={project.headerImage || project.image} alt={project.title} className="w-full" />
+								</div>
+							)}
 							<div className="p-5 sm:p-7">
 								<h2 className="term-name text-xl font-semibold sm:text-2xl">{project.title}</h2>
 								<p className="term-desc mt-3 max-w-2xl text-sm leading-relaxed sm:text-[15px]">{project.description}</p>

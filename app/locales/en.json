@@ -179,6 +179,21 @@
     "title": "Key Features"
   },
   "projectsData": {
+    "joyboy": {
+      "title": "JoyBoy",
+      "description": "A Game Boy emulator written in Go, featuring an interactive debugger and OpenGL rendering.",
+      "fullDescription": "JoyBoy is a Game Boy emulator written in Go, released as version 0.1. It emulates the LR35902 CPU with a No-MBC (32 KiB) cartridge setup and renders frames in OpenGL using GLFW and Dear ImGui. It ships with an interactive debugger that lets you pause, single-step and restart the emulated CPU, and the joypad maps to keyboard controls. JoyBoy is verified with hand-tested Tetris and Dr. Mario ROMs and is built from a hardcoded ROM path - a full cartridge and sound implementation is planned for future versions.",
+      "features": {
+        "cpuEmulation": "CPU Emulation",
+        "cpuEmulationDesc": "Emulation of the LR35902 CPU (Sharp SM83 core) with a No-MBC 32 KiB cartridge setup.",
+        "debugger": "Interactive Debugger",
+        "debuggerDesc": "Pause, single-step, fast-step and restart the emulated CPU live, with memory and register state inspection.",
+        "noMbc": "No MBC Cartridge Support",
+        "noMbcDesc": "Direct 32 KiB ROM loading without memory bank controllers.",
+        "frameRenderer": "OpenGL Frame Rendering",
+        "frameRendererDesc": "Frame rendering in OpenGL via GLFW and Dear ImGui with a windowed display."
+      }
+    },
     "ara-commodities": {
       "title": "ARA Commodities Website",
       "description": "A high-performance corporate multi-language website built with Astro and Contentful CMS.",

@@ -14,7 +14,8 @@ Um ein neues Projekt zu Ihrer mehrsprachigen Website hinzuzufügen, müssen Sie 
 {
   id: "mein-neues-projekt",           // Eindeutige ID
   name: "MeinNeuesProjekt",           // Interner Name
-  image: "/mein-projekt-bild.jpg",    // Haupt-Bild
+  image: "/mein-projekt-bild.jpg",    // Optional: Haupt-Bild für Karten
+  headerImage: "/mein-header.jpg",    // Optional: Detailseiten-Kopfbild (fällt auf image zurück)
   images: [                           // Optional: Galerie-Bilder
     {
       src: "/bild1.jpg",
@@ -96,9 +97,13 @@ Um ein neues Projekt zu Ihrer mehrsprachigen Website hinzuzufügen, müssen Sie 
 ```
 
 ## 📸 Bilder hinzufügen
-Vergessen Sie nicht, die Projektbilder in den `public/` Ordner zu legen:
+Bilder sind **optional**. Ohne `image`/`headerImage`/`images` werden Karten und Detailseiten sauber ohne Medienblock angezeigt – es wird kein leerer Platzhalter oder kaputter Bildpfad gerendert.
+
+Um später Bilder zu ergänzen, einfach die Bilddateien in den `public/` Ordner legen und die Datenfelder setzen:
 - `public/mein-projekt-bild.jpg` (Hauptbild)
 - `public/bild1.jpg`, `public/bild2.jpg` (Galerie-Bilder)
+
+Es sind danach keine Komponentenänderungen nötig.
 
 ## ✅ Wichtige Hinweise:
 
@@ -119,8 +124,10 @@ Mit `slug: "mein-neues-projekt"` ist das Projekt erreichbar unter:
 - 🇩🇪 `/de/projects/mein-neues-projekt`
 
 ### 🖼️ **Bilder sind optional**
-- Ohne `images` Array: Nur Hauptbild wird angezeigt
-- Mit `images` Array: Galerie wird auf der Detailseite angezeigt
+- Ohne `image`: Karte beginnt direkt mit dem Textinhalt, ohne Medienblock
+- Ohne `headerImage`/`image`: Detailseite zeigt keinen Kopf-Bildblock
+- Ohne `images` Array: Keine Galerie auf der Detailseite
+- Bilder später ergänzen erfordert nur Daten-/Medienänderungen, keine Komponentenänderungen
 
 ## 🚀 Nach dem Hinzufügen
 Das war's! Das neue Projekt erscheint automatisch:

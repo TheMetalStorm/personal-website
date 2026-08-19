@@ -27,10 +27,11 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
 	}
 
 	const headerImage = project.headerImage || project.image;
-	const headerName =
-		project.images?.find((img) => img.src === headerImage)?.caption ||
-		headerImage.split('/').pop() ||
-		'';
+	const headerName = headerImage
+		? project.images?.find((img) => img.src === headerImage)?.caption ||
+			headerImage.split('/').pop() ||
+			''
+		: '';
 
 	return (
 		<main className="term-mono mx-auto max-w-5xl px-5 pb-16 pt-10 sm:px-6 sm:pt-14">
@@ -41,22 +42,24 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
 			<Link href={backUrl} className="term-link text-sm">← {t('projects.viewAll')}</Link>
 
 			<section className="mt-8 pb-10">
-				<div className="term-border relative border">
-					{/* eslint-disable-next-line @next/next/no-img-element */}
-					<img src={headerImage} alt={project.title} className="w-full" />
-					<div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-black/60 px-4 py-2 backdrop-blur-sm">
-						<span className="truncate text-xs text-white/90">{headerName}</span>
-						<a
-							href={headerImage}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="term-border shrink-0 border bg-black/50 px-3 py-1 text-xs text-white hover:text-[var(--terminal-accent)]"
-						>
-							Open ↗
-						</a>
+				{headerImage && (
+					<div className="term-border relative border">
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img src={headerImage} alt={project.title} className="w-full" />
+						<div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-black/60 px-4 py-2 backdrop-blur-sm">
+							<span className="truncate text-xs text-white/90">{headerName}</span>
+							<a
+								href={headerImage}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="term-border shrink-0 border bg-black/50 px-3 py-1 text-xs text-white hover:text-[var(--terminal-accent)]"
+							>
+								Open ↗
+							</a>
+						</div>
 					</div>
-				</div>
-				<h1 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
+				)}
+				<h1 className={`${headerImage ? 'mt-6 ' : ''}text-3xl font-semibold tracking-tight sm:text-4xl`}>
 					{project.title}<span className="term-cursor"></span>
 				</h1>
 				<p className="term-desc mt-3 max-w-2xl text-[15px] leading-relaxed">{project.description}</p>
