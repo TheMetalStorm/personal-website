@@ -97,7 +97,7 @@ Um ein neues Projekt zu Ihrer mehrsprachigen Website hinzuzufügen, müssen Sie 
 ```
 
 ## 📸 Bilder hinzufügen
-Bilder sind **optional**. Ohne `image`/`headerImage`/`images` werden Karten und Detailseiten sauber ohne Medienblock angezeigt – es wird kein leerer Platzhalter oder kaputter Bildpfad gerendert.
+Bilder sind **optional**. Ohne `image`/`headerImage`/`images` werden Karten und Detailseiten sauber ohne Medienblock angezeigt. Es wird kein leerer Platzhalter oder kaputter Bildpfad gerendert.
 
 Um später Bilder zu ergänzen, einfach die Bilddateien in den `public/` Ordner legen und die Datenfelder setzen:
 - `public/mein-projekt-bild.jpg` (Hauptbild)

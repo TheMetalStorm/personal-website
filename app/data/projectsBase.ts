@@ -39,6 +39,8 @@ const baseProjects = [
   {
     id: "joyboy",
     name: "JoyBoy",
+    image: "/media/joyboy/tetris.png",
+    headerImage: "/media/joyboy/tetris.png",
     technologies: ["Go", "OpenGL", "GLFW", "Dear ImGui", "Game Boy Emulation"],
     images: [
       {
