@@ -59,7 +59,7 @@ const baseProjects = [
     features: [
       { title: "cpuEmulation", description: "cpuEmulationDesc" },
       { title: "debugger", description: "debuggerDesc" },
-      { title: "joypadInput", description: "joypadInputDesc" },
+      { title: "ppuTiming", description: "ppuTimingDesc" },
       { title: "frameRenderer", description: "frameRendererDesc" }
     ],
     githubUrl: "https://github.com/TheMetalStorm/joyboy",

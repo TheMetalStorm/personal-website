@@ -192,8 +192,8 @@
         "cpuEmulationDesc": "Emulation der LR35902-CPU (Sharp SM83-Kern) mit einem No-MBC-32-KiB-Cartridge-Aufbau.",
         "debugger": "Interaktiver Debugger",
         "debuggerDesc": "Breakpoints per Klick auf Speicherzellen setzen, die emulierte CPU neu starten, im Einzelschritt und Schnellschritt ausführen, Register und Speicher inspizieren sowie Tile-, Background-, Window- und Objekt-Viewer anzeigen.",
-        "joypadInput": "Joypad-Eingabe",
-        "joypadInputDesc": "Tastatursteuerung, die auf das Game-Boy-Joypad abgebildet wird: Steuerkreuz, A/B-Buttons, Start und Select.",
+        "ppuTiming": "PPU-Zustandsmaschine",
+        "ppuTimingDesc": "Emuliert die PPU-Scanline-Zustandsmaschine (OAM-Suche, Pixeltransfer, HBlank, VBlank) mit modusbasiertem Timing und STAT- sowie LY=LYC-Interrupt-Handling.",
         "frameRenderer": "OpenGL-Frame-Rendering",
         "frameRendererDesc": "Frame-Rendering in OpenGL über GLFW und Dear ImGui mit Fensterdarstellung."
       }
