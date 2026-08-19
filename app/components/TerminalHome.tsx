@@ -20,7 +20,7 @@ export default function TerminalHome() {
 		{ n: '05', key: 'blog', href: null },
 	];
 
-	const featured = getFeaturedProjects(translations).slice(0, 3);
+	const featured = getFeaturedProjects(translations).slice(0, 4);
 
 	return (
 		<main className="term-mono mx-auto max-w-5xl px-5 pb-16 pt-10 sm:px-6 sm:pt-14">
@@ -73,13 +73,16 @@ export default function TerminalHome() {
 				<p className="term-dim mb-4 text-[13px]">
 					<span className="term-accent">$</span> cat ./projects/{t('landing.featured')}
 				</p>
-				<ul className="space-y-2">
+				<ul className="space-y-3">
 					{featured.map((p) => (
-						<li key={p.slug} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[15px]">
-							<Link href={`${prefix}/projects/${p.slug}`} className="term-title font-semibold">
-								{p.title}
-							</Link>
-							<span className="term-dim text-[13px]">{p.technologies.slice(0, 3).join(' · ')}</span>
+						<li key={p.slug}>
+							<div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[15px]">
+								<Link href={`${prefix}/projects/${p.slug}`} className="term-title font-semibold">
+									{p.title}
+								</Link>
+								<span className="term-dim text-[13px]">{p.technologies.slice(0, 3).join(' · ')}</span>
+							</div>
+							<p className="term-desc mt-0.5 max-w-xl text-[13px] leading-relaxed">{p.description}</p>
 						</li>
 					))}
 				</ul>

@@ -157,7 +157,7 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/Spring-Library-Management-API",
     slug: "spring-library-api",
-    featured: false,
+    featured: true,
     profile: true,
     developmentType: 'solo',
     type: 'software'
@@ -242,7 +242,7 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/zilo",
     slug: "zilo",
-    featured: true,
+    featured: false,
     developmentType: 'solo',
     type: 'software'
   },
