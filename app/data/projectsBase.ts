@@ -27,9 +27,11 @@ export interface Project {
   githubUrl?: string;
   slug: string;
   featured?: boolean;
+  profile?: boolean; // Show in the professional profile (adjust per project)
   developmentType?: 'solo' | 'team' | 'freelance';
   imageContain?: boolean;
   type?: string;
+  commercial?: boolean;
 }
 
 // Base project data (language-neutral) - Server-side safe
@@ -60,8 +62,10 @@ const baseProjects = [
     ],
     demoUrl: "https://ara-commodities.com",
     slug: "ara-commodities",
-    featured: true,
+    featured: false,
+    profile: true,
     developmentType: 'freelance',
+    commercial: true,
     imageContain: true,
     type: 'website'
   },
@@ -97,6 +101,7 @@ const baseProjects = [
     demoUrl: "https://shared-aesthetic.vercel.app",
     slug: "shared-aesthetic",
     featured: true,
+    profile: true,
     developmentType: 'solo',
     type: 'website'
   },
@@ -136,7 +141,8 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/Spring-Library-Management-API",
     slug: "spring-library-api",
-    featured: true,
+    featured: false,
+    profile: true,
     developmentType: 'solo',
     type: 'software'
   },
@@ -181,6 +187,7 @@ const baseProjects = [
     githubUrl: "https://github.com/TheMetalStorm/c8-serenityOS",
     slug: "c8-serenityos",
     featured: true,
+    profile: true,
     developmentType: 'solo',
     type: 'software'
   },
@@ -219,7 +226,7 @@ const baseProjects = [
     ],
     githubUrl: "https://github.com/TheMetalStorm/zilo",
     slug: "zilo",
-    featured: false,
+    featured: true,
     developmentType: 'solo',
     type: 'software'
   },

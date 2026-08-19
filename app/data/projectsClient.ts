@@ -42,6 +42,16 @@ export function getFeaturedProjects(translations: Translations): Project[] {
   return projects.filter(project => project.featured === true);
 }
 
+export function getProfileProjects(translations: Translations): Project[] {
+  const projects = getLocalizedProjects(translations);
+  return projects.filter(project => project.profile === true);
+}
+
 export function getAllProjects(translations: Translations): Project[] {
   return getLocalizedProjects(translations);
+}
+
+export function getCommercialProjects(translations: Translations): Project[] {
+  const projects = getLocalizedProjects(translations);
+  return projects.filter(project => project.commercial === true);
 }

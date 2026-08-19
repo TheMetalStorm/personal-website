@@ -1,243 +1,138 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Play, Gamepad2, Cpu, Tag, Calendar, Home, User, Users } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { Game } from '../data/gamesBase';
 import ImageGallery from './ImageGallery';
+import LegalFooter from './LegalFooter';
 import { useI18n } from '../hooks/useI18n';
 
 interface GameDetailProps {
-  game: Game;
+	game: Game;
 }
 
 export default function GameDetail({ game }: GameDetailProps) {
-  const { t, locale } = useI18n();
-  const backUrl = locale === 'de' ? '/de/games' : '/games';
+	const { t, locale } = useI18n();
+	const pathname = usePathname();
+	const prefix = pathname.startsWith('/de') ? '/de' : pathname.startsWith('/en') ? '/en' : '';
+	const backUrl = `${prefix}/games`;
 
-  return (
-    <main className="min-h-screen bg-gray-900 relative overflow-hidden pt-24 pb-20">
+	return (
+		<main className="term-mono mx-auto max-w-5xl px-5 pb-16 pt-10 sm:px-6 sm:pt-14">
+			<p className="term-dim mb-6 text-[13px]">
+				<span className="term-accent">$</span> cd ~/games/{game.slug}
+			</p>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+			<Link href={backUrl} className="term-link text-sm">← {t('games.viewAll')}</Link>
 
-        {/* Back Button */}
-        <Link
-          href={backUrl}
-          className="group inline-flex items-center gap-2 text-brand-blue font-outfit font-bold px-5 py-2 bento-glass rounded-xl mb-12 hover:bg-white/5 transition-all"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          {t('games.viewAll')}
-        </Link>
+			<section className="mt-8 pb-10">
+				<div className="term-border border">
+					{/* eslint-disable-next-line @next/next/no-img-element */}
+					<img src={game.headerImage || game.image} alt={game.title} className="w-full" />
+				</div>
+				<h1 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
+					{game.title}<span className="term-cursor"></span>
+				</h1>
+				<p className="term-desc mt-3 max-w-2xl text-[15px] leading-relaxed">{game.description}</p>
+				<div className="mt-4 flex flex-wrap gap-2">
+					<span className="term-border term-dim border px-2 py-0.5 text-[11px]">{game.engine}</span>
+					{game.genre && <span className="term-border term-dim border px-2 py-0.5 text-[11px]">{game.genre}</span>}
+					{game.playUrl && <span className="term-border term-accent border px-2 py-0.5 text-[11px]">{t('games.playableInBrowser')}</span>}
+				</div>
+			</section>
 
-        {/* Game Header */}
-        <div className="relative rounded-3xl overflow-hidden mb-12 group">
-          <div className="relative h-64 sm:h-80 md:h-[450px] w-full">
-            <Image
-              src={game.headerImage || game.image}
-              alt={game.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/20 to-transparent" />
+			{(game.playUrl || game.githubUrl || game.downloadUrl) && (
+				<section className="pb-10">
+					<p className="term-dim mb-3 text-[13px]">
+						<span className="term-accent">$</span> open links
+					</p>
+					<div className="flex flex-wrap gap-3">
+						{game.playUrl && (
+							<a href={game.playUrl} target="_blank" rel="noopener noreferrer" className="term-border term-accent border px-4 py-2 text-sm">→ {t('games.playGame')}</a>
+						)}
+						{game.githubUrl && (
+							<a href={game.githubUrl} target="_blank" rel="noopener noreferrer" className="term-border term-link border px-4 py-2 text-sm">→ {t('games.viewCode')}</a>
+						)}
+						{game.downloadUrl && (
+							<a href={game.downloadUrl} target="_blank" rel="noopener noreferrer" className="term-border term-link border px-4 py-2 text-sm">→ {t('games.download')}</a>
+						)}
+					</div>
+				</section>
+			)}
 
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-brand-blue/10 backdrop-blur-md border border-brand-blue/20 text-brand-blue text-xs font-bold rounded-lg uppercase tracking-wider">
-                  {game.engine}
-                </span>
-                {game.genre && (
-                  <span className="px-3 py-1 bg-brand-violet/10 backdrop-blur-md border border-brand-violet/20 text-brand-violet text-xs font-bold rounded-lg uppercase tracking-wider">
-                    {game.genre}
-                  </span>
-                )}
-                {game.playUrl && (
-                  <span className="px-3 py-1 bg-brand-blue/10 backdrop-blur-md border border-brand-blue/20 text-brand-blue text-xs font-bold rounded-lg uppercase tracking-wider flex items-center gap-1">
-                    <Play className="w-3 h-3" />
-                    {t('games.playableInBrowser')}
-                  </span>
-                )}
-              </div>
-              <h1 className="text-4xl md:text-6xl font-outfit font-bold text-white mb-4 tracking-tight drop-shadow-2xl">
-                {game.title}
-              </h1>
-              <p className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-light drop-shadow-md">
-                {game.description}
-              </p>
-            </div>
-          </div>
-        </div>
+			<section className="pb-10">
+				<p className="term-dim mb-3 text-[13px]">
+					<span className="term-accent">$</span> cat about.md
+				</p>
+				<div className="term-desc max-w-3xl space-y-4 text-[15px] leading-relaxed">
+					{game.fullDescription.split('\n').map((para, i) => (
+						<p key={i}>{para}</p>
+					))}
+				</div>
+			</section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+			<section className="pb-10">
+				<p className="term-dim mb-3 text-[13px]">
+					<span className="term-accent">$</span> cat info
+				</p>
+				<div className="term-border border-t">
+					<div className="term-border flex items-baseline gap-4 border-b py-3">
+						<span className="term-dim w-44 shrink-0 text-xs">{t('games.engine')}</span>
+						<span>{game.engine}</span>
+					</div>
+					{game.genre && (
+						<div className="term-border flex items-baseline gap-4 border-b py-3">
+							<span className="term-dim w-44 shrink-0 text-xs">{t('games.genre')}</span>
+							<span>{game.genre}</span>
+						</div>
+					)}
+					{game.releaseDate && (
+						<div className="term-border flex items-baseline gap-4 border-b py-3">
+							<span className="term-dim w-44 shrink-0 text-xs">{locale === 'de' ? 'Veröffentlichung' : 'Release'}</span>
+							<span>{game.releaseDate}</span>
+						</div>
+					)}
+					<div className="term-border flex items-baseline gap-4 border-b py-3">
+						<span className="term-dim w-44 shrink-0 text-xs">{t('games.developmentType')}</span>
+						<span>{game.developmentType === 'team' ? t('games.teamDevelopment') : t('games.soloDevelopment')}</span>
+					</div>
+					<div className="term-border flex items-baseline gap-4 border-b py-3">
+						<span className="term-dim w-44 shrink-0 text-xs">{t('games.technologies')}</span>
+						<span className="flex flex-wrap gap-2">
+							{game.technologies.map((tech, i) => (
+								<span key={i} className="term-border term-dim border px-2 py-0.5 text-[11px]">{tech}</span>
+							))}
+						</span>
+					</div>
+				</div>
+			</section>
 
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+			{game.features && game.features.length > 0 && (
+				<section className="pb-10">
+					<p className="term-dim mb-3 text-[13px]">
+						<span className="term-accent">$</span> cat features
+					</p>
+					<div className="term-border border-t">
+						{game.features.map((feature, i) => (
+							<div key={i} className="term-border border-b py-4">
+								<h3 className="term-name font-semibold">{feature.title}</h3>
+								<p className="term-desc mt-1 text-sm leading-relaxed">{feature.description}</p>
+							</div>
+						))}
+					</div>
+				</section>
+			)}
 
-            {/* About Section */}
-            <div className="bento-glass p-8 md:p-10 rounded-3xl border-white/5">
-              <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white mb-8 flex items-center gap-3">
-                <div className="w-2 h-8 bg-brand-violet rounded-full" />
-                {t('games.about')}
-              </h2>
-              <div className="text-slate-300 leading-relaxed text-lg space-y-4 font-light">
-                {game.fullDescription.split('\n').map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
-            </div>
+			{game.images && game.images.length > 0 && (
+				<section className="pb-10">
+					<p className="term-dim mb-3 text-[13px]">
+						<span className="term-accent">$</span> cat gallery
+					</p>
+					<ImageGallery images={game.images} />
+				</section>
+			)}
 
-            {/* Features Section */}
-            {game.features && game.features.length > 0 && (
-              <div className="bento-glass p-8 md:p-10 rounded-3xl border-white/5">
-                <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white mb-8 flex items-center gap-3">
-                  <div className="w-2 h-8 bg-brand-blue rounded-full" />
-                  {t('projectFeatures.title')}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {game.features.map((feature, index) => (
-                    <div key={index} className="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-brand-blue/20 transition-all group">
-                      <h3 className="font-outfit font-bold text-white mb-3 text-lg group-hover:text-brand-blue transition-colors">
-                        {feature.title}
-                      </h3>
-                      <p className="text-slate-400 font-light leading-relaxed text-sm">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Game Gallery */}
-            {game.images && game.images.length > 0 && (
-              <div className="bento-glass p-8 md:p-10 rounded-3xl border-white/5">
-                <h2 className="text-2xl md:text-3xl font-outfit font-bold text-white mb-8 flex items-center gap-3">
-                  <div className="w-2 h-8 bg-brand-blue rounded-full" />
-                  {t('games.gallery')}
-                </h2>
-                <ImageGallery images={game.images} />
-              </div>
-            )}
-
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-8 sticky top-24">
-
-            {/* Action Buttons */}
-            <div className="bento-glass p-8 rounded-3xl border-white/5">
-              <div className="space-y-4">
-                {game.playUrl && (
-                  <a
-                    href={game.playUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-brand-blue h-14 rounded-2xl text-brand-navy font-outfit font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.5)]"
-                  >
-                    <Play className="w-5 h-5" />
-                    {t('games.playGame')}
-                  </a>
-                )}
-
-                {game.githubUrl && (
-                  <a
-                    href={game.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bento-glass h-14 border-white/10 text-white font-outfit font-bold flex items-center justify-center gap-2 hover:bg-white/10 active:scale-[0.98] transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                    {t('games.viewCode')}
-                  </a>
-                )}
-
-                {game.downloadUrl && (
-                  <a
-                    href={game.downloadUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-brand-violet h-14 rounded-2xl text-white font-outfit font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(112,0,255,0.3)] hover:shadow-[0_0_30px_rgba(112,0,255,0.5)]"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    {t('games.download')}
-                  </a>
-                )}
-              </div>
-            </div>
-
-            {/* Game Info */}
-            <div className="bento-glass p-8 rounded-3xl border-white/5">
-              <h3 className="text-xl font-outfit font-bold text-white mb-6 uppercase tracking-widest text-sm opacity-50">
-                Game Information
-              </h3>
-
-              <div className="space-y-6">
-                <div>
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-tighter block mb-1">
-                    {t('games.engine')}
-                  </span>
-                  <p className="text-white font-outfit font-semibold text-lg">{game.engine}</p>
-                </div>
-
-                {game.genre && (
-                  <div>
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-tighter block mb-1">
-                      {t('games.genre')}
-                    </span>
-                    <p className="text-white font-outfit font-semibold text-lg">{game.genre}</p>
-                  </div>
-                )}
-
-                {game.releaseDate && (
-                  <div>
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-tighter block mb-1">
-                      Release Date
-                    </span>
-                    <p className="text-white font-outfit font-semibold text-lg">{game.releaseDate}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Development Section */}
-            <div className="bento-glass p-8 rounded-3xl border-white/5">
-              <h3 className="text-xl font-outfit font-bold text-white mb-6 uppercase tracking-widest text-sm opacity-50 flex items-center gap-2">
-                {game.developmentType === 'team' ? <Users className="w-4 h-4" /> : <User className="w-4 h-4" />}
-                {t('games.development')}
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-tighter block mb-1">
-                    {t('games.developmentType')}
-                  </span>
-                  <p className="text-white font-outfit font-semibold text-lg">
-                    {game.developmentType === 'team' ? t('games.teamDevelopment') : t('games.soloDevelopment')}
-                  </p>
-                </div>
-                {game.developmentType === 'team' && (
-                  <p className="text-sm text-slate-500 italic font-light">
-                    {t('games.creditsInGame')}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {/* Technologies */}
-            <div className="bento-glass p-8 rounded-3xl border-white/5">
-              <h3 className="text-xl font-outfit font-bold text-white mb-6 uppercase tracking-widest text-sm opacity-50">
-                {t('games.technologies')}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {game.technologies.map((tech, index) => (
-                  <span key={index} className="px-3 py-1.5 bg-white/5 border border-white/10 text-slate-300 text-sm font-medium rounded-xl hover:border-brand-blue/30 transition-colors">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+			<LegalFooter />
+		</main>
+	);
 }

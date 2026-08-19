@@ -39,7 +39,7 @@ export default function ContactSection() {
 								<div className="p-3 bento-glass rounded-2xl">
 									<Mail className="w-6 h-6 text-brand-violet" />
 								</div>
-								<span className="text-lg font-medium">arapoglu.simon@gmx.de</span>
+								<span className="text-lg font-medium">contact@simonarapoglu.com</span>
 							</div>
 						</div>
 					</div>

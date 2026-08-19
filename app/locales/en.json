@@ -1,8 +1,50 @@
 {
+  "landing": {
+    "role": "Fullstack Developer · Emulators, tools, games",
+    "tagline": "I build APIs, terminal tools and interactive systems, from Java/Spring reporting to real-time shaders in the browser. This site is the entry point into five areas:",
+    "ls": "ls",
+    "featured": "featured",
+    "systemReady": "system ready",
+    "location": "fürth · germany",
+    "blogSoon": "The blog is coming soon.",
+    "commercialSoon": "Commercial work will appear here.",
+    "hubs": {
+      "profile": {
+        "name": "Profile",
+        "title": "Professional Profile",
+        "desc": "Professional profile, skills & CV",
+        "path": "/profile"
+      },
+      "projects": {
+        "name": "Software Projects",
+        "title": "Software Projects",
+        "desc": "Technical project archive & own developments",
+        "path": "/projects"
+      },
+      "games": {
+        "name": "Games",
+        "title": "Games & Interactive Experiments",
+        "desc": "Games & interactive experiments",
+        "path": "/games"
+      },
+      "commercial": {
+        "name": "Commercial",
+        "title": "Commercial Work",
+        "desc": "Client projects & commercial products",
+        "path": "/commercial"
+      },
+      "blog": {
+        "name": "Blog",
+        "title": "Blog",
+        "desc": "Thoughts, notes & technical writing",
+        "path": "coming soon"
+      }
+    }
+  },
   "hero": {
     "name": "Simon Arapoglu",
-    "title": "Software Developer",
-    "description": "I'm a backend developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser.",
+    "title": "Fullstack Developer",
+    "description": "I'm a fullstack developer building APIs, emulators, and interactive game systems. Professionally, I've developed Java/Spring reporting solutions, managed relational and NoSQL databases, and implemented CI/CD workflows. I also create real-time gameplay systems and shaders that you can experience directly in your browser.",
     "stats": {
       "professional": "2 Years",
       "professionalLabel": "Professional Experience",
@@ -20,7 +62,10 @@
     "games": "Games",
     "skills": "Skills",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "themeToggle": "Toggle theme",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "projects": {
     "viewCode": "View Code",
@@ -28,7 +73,7 @@
     "title": "Featured Projects",
     "allProjectsTitle": "All Projects",
     "description": "Here are some of the projects I've worked on",
-    "featuredDescription": "Selection of featured work spanning backend systems and creative tech.",
+    "featuredDescription": "Selection of featured work spanning fullstack systems and creative tech.",
     "viewProject": "View Project",
     "technologies": "Technologies",
     "gallery": "Project Gallery",
@@ -44,6 +89,11 @@
       "website": "Website",
       "software": "Software Project"
     }
+  },
+  "commercial": {
+    "description": "Commercially developed work: client projects and products.",
+    "visitWebsite": "Visit website",
+    "moreDetails": "More details"
   },
   "games": {
     "viewCode": "View Code",
@@ -78,11 +128,17 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a backend developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences. At anevis solutions, I worked extensively with Java and the Spring framework to develop reporting platforms, maintain PostgreSQL and MongoDB databases, and optimize CI/CD pipelines. Beyond professional work, I design complex backend systems for games, including custom rendering pipelines, real-time shaders, and narrative engines in Unity and WebGL. My personal projects span a variety of technologies, including C/C++, Zig, HLSL, and low-level system programming, showcasing both my versatility and technical depth. I enjoy tackling performance-critical problems, experimenting with new technologies, and creating experiences that blend technical rigor with engaging interactivity. Explore my projects to see how my backend expertise powers gameplay, simulations, and interactive applications directly in the browser.",
+    "description": "I'm a fullstack developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences. At anevis solutions, I worked extensively with Java and the Spring framework to develop reporting platforms, maintain PostgreSQL and MongoDB databases, and optimize CI/CD pipelines. Beyond professional work, I design complex backend systems for games, including custom rendering pipelines, real-time shaders, and narrative engines in Unity and WebGL. My personal projects span a variety of technologies, including C/C++, Zig, HLSL, and low-level system programming, showcasing both my versatility and technical depth. I enjoy tackling performance-critical problems, experimenting with new technologies, and creating experiences that blend technical rigor with engaging interactivity. Explore my projects to see how my backend expertise powers gameplay, simulations, and interactive applications directly in the browser.",
+    "paragraphs": [
+      "I'm a fullstack developer with a strong backend foundation. I build web applications end-to-end – from data models, databases and APIs to responsive user interfaces, deployment and CI/CD.",
+      "At anevis solutions, I developed reporting platforms with Java and the Spring framework, maintained PostgreSQL and MongoDB databases, and implemented CI/CD pipelines. This experience underpins the robust, maintainable applications I build across the stack.",
+      "Across personal and commercial projects, I connect backend systems with modern web interfaces. I work with technologies including TypeScript, React, Next.js, Astro and Contentful and take ownership from concept through implementation and release.",
+      "Low-level developer tooling, emulators and interactive applications complement my fullstack profile. They sharpen my approach to clean architecture, performance and dependable software beyond conventional web development."
+    ],
     "sections": {
       "professional": {
         "title": "Professional Background",
-        "description": "I'm a backend developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences."
+        "description": "I'm a fullstack developer and systems programmer with a passion for building everything from APIs and emulators to interactive game experiences."
       },
       "experience": {
         "title": "Industry Experience",
@@ -115,6 +171,10 @@
     "error": "An error occurred",
     "notFound": "Page not found"
   },
+  "imprint": "Imprint",
+  "privacy": "Privacy",
+  "imprintTitle": "Imprint",
+  "privacyTitle": "Privacy Policy",
   "projectFeatures": {
     "title": "Key Features"
   },

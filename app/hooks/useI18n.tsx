@@ -29,7 +29,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Derive locale and translations directly from pathname — no useState/useEffect needed
+  // Derive locale and translations directly from pathname - no useState/useEffect needed
   const locale: Locale = pathname.startsWith('/de') ? 'de' : 'en';
   const translations = translationsMap[locale];
 

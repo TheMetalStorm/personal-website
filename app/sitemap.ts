@@ -34,6 +34,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Profile pages
+  const profilePages = [
+    {
+      url: `${baseUrl}/profile`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/en/profile`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/de/profile`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ];
+
   // Projects pages
   const projectPages = [
     {
@@ -55,6 +77,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
+
+  // Commercial pages
+  const commercialPages = [
+    {
+      url: `${baseUrl}/commercial`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/en/commercial`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/de/commercial`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ];
+
+  const legalPages = ['imprint', 'privacy'].flatMap(path => [
+    {
+      url: `${baseUrl}/${path}`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/en/${path}`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/de/${path}`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+  ]);
 
   // Games pages
   const gamePages = [
@@ -124,7 +189,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...mainPages,
+    ...profilePages,
     ...projectPages,
+    ...commercialPages,
+    ...legalPages,
     ...gamePages,
     ...individualProjectPages,
     ...individualGamePages,

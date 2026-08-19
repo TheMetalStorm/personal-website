@@ -1,7 +1,19 @@
+import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Outfit } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from './hooks/useI18n';
 import Header from './components/Header';
+import HtmlLang from './components/HtmlLang';
+
+const themeInitScript = `(function () {
+	try {
+		var t = localStorage.getItem('theme');
+		if (t !== 'light' && t !== 'dark') t = 'dark';
+		document.documentElement.setAttribute('data-theme', t);
+	} catch (e) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	}
+})();`;
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -20,13 +32,13 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Simon Arapoglu - Backend Developer & Game Developer',
+		default: 'Simon Arapoglu - Fullstack Developer & Game Developer',
 		template: '%s | Simon Arapoglu - Developer Portfolio',
 	},
-	description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
+	description: 'Passionate fullstack developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
 	keywords: [
 		'Simon Arapoglu',
-		'Backend Developer',
+		'Fullstack Developer',
 		'Software Engineer',
 		'Game Developer',
 		'Java',
@@ -39,7 +51,7 @@ export const metadata: Metadata = {
 		'Web Development',
 		'Game Development',
 		'Portfolio',
-		'Backend Development',
+		'Fullstack Development',
 		'Frontend Development',
 		'API Development',
 		'Clean Code',
@@ -56,8 +68,8 @@ export const metadata: Metadata = {
 		},
 	},
 	openGraph: {
-		title: 'Simon Arapoglu - Backend Developer & Game Developer',
-		description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
+		title: 'Simon Arapoglu - Fullstack Developer & Game Developer',
+		description: 'Passionate fullstack developer specializing in Java Spring Boot, REST APIs, and Unity game development. Explore my projects including desktop applications, terminal tools, games, and software solutions.',
 		url: 'https://simonarapoglu.com',
 		siteName: 'Simon Arapoglu - Developer Portfolio',
 		images: [
@@ -65,7 +77,7 @@ export const metadata: Metadata = {
 				url: '/portrait.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Simon Arapoglu - Backend Developer & Game Developer',
+				alt: 'Simon Arapoglu - Fullstack Developer & Game Developer',
 			},
 		],
 		locale: 'en_US',
@@ -73,8 +85,8 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Simon Arapoglu - Backend Developer & Game Developer',
-		description: 'Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development.',
+		title: 'Simon Arapoglu - Fullstack Developer & Game Developer',
+		description: 'Passionate fullstack developer specializing in Java Spring Boot, REST APIs, and Unity game development.',
 		images: ['/portrait.jpg'],
 	},
 	robots: {
@@ -99,8 +111,8 @@ export default function RootLayout({
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Simon Arapoglu",
-		"jobTitle": "Backend Developer",
-		"description": "Passionate backend developer specializing in Java Spring Boot, REST APIs, and Unity game development.",
+		"jobTitle": "Fullstack Developer",
+		"description": "Passionate fullstack developer specializing in Java Spring Boot, REST APIs, and Unity game development.",
 		"url": "https://simonarapoglu.com",
 		"image": "https://simonarapoglu.com/portrait.jpg",
 		"sameAs": [
@@ -120,7 +132,7 @@ export default function RootLayout({
 		],
 		"hasOccupation": {
 			"@type": "Occupation",
-			"name": "Software Developer",
+			"name": "Fullstack Developer",
 			"occupationLocation": {
 				"@type": "Country",
 				"name": "Germany"
@@ -129,8 +141,9 @@ export default function RootLayout({
 	};
 
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -140,6 +153,7 @@ export default function RootLayout({
 
 
 				<I18nProvider>
+					<HtmlLang />
 					<Header />
 					<div className="relative z-10 pt-14 sm:pt-16">
 						{children}

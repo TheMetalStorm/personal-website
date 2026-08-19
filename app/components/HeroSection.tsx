@@ -122,7 +122,7 @@ export default function HeroSection() {
 									</div>
 								</div>
 
-								{/* Stat Card — below image, always in-flow */}
+								{/* Stat Card - below image, always in-flow */}
 								<motion.div
 									animate={{ y: [0, -6, 0] }}
 									transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -144,7 +144,7 @@ export default function HeroSection() {
 						</motion.div>
 					</div>
 
-					{/* Spotlight Project — Full-width below hero grid */}
+					{/* Spotlight Project - Full-width below hero grid */}
 					<motion.div variants={itemVariants}>
 						<Link
 							href={`/${locale === 'de' ? 'de/' : ''}projects/ara-commodities`}

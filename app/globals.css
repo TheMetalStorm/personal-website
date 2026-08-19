@@ -3,6 +3,29 @@
 	--foreground: #ffffff;
 	--brand-blue: #00f2ff;
 	--brand-violet: #7000ff;
+
+	/* Terminal theme - dark (default) */
+	--terminal-bg: #0c0a07;
+	--terminal-ink: #e9e2d0;
+	--terminal-muted: #8a8273;
+	--terminal-dim: #5f584a;
+	--terminal-accent: #ffb000;
+	--terminal-line: #2a2418;
+	--terminal-desc: #a89e8a;
+	--terminal-row-hover: #16130d;
+	color-scheme: dark;
+}
+
+[data-theme='light'] {
+	--terminal-bg: #f5f1e7;
+	--terminal-ink: #20190c;
+	--terminal-muted: #6f6655;
+	--terminal-dim: #9b9280;
+	--terminal-accent: #b45309;
+	--terminal-line: #e2dac6;
+	--terminal-desc: #5f5747;
+	--terminal-row-hover: #ece4d0;
+	color-scheme: light;
 }
 
 @tailwind base;
@@ -10,8 +33,8 @@
 @tailwind utilities;
 
 body {
-	background-color: var(--background);
-	color: var(--foreground);
+	background-color: var(--terminal-bg);
+	color: var(--terminal-ink);
 	overflow-x: hidden;
 }
 
@@ -77,5 +100,62 @@ body {
 			opacity: 0.5;
 			transform: translateX(-50%) scale(1.05);
 		}
+	}
+}
+
+/* Terminal design system */
+.term-mono {
+	font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.term-ink { color: var(--terminal-ink); }
+.term-muted { color: var(--terminal-muted); }
+.term-dim { color: var(--terminal-dim); }
+.term-accent { color: var(--terminal-accent); }
+.term-desc { color: var(--terminal-desc); }
+.term-border { border-color: var(--terminal-line); }
+
+.term-link {
+	color: var(--terminal-muted);
+	transition: color 0.15s ease;
+}
+.term-link:hover {
+	color: var(--terminal-accent);
+}
+
+.term-title {
+	color: var(--terminal-ink);
+	transition: color 0.15s ease;
+}
+.term-title:hover {
+	color: var(--terminal-accent);
+}
+
+.term-row {
+	transition: background-color 0.15s ease;
+}
+.term-row:hover {
+	background-color: var(--terminal-row-hover);
+}
+.term-name {
+	transition: color 0.15s ease;
+}
+.term-row:hover .term-name {
+	color: var(--terminal-accent);
+}
+
+.term-cursor {
+	display: inline-block;
+	width: 0.6em;
+	height: 1.05em;
+	background: var(--terminal-accent);
+	margin-left: 0.06em;
+	vertical-align: -0.12em;
+	animation: term-blink 1.06s steps(1) infinite;
+}
+
+@keyframes term-blink {
+	50% {
+		opacity: 0;
 	}
 }

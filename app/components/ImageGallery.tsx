@@ -150,8 +150,17 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           return (
             <div
               key={index}
-              className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden cursor-pointer group"
+              role="button"
+              tabIndex={0}
+              aria-label={item.alt || item.caption || `Open image ${index + 1}`}
+              className="term-border relative aspect-video cursor-pointer overflow-hidden border group"
               onClick={() => openLightbox(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  openLightbox(index);
+                }
+              }}
             >
               {mediaType === 'video' ? (
                 <>
@@ -208,8 +217,8 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 </>
               )}
               {item.caption && (
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
-                  <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2">
+                  <p className="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {item.caption}
                   </p>
                 </div>
@@ -230,6 +239,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
             className="fixed top-20 right-4 z-[60] text-white hover:text-red-400 transition-all duration-200 bg-black bg-opacity-80 hover:bg-opacity-95 rounded-full p-3 shadow-lg border border-gray-500 hover:border-red-400"
             onClick={closeLightbox}
             title="Close (ESC)"
+            aria-label="Close (ESC)"
           >
             <X size={20} strokeWidth={2.5} />
           </button>
@@ -242,6 +252,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 e.stopPropagation();
                 goToPrevious();
               }}
+              aria-label="Previous image"
             >
               <ChevronLeft size={48} />
             </button>
@@ -254,6 +265,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 e.stopPropagation();
                 goToNext();
               }}
+              aria-label="Next image"
             >
               <ChevronRight size={48} />
             </button>

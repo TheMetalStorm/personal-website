@@ -37,6 +37,7 @@ Um ein neues Projekt zu Ihrer mehrsprachigen Website hinzuzufügen, müssen Sie 
   demoUrl: "https://mein-projekt.com",                // Optional  
   slug: "mein-neues-projekt",                         // URL-Slug
   featured: true                                      // Auf Startseite?
+  profile: true                                       // Im beruflichen Profil?
 }
 ```
 
@@ -106,9 +107,11 @@ Die `id` in `projectsBase.ts` **muss** mit dem Key in den JSON-Dateien übereins
 - `projectsBase.ts`: `id: "mein-neues-projekt"`
 - `en.json` + `de.json`: `"mein-neues-projekt": { ... }`
 
-### 🏠 **Featured Projects**
+### 🏠 **Featured & Profil**
 - `featured: true` → Erscheint auf der Startseite
 - `featured: false` → Nur auf der "Alle Projekte" Seite
+- `profile: true` → Erscheint im beruflichen Profil (individuell anpassbar)
+- `profile: false` → Nicht im Profil
 
 ### 🔗 **URL-Struktur**
 Mit `slug: "mein-neues-projekt"` ist das Projekt erreichbar unter:
@@ -123,6 +126,7 @@ Mit `slug: "mein-neues-projekt"` ist das Projekt erreichbar unter:
 Das war's! Das neue Projekt erscheint automatisch:
 - ✅ In der Projektliste (`/projects` und `/de/projects`)
 - ✅ Auf der Startseite (falls `featured: true`)
+- ✅ Im beruflichen Profil (falls `profile: true`)
 - ✅ Mit eigener Detailseite
 - ✅ In beiden Sprachen
 
