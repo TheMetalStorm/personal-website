@@ -1,2 +1,2 @@
-// Re-export game detail page
-export { default, generateStaticParams } from '../../../games/[slug]/page';
+// Re-export game detail page and its English metadata.
+export { default, generateStaticParams, generateMetadata } from '../../../games/[slug]/page';

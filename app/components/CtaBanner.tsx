@@ -33,7 +33,7 @@ export default function CtaBanner() {
             }}
             className="relative z-10 px-8 py-4 bg-brand-navy text-white font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-lg"
           >
-            Let's Talk <ArrowRight className="w-5 h-5" />
+            Let&apos;s Talk <ArrowRight className="w-5 h-5" />
           </button>
           <div className="absolute top-0 right-0 h-full w-1/3 bg-white/10 -skew-x-12 translate-x-1/2 group-hover:translate-x-1/3 transition-transform duration-1000"></div>
         </div>

@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import { getFeaturedGames } from '../data/gamesClient';
 import { useI18n } from '../hooks/useI18n';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ItemCard from './ItemCard';
 
 export default function GamesSection() {
 	const { t, locale, translations } = useI18n();
 	const gamesUrl = locale === 'de' ? '/de/games' : '/games';
-	const featuredGames = getFeaturedGames(locale, translations);
+	const featuredGames = getFeaturedGames(translations);
 
 	return (
 		<section id="games" className="relative py-24 bg-brand-navy/30">
@@ -43,7 +43,7 @@ export default function GamesSection() {
 							{
 								href: `${gamesUrl}/${game.slug}`,
 								label: t('games.viewGame'),
-								icon: 'ArrowRight' as any,
+								icon: 'ArrowRight' as const,
 								isPrimary: true,
 								isExternal: false
 							},

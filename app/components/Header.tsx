@@ -15,12 +15,14 @@ export default function Header() {
 
 	useEffect(() => {
 		if (document.documentElement.getAttribute('data-theme') === 'light') {
-			setTheme('light');
+			const frame = window.requestAnimationFrame(() => setTheme('light'));
+			return () => window.cancelAnimationFrame(frame);
 		}
 	}, []);
 
 	useEffect(() => {
-		setMenuOpen(false);
+		const frame = window.requestAnimationFrame(() => setMenuOpen(false));
+		return () => window.cancelAnimationFrame(frame);
 	}, [pathname]);
 
 	const toggleTheme = () => {
@@ -63,9 +65,6 @@ export default function Header() {
 							{link.label}
 						</Link>
 					))}
-					<span className="term-dim select-none" title={t('landing.blogSoon')}>
-						{t('landing.hubs.blog.name').toLowerCase()}:soon
-					</span>
 					<Link href={`${homeUrl}#contact`} className="term-link">
 						{t('navigation.contact').toLowerCase()}
 					</Link>
@@ -99,9 +98,6 @@ export default function Header() {
 								{link.label}
 							</Link>
 						))}
-						<span className="term-dim term-border select-none border-b py-2" title={t('landing.blogSoon')}>
-							{t('landing.hubs.blog.name').toLowerCase()}:soon
-						</span>
 						<Link
 							href={`${homeUrl}#contact`}
 							className="term-link term-border border-b py-2"

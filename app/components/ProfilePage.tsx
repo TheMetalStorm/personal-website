@@ -140,7 +140,7 @@ export default function ProfilePage() {
 				<p className="term-dim mb-4 text-[13px]">
 					<span className="term-accent">$</span> open lebenslauf.pdf
 				</p>
-				<a href={resumePath} target="_blank" rel="noopener noreferrer" className="term-border inline-flex items-center gap-3 border px-5 py-3">
+				<a href={resumePath} target="_blank" rel="noopener noreferrer" className="term-border inline-flex max-w-full flex-wrap items-center gap-3 border px-5 py-3">
 					<span className="term-name font-semibold">{t('contact.resume')}</span>
 					<span className="term-dim text-sm">{t('contact.downloadResume')}</span>
 					<span className="term-accent">↓</span>

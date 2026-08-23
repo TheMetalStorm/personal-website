@@ -36,7 +36,15 @@ export interface Game {
 }
 
 // Define a type for base games without translated content
-type BaseGame = Omit<Game, 'title' | 'description' | 'fullDescription'>;
+export type BaseGame = Omit<Game, 'title' | 'description' | 'fullDescription'>;
+
+export interface GameTranslation {
+  title?: string;
+  description?: string;
+  fullDescription?: string;
+  imageCaptions?: Record<string, string>;
+  features?: Record<string, string>;
+}
 
 // Base games data (language-neutral) - Server-side safe
 const baseGames: BaseGame[] = [
@@ -66,7 +74,7 @@ const baseGames: BaseGame[] = [
       {
         src: "/media/ba/Bachelorarbeit.pdf",
         alt: "Bachelor thesis PDF document",
-        pdfThumbnail: "/media/ba/pdf_preview.png",
+        pdfThumbnail: "/media/ba/pdf_preview.PNG",
         captionKey: "thesisPdf",
         type: "pdf"
       }
@@ -145,7 +153,7 @@ const baseGames: BaseGame[] = [
       { title: "enemyCombat", description: "enemyCombatDesc" },
       { title: "portalInspiredPuzzles", description: "portalInspiredPuzzlesDesc" }
     ],
-    playUrl: "https://themetalstorm.itch.io/spitting-sugar?secret=264OgofN46PWjfnYykV246nbfdo",
+    playUrl: "https://themetalstorm.itch.io/spitting-sugar",
     slug: "spitting-sugar",
     featured: true,
     developmentType: 'team'
@@ -257,7 +265,6 @@ const baseGames: BaseGame[] = [
       { title: "creativeChallenges", description: "creativeChallengesDesc" },
       { title: "timeConstraints", description: "timeConstraintsDesc" }
     ],
-    githubUrl: "https://github.com/Nashi1337/pirategamejam25",
     playUrl: "https://themetalstorm.itch.io/living-armory",
     slug: "pirate-game-jam-2025",
     featured: true,
@@ -325,7 +332,7 @@ export function getBaseGameBySlug(slug: string): BaseGame | undefined {
 }
 
 // Server-safe localization function
-export function localizeGame(baseGame: BaseGame, gameTranslations: any): Game {
+export function localizeGame(baseGame: BaseGame, gameTranslations?: GameTranslation): Game {
   if (!gameTranslations) {
     return {
       ...baseGame,
@@ -336,13 +343,13 @@ export function localizeGame(baseGame: BaseGame, gameTranslations: any): Game {
   }
 
   // Localize features
-  const localizedFeatures = baseGame.features?.map((feature: any) => ({
+  const localizedFeatures = baseGame.features?.map((feature) => ({
     title: gameTranslations.features?.[feature.title] || feature.title,
     description: gameTranslations.features?.[feature.description] || feature.description
   }));
 
   // Localize image captions
-  const localizedImages = baseGame.images?.map((image: any) => ({
+  const localizedImages = baseGame.images?.map((image) => ({
     ...image,
     caption: image.captionKey ? 
       gameTranslations.imageCaptions?.[image.captionKey] : 
@@ -351,9 +358,9 @@ export function localizeGame(baseGame: BaseGame, gameTranslations: any): Game {
 
   return {
     ...baseGame,
-    title: gameTranslations.title,
-    description: gameTranslations.description,
-    fullDescription: gameTranslations.fullDescription,
+    title: gameTranslations.title || baseGame.name,
+    description: gameTranslations.description || "Missing translation",
+    fullDescription: gameTranslations.fullDescription || "Missing translation",
     features: localizedFeatures,
     images: localizedImages
   };

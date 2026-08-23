@@ -79,7 +79,7 @@ const structuredData = {
 	"name": "Simon Arapoglu",
 	"jobTitle": "Fullstack-Entwickler",
 	"description": "Leidenschaftlicher Fullstack-Entwickler spezialisiert auf Java Spring Boot, REST-APIs und Unity-Spieleentwicklung.",
-	"url": "https://simonarapoglu.com/de",
+	"url": "https://simonarapoglu.com",
 	"image": "https://simonarapoglu.com/portrait.jpg",
 	"sameAs": [
 		"https://github.com/TheMetalStorm",

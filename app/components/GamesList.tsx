@@ -11,8 +11,7 @@ export default function GamesList() {
 	const pathname = usePathname();
 
 	const prefix = pathname.startsWith('/de') ? '/de' : pathname.startsWith('/en') ? '/en' : '';
-	const gamesData = translations.gamesData as Record<string, any>;
-	const games = getBaseGames().map((g) => localizeGame(g, gamesData?.[g.id]));
+	const games = getBaseGames().map((g) => localizeGame(g, translations.gamesData?.[g.id as keyof typeof translations.gamesData]));
 
 	return (
 		<main className="term-mono mx-auto max-w-5xl px-5 pb-16 pt-10 sm:px-6 sm:pt-14">

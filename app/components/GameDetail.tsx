@@ -76,28 +76,28 @@ export default function GameDetail({ game }: GameDetailProps) {
 					<span className="term-accent">$</span> cat info
 				</p>
 				<div className="term-border border-t">
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('games.engine')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('games.engine')}</span>
 						<span>{game.engine}</span>
 					</div>
 					{game.genre && (
-						<div className="term-border flex items-baseline gap-4 border-b py-3">
-							<span className="term-dim w-44 shrink-0 text-xs">{t('games.genre')}</span>
+						<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+							<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('games.genre')}</span>
 							<span>{game.genre}</span>
 						</div>
 					)}
 					{game.releaseDate && (
-						<div className="term-border flex items-baseline gap-4 border-b py-3">
-							<span className="term-dim w-44 shrink-0 text-xs">{locale === 'de' ? 'Veröffentlichung' : 'Release'}</span>
+						<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+							<span className="term-dim text-xs sm:w-44 sm:shrink-0">{locale === 'de' ? 'Veröffentlichung' : 'Release'}</span>
 							<span>{game.releaseDate}</span>
 						</div>
 					)}
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('games.developmentType')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('games.developmentType')}</span>
 						<span>{game.developmentType === 'team' ? t('games.teamDevelopment') : t('games.soloDevelopment')}</span>
 					</div>
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('games.technologies')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('games.technologies')}</span>
 						<span className="flex flex-wrap gap-2">
 							{game.technologies.map((tech, i) => (
 								<span key={i} className="term-border term-dim border px-2 py-0.5 text-[11px]">{tech}</span>

@@ -1,2 +1,2 @@
-// Re-export projects page
-export { default } from '../../projects/page';
+// Re-export projects page and its canonical metadata.
+export { default, metadata } from '../../projects/page';
