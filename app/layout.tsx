@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Outfit } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from './hooks/useI18n';
 import Header from './components/Header';
@@ -14,21 +13,6 @@ const themeInitScript = `(function () {
 		document.documentElement.setAttribute('data-theme', 'dark');
 	}
 })();`;
-
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-});
-
-const outfit = Outfit({
-	variable: '--font-outfit',
-	subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
 	title: {
@@ -143,19 +127,25 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: "document.documentElement.lang = window.location.pathname.startsWith('/de') ? 'de' : 'en';",
+					}}
+				/>
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
 				/>
 			</head>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-x-hidden min-h-screen`}>
+			<body className="antialiased relative min-h-screen overflow-x-hidden">
 
 
 				<I18nProvider>
 					<HtmlLang />
+					<a className="skip-link" href="#main-content">Skip to content</a>
 					<Header />
-					<div className="relative z-10 pt-14 sm:pt-16">
+					<div id="main-content" className="relative z-10 pt-14 sm:pt-16">
 						{children}
 					</div>
 				</I18nProvider>

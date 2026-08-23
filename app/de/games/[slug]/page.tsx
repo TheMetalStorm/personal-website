@@ -1,6 +1,8 @@
 import { getAllGameSlugs, getBaseGameBySlug, localizeGame } from '../../../data/gamesBase';
 import GameDetail from '../../../components/GameDetail';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { createPageMetadata } from '../../../metadata';
 
 // Load translations server-side
 async function loadTranslations(locale: string) {
@@ -15,6 +17,33 @@ async function loadTranslations(locale: string) {
 
 interface GameDetailPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: GameDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const baseGame = getBaseGameBySlug(slug);
+
+  if (!baseGame) {
+    return createPageMetadata({
+      locale: 'de',
+      path: `/games/${slug}`,
+      title: 'Spiel nicht gefunden',
+      description: 'Das angeforderte Spiel wurde nicht gefunden.',
+    });
+  }
+
+  const translations = await loadTranslations('de');
+  const game = localizeGame(baseGame, translations?.gamesData?.[baseGame.id]);
+
+  return createPageMetadata({
+    locale: 'de',
+    path: `/games/${slug}`,
+    title: game.title,
+    description: game.description,
+    keywords: [game.name, ...game.technologies, game.engine, 'Spieleentwicklung', 'Simon Arapoglu'],
+    image: game.headerImage || game.image,
+    type: 'article',
+  });
 }
 
 export default async function GameDetailPageDE({ params }: GameDetailPageProps) {

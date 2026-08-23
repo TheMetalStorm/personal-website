@@ -112,8 +112,8 @@ function PrivacyEN() {
 				<p>Further information: <a className="term-link" href="https://www.checkdomain.de/agb/datenschutz/" target="_blank" rel="noopener noreferrer">checkdomain privacy information</a>.</p>
 			</Section>
 			<Section title="3. Theme preference in your browser">
-				<p>When you switch between light and dark mode, your selected preference is stored in your browser's local storage. It contains only the value “light” or “dark”, is not transmitted to us and is used to retain the display setting you expressly requested on later visits.</p>
-				<p>Access is required to provide this requested convenience feature (Section 25(2)(2) TDDDG). You can remove the preference at any time by deleting this website's data in your browser.</p>
+				<p>When you switch between light and dark mode, your selected preference is stored in your browser&apos;s local storage. It contains only the value “light” or “dark”, is not transmitted to us and is used to retain the display setting you expressly requested on later visits.</p>
+				<p>Access is required to provide this requested convenience feature (Section 25(2)(2) TDDDG). You can remove the preference at any time by deleting this website&apos;s data in your browser.</p>
 			</Section>
 			<Section title="4. Contact by email">
 				<p>If you contact us by email, we process your email address, the content of your message and any information you provide voluntarily in order to respond. For contractual or pre-contractual enquiries, the legal basis is Article 6(1)(b) GDPR; otherwise it is Article 6(1)(f) GDPR. Our legitimate interest is responding to enquiries.</p>
@@ -123,7 +123,7 @@ function PrivacyEN() {
 				<p>This website links to external services, including GitHub, LinkedIn, itch.io and the websites of featured projects. Merely viewing our pages does not establish a connection to these providers through those links. Once you follow a link, the respective provider processes data under its own privacy policy. We have no control over that processing.</p>
 			</Section>
 			<Section title="6. Cookies, analytics and tracking">
-				<p>This website currently uses no analytics, marketing or tracking services and no cookies that require consent. If the website's functionality changes, we will update this privacy policy and obtain consent in advance where required.</p>
+				<p>This website currently uses no analytics, marketing or tracking services and no cookies that require consent. If the website&apos;s functionality changes, we will update this privacy policy and obtain consent in advance where required.</p>
 			</Section>
 			<Section title="7. Your rights">
 				<p>Subject to the applicable legal requirements, you have rights of access, rectification, erasure, restriction of processing, data portability and objection. You may withdraw consent at any time with future effect. You also have the right to lodge a complaint with a data protection supervisory authority.</p>

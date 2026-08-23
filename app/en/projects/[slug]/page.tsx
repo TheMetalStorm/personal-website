@@ -1,2 +1,2 @@
-// Re-export project detail page
-export { default, generateStaticParams } from '../../../projects/[slug]/page';
+// Re-export project detail page and its English metadata.
+export { default, generateStaticParams, generateMetadata } from '../../../projects/[slug]/page';

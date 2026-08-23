@@ -2,6 +2,7 @@ export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
+  captionKey?: string;
   type?: 'image' | 'video' | 'pdf';
   poster?: string; // For video thumbnails
   pdfThumbnail?: string; // For PDF first page thumbnails
@@ -34,8 +35,10 @@ export interface Project {
   commercial?: boolean;
 }
 
+export type BaseProject = Omit<Project, 'title' | 'description' | 'fullDescription'>;
+
 // Base project data (language-neutral) - Server-side safe
-const baseProjects = [
+const baseProjects: BaseProject[] = [
   {
     id: "joyboy",
     name: "JoyBoy",
@@ -226,7 +229,7 @@ const baseProjects = [
   {
     id: "zilo",
     name: "Zilo",
-    image: "/media/zilo/card_preview.png",
+    image: "/media/zilo/card_preview.PNG",
     headerImage: "/media/zilo/header_image.png",
 
     images: [
@@ -344,7 +347,16 @@ export function getAllProjectSlugs(): string[] {
   return baseProjects.map(project => project.slug);
 }
 
-export function getBaseProjects() {
+export interface ProjectTranslation {
+  title?: string;
+  description?: string;
+  fullDescription?: string;
+  type?: string;
+  imagesCaptions?: Record<string, string>;
+  features?: Record<string, string>;
+}
+
+export function getBaseProjects(): BaseProject[] {
   return baseProjects;
 }
 
@@ -353,7 +365,7 @@ export function getBaseProjectBySlug(slug: string) {
 }
 
 // Server-safe localization function
-export function localizeProject(baseProject: any, projectTranslations: any): Project {
+export function localizeProject(baseProject: BaseProject, projectTranslations?: ProjectTranslation): Project {
   if (!projectTranslations) {
     return {
       ...baseProject,
@@ -364,7 +376,7 @@ export function localizeProject(baseProject: any, projectTranslations: any): Pro
   }
 
   // Localize features
-  const localizedFeatures = baseProject.features?.map((feature: any) => ({
+  const localizedFeatures = baseProject.features?.map((feature) => ({
     title: projectTranslations.features?.[feature.title] || feature.title,
     description: projectTranslations.features?.[feature.description] || feature.description
   })) || [];

@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollSlide } from '../hooks/useScrollSlide';
-import { Code2, Gamepad2, Github, ExternalLink, Play, ArrowUpRight } from 'lucide-react';
+import { Code2, Gamepad2, Github, ExternalLink, Play, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 interface Badge {
   text: string;
   color: 'blue' | 'purple' | 'green' | 'pink' | 'gray';
 }
 
-type IconName = 'Code2' | 'Gamepad2' | 'Github' | 'ExternalLink' | 'Play';
+type IconName = 'Code2' | 'Gamepad2' | 'Github' | 'ExternalLink' | 'Play' | 'ArrowRight';
 
 interface ActionButton {
   href: string;
@@ -38,8 +38,9 @@ const iconMap = {
   Code2,
   Gamepad2,
   Github,
-  ExternalLink,
-  Play,
+	ExternalLink,
+	Play,
+	ArrowRight,
 };
 
 export default function ItemCard({

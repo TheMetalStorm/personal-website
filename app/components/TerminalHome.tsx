@@ -17,7 +17,6 @@ export default function TerminalHome() {
 		{ n: '02', key: 'projects', href: `${prefix}/projects` },
 		{ n: '03', key: 'games', href: `${prefix}/games` },
 		{ n: '04', key: 'commercial', href: `${prefix}/commercial` },
-		{ n: '05', key: 'blog', href: null },
 	];
 
 	const featured = getFeaturedProjects(translations).slice(0, 4);
@@ -47,12 +46,12 @@ export default function TerminalHome() {
 						const inner = (
 							<>
 								<span className="term-accent w-8 shrink-0 text-sm">[{hub.n}]</span>
-								<span className="term-name text-lg font-semibold sm:text-2xl">
+								<span className="term-name min-w-0 break-words text-lg font-semibold sm:text-2xl">
 									{name}
 									<span className="term-dim">/</span>
 								</span>
 								<span className="term-dim hidden flex-1 text-sm sm:inline">{desc}</span>
-								<span className="term-dim text-xs">{path}</span>
+								<span className="term-dim hidden text-xs sm:inline">{path}</span>
 								<span className="term-accent">→</span>
 							</>
 						);
@@ -86,13 +85,6 @@ export default function TerminalHome() {
 						</li>
 					))}
 				</ul>
-			</section>
-
-			<section className="py-6">
-				<p className="term-dim mb-3 text-[13px]">
-					<span className="term-accent">$</span> cat ./blog/latest
-				</p>
-				<p className="term-dim text-[15px]">- {t('landing.blogSoon')}</p>
 			</section>
 
 			<section id="contact" className="scroll-mt-24 py-12">

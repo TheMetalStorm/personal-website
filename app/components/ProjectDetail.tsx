@@ -102,12 +102,12 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
 					<span className="term-accent">$</span> cat info
 				</p>
 				<div className="term-border border-t">
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('projects.type')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('projects.type')}</span>
 						<span>{project.type ? t(`projects.projectTypes.${project.type}`) : t('projects.projectTypes.software')}</span>
 					</div>
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('projects.development')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('projects.development')}</span>
 						<span>
 							{project.developmentType === 'freelance'
 								? t('projects.freelanceDevelopment')
@@ -116,8 +116,8 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
 								: t('projects.soloDevelopment')}
 						</span>
 					</div>
-					<div className="term-border flex items-baseline gap-4 border-b py-3">
-						<span className="term-dim w-44 shrink-0 text-xs">{t('projects.technologies')}</span>
+					<div className="term-border flex flex-col gap-1 border-b py-3 sm:flex-row sm:items-baseline sm:gap-4">
+						<span className="term-dim text-xs sm:w-44 sm:shrink-0">{t('projects.technologies')}</span>
 						<span className="flex flex-wrap gap-2">
 							{project.technologies.map((tech, i) => (
 								<span key={i} className="term-border term-dim border px-2 py-0.5 text-[11px]">{tech}</span>
