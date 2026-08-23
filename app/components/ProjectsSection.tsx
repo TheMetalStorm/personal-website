@@ -42,7 +42,7 @@ export default function ProjectsSection() {
 							{
 								href: `${projectsUrl}/${project.slug}`,
 								label: t('projects.viewProject'),
-								icon: 'ArrowRight' as any, // Using ArrowRight locally in ItemCard logic adjustments
+								icon: 'ArrowRight' as const,
 								isPrimary: true,
 								isExternal: false
 							},

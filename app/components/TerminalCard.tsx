@@ -55,7 +55,7 @@ export default function TerminalCard({
 					))}
 				</div>
 
-				<div className="term-border mt-4 flex items-center justify-between gap-3 border-t pt-3">
+				<div className="term-border mt-4 flex flex-wrap items-center justify-between gap-3 border-t pt-3">
 					<div className="flex flex-wrap gap-x-4 gap-y-1">
 						{actions.map((a) => (
 							<a key={a.href} href={a.href} target="_blank" rel="noopener noreferrer" className="term-link text-xs underline decoration-dotted underline-offset-4 hover:text-[var(--terminal-accent)]">

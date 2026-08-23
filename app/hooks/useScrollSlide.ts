@@ -19,10 +19,10 @@ export function useScrollSlide(offset = 30, delay = 0) {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        setHasMounted(true);
+        const frame = window.requestAnimationFrame(() => setHasMounted(true));
 
         const el = ref.current;
-        if (!el) return;
+        if (!el) return () => window.cancelAnimationFrame(frame);
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -35,7 +35,10 @@ export function useScrollSlide(offset = 30, delay = 0) {
         );
 
         observer.observe(el);
-        return () => observer.disconnect();
+        return () => {
+            window.cancelAnimationFrame(frame);
+            observer.disconnect();
+        };
     }, []);
 
     const style: CSSProperties = {

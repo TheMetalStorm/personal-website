@@ -1,7 +1,7 @@
-import { notFound } from 'next/navigation';
 import { getAllProjectSlugs, getBaseProjectBySlug, localizeProject } from '../../data/projectsBase';
 import ProjectDetail from '../../components/ProjectDetail';
 import type { Metadata } from 'next';
+import { createPageMetadata } from '../../metadata';
 
 // Load translations server-side
 async function loadTranslations(locale: string) {
@@ -24,18 +24,22 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   
   const baseProject = getBaseProjectBySlug(slug);
   if (!baseProject) {
-    return {
+		return createPageMetadata({
+			locale: 'en',
+			path: `/projects/${slug}`,
       title: 'Project Not Found',
       description: 'The requested project could not be found.',
-    };
+		});
   }
 
   const translations = await loadTranslations(locale);
-  const project = localizeProject(baseProject, translations?.projectsData?.[baseProject.id]);
+  const project = localizeProject(baseProject, translations?.projectsData?.[baseProject.id as keyof typeof translations.projectsData]);
 
   const projectImage = project.headerImage || project.image;
 
-  return {
+	return createPageMetadata({
+		locale: 'en',
+		path: `/projects/${slug}`,
     title: project.title,
     description: project.description,
     keywords: [
@@ -45,24 +49,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       'Simon Arapoglu',
       ...(project.developmentType ? [project.developmentType] : []),
     ],
-    openGraph: {
-      title: `${project.title} - Simon Arapoglu`,
-      description: project.description,
-      ...(projectImage
-        ? {
-            images: [
-              {
-                url: projectImage,
-                width: 1200,
-                height: 630,
-                alt: project.title,
-              },
-            ],
-          }
-        : {}),
-      type: 'article',
-    },
-  };
+    image: projectImage,
+    type: 'article',
+  });
 }
 
 export async function generateStaticParams() {

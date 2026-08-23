@@ -2,6 +2,7 @@ import { getAllGameSlugs, getBaseGameBySlug, localizeGame } from '../../data/gam
 import GameDetail from '../../components/GameDetail';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { createPageMetadata } from '../../metadata';
 
 // Load translations server-side
 async function loadTranslations(locale: string) {
@@ -25,16 +26,20 @@ export async function generateMetadata({ params }: GameDetailPageProps): Promise
   
   const baseGame = getBaseGameBySlug(slug);
   if (!baseGame) {
-    return {
+    return createPageMetadata({
+      locale: 'en',
+      path: `/games/${slug}`,
       title: 'Game Not Found',
       description: 'The requested game could not be found.',
-    };
+    });
   }
 
   const translations = await loadTranslations(locale);
   const game = localizeGame(baseGame, translations?.gamesData?.[baseGame.id]);
 
-  return {
+  return createPageMetadata({
+    locale: 'en',
+    path: `/games/${slug}`,
     title: game.title,
     description: game.description,
     keywords: [
@@ -45,20 +50,9 @@ export async function generateMetadata({ params }: GameDetailPageProps): Promise
       'Simon Arapoglu',
       ...(game.genre ? [game.genre] : []),
     ],
-    openGraph: {
-      title: `${game.title} - Simon Arapoglu`,
-      description: game.description,
-      images: [
-        {
-          url: game.headerImage || game.image,
-          width: 1200,
-          height: 630,
-          alt: game.title,
-        },
-      ],
-      type: 'article',
-    },
-  };
+    image: game.headerImage || game.image,
+    type: 'article',
+  });
 }
 
 export default async function GameDetailPage({ params }: GameDetailPageProps) {

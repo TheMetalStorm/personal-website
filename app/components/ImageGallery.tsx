@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, Play, FileText, Download, AlertCircle } from 'lucide-react';
@@ -26,13 +26,14 @@ const getMediaType = (item: ProjectImage): 'image' | 'video' | 'pdf' => {
 };
 
 // Component for handling video with fallback
-const VideoPlayer = ({ src, poster, className, controls = false, muted = true, autoPlay = false, style, onError }: {
+const VideoPlayer = ({ src, poster, className, controls = false, muted = true, autoPlay = false, ariaLabel, style, onError }: {
   src: string;
   poster?: string;
   className?: string;
   controls?: boolean;
   muted?: boolean;
   autoPlay?: boolean;
+  ariaLabel?: string;
   style?: React.CSSProperties;
   onError?: () => void;
 }) => {
@@ -70,6 +71,7 @@ const VideoPlayer = ({ src, poster, className, controls = false, muted = true, a
       controls={controls}
       muted={muted}
       autoPlay={autoPlay}
+      aria-label={ariaLabel}
       preload="metadata"
       style={style}
       onError={handleError}
@@ -84,13 +86,18 @@ interface ImageGalleryProps {
 
 export default function ImageGallery({ images, className = '' }: ImageGalleryProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastFocusedElement = useRef<HTMLElement | null>(null);
+  const previousBodyOverflow = useRef('');
 
   const openLightbox = (index: number) => {
+    lastFocusedElement.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setSelectedImageIndex(index);
   };
 
   const closeLightbox = () => {
     setSelectedImageIndex(null);
+    lastFocusedElement.current?.focus();
   };
 
   const goToPrevious = () => {
@@ -105,37 +112,55 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
     }
   };
 
-  // Add global keyboard event listener
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedImageIndex === null) return;
+    if (selectedImageIndex === null) {
+      return;
+    }
 
+    const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
         case 'Escape':
-          closeLightbox();
+          setSelectedImageIndex(null);
+          lastFocusedElement.current?.focus();
           break;
         case 'ArrowLeft':
-          goToPrevious();
+          setSelectedImageIndex((index) => index === null ? null : Math.max(0, index - 1));
           break;
         case 'ArrowRight':
-          goToNext();
+          setSelectedImageIndex((index) => index === null ? null : Math.min(images.length - 1, index + 1));
           break;
       }
     };
 
-    if (selectedImageIndex !== null) {
-      document.addEventListener('keydown', handleKeyDown);
-      // Prevent body scrolling when lightbox is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.addEventListener('keydown', handleKeyDown);
+    previousBodyOverflow.current = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = previousBodyOverflow.current;
     };
-  }, [selectedImageIndex]);
+  }, [images.length, selectedImageIndex]);
+
+  const handleDialogKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Tab') return;
+
+    const focusableElements = event.currentTarget.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), a[href], video[controls]'
+    );
+    if (focusableElements.length === 0) return;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
 
   if (!images || images.length === 0) {
     return null;
@@ -148,25 +173,20 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
         {images.map((item, index) => {
           const mediaType = getMediaType(item);
           return (
-            <div
+            <button
               key={index}
-              role="button"
-              tabIndex={0}
+              type="button"
               aria-label={item.alt || item.caption || `Open image ${index + 1}`}
-              className="term-border relative aspect-video cursor-pointer overflow-hidden border group"
+              aria-haspopup="dialog"
+              className="term-border relative block aspect-video w-full cursor-pointer overflow-hidden border bg-transparent p-0 text-left group"
               onClick={() => openLightbox(index)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  openLightbox(index);
-                }
-              }}
             >
               {mediaType === 'video' ? (
                 <>
                   <VideoPlayer
                     src={item.src}
                     poster={item.poster}
+                    ariaLabel={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     muted
                   />
@@ -218,12 +238,12 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
               )}
               {item.caption && (
                 <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2">
-                  <p className="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.caption}
-                  </p>
-                </div>
-              )}
-            </div>
+                    <p className="text-white text-xs leading-relaxed">
+                      {item.caption}
+                    </p>
+                  </div>
+                )}
+            </button>
           );
         })}
       </div>
@@ -233,9 +253,18 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
           onClick={closeLightbox}
+          onKeyDown={handleDialogKeyDown}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="gallery-dialog-title"
         >
+          <h2 id="gallery-dialog-title" className="sr-only">
+            {images[selectedImageIndex].caption || images[selectedImageIndex].alt}
+          </h2>
           {/* Close Button - Positioned below header */}
           <button
+            ref={closeButtonRef}
+            type="button"
             className="fixed top-20 right-4 z-[60] text-white hover:text-red-400 transition-all duration-200 bg-black bg-opacity-80 hover:bg-opacity-95 rounded-full p-3 shadow-lg border border-gray-500 hover:border-red-400"
             onClick={closeLightbox}
             title="Close (ESC)"
@@ -247,6 +276,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           {/* Navigation Buttons */}
           {selectedImageIndex > 0 && (
             <button
+              type="button"
               className="absolute left-4 text-white hover:text-gray-300 transition-colors z-10"
               onClick={(e) => {
                 e.stopPropagation();
@@ -260,6 +290,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
 
           {selectedImageIndex < images.length - 1 && (
             <button
+              type="button"
               className="absolute right-4 text-white hover:text-gray-300 transition-colors z-10"
               onClick={(e) => {
                 e.stopPropagation();
@@ -274,6 +305,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
           {/* Image Container */}
           <div
             className="relative w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
             style={{
               maxHeight: 'calc(100vh - 8rem)', /* Reduced space for smaller caption */
               maxWidth: 'calc(100vw - 2rem)',
@@ -282,12 +314,13 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
             }}
           >
             {getMediaType(images[selectedImageIndex]) === 'video' ? (
-              <div onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+              <div>
                 <VideoPlayer
                   src={images[selectedImageIndex].src}
                   controls
                   autoPlay
                   muted={false}
+                  ariaLabel={images[selectedImageIndex].alt}
                   className="max-w-full max-h-full object-contain"
                   style={{
                     maxHeight: 'calc(100vh - 10rem)', /* Reduced reserved space */
@@ -296,7 +329,7 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                 />
               </div>
             ) : getMediaType(images[selectedImageIndex]) === 'pdf' ? (
-              <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg p-8 max-w-2xl" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+              <div className="flex max-w-2xl flex-col items-center justify-center rounded-lg bg-gray-100 p-8">
                 {images[selectedImageIndex].pdfThumbnail ? (
                   <Image
                     src={images[selectedImageIndex].pdfThumbnail!}
@@ -325,7 +358,6 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       <FileText className="w-5 h-5" />
                       View PDF
@@ -334,7 +366,6 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                       href={images[selectedImageIndex].src}
                       download
                       className="inline-flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       <Download className="w-5 h-5" />
                       Download PDF
@@ -356,7 +387,6 @@ export default function ImageGallery({ images, className = '' }: ImageGalleryPro
                   height: 'auto'
                 }}
                 priority
-                onClick={(e: React.MouseEvent) => e.stopPropagation()}
               />
             )}
 

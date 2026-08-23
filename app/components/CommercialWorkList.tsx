@@ -53,9 +53,6 @@ export default function CommercialWorkList() {
 						</article>
 					))}
 				</div>
-				<p className="term-dim mt-10 text-[13px]">
-					<span className="term-accent">$</span> {t('commercial.moreComingSoon')}
-				</p>
 				</>
 			)}
 			<LegalFooter />

@@ -9,7 +9,7 @@ import deTranslations from '../locales/de.json';
 
 export type Locale = 'en' | 'de';
 
-type Translations = typeof enTranslations;
+export type Translations = typeof enTranslations;
 
 interface I18nContextType {
   locale: Locale;
@@ -62,11 +62,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   // Helper function to get nested translation
   const t = useCallback((key: string): string => {
     const keys = key.split('.');
-    let value: any = translations;
+    let value: unknown = translations;
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
         return key; // Return key if translation not found
       }
