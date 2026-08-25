@@ -105,6 +105,36 @@ const baseProjects: BaseProject[] = [
     type: 'website'
   },
   {
+    id: "writeplease",
+    name: "WritePlease",
+    image: "/media/writeplease/main-workspace.png",
+    images: [
+      {
+        src: "/media/writeplease/canvas-planning.png",
+        alt: "WritePlease canvas view mapping Crime and Punishment scenes and story connections",
+        captionKey: "canvasPlanning"
+      },
+      {
+        src: "/media/writeplease/dark-folder-overview.png",
+        alt: "WritePlease dark theme showing the project folder overview and chapter word counts",
+        captionKey: "darkFolderOverview"
+      }
+    ],
+    technologies: ["Flutter", "Dart", "Linux", "Windows", "Android"],
+    features: [
+      { title: "canvasPlanning", description: "canvasPlanningDesc" },
+      { title: "bilingualSpellcheck", description: "bilingualSpellcheckDesc" },
+      { title: "binderOrganization", description: "binderOrganizationDesc" },
+      { title: "exportFormats", description: "exportFormatsDesc" }
+    ],
+    demoUrl: "https://getwriteplease.com",
+    slug: "writeplease",
+    featured: true,
+    developmentType: 'solo',
+    commercial: true,
+    type: 'software'
+  },
+  {
     id: "shared-aesthetic",
     name: "Shared Aesthetic",
     headerImage: "/media/shared_aesthetic/header.jpeg",

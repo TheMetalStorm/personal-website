@@ -77,7 +77,7 @@ export default function ProjectDetail({ project: propProject, slug }: ProjectDet
 					</p>
 					<div className="flex flex-wrap gap-3">
 						{project.demoUrl && (
-							<a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="term-border term-accent border px-4 py-2 text-sm">→ demo</a>
+							<a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="term-border term-accent border px-4 py-2 text-sm">→ {t('projects.projectTypes.website')}</a>
 						)}
 						{project.githubUrl && (
 							<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="term-border term-link border px-4 py-2 text-sm">→ {t('projects.viewCode')}</a>

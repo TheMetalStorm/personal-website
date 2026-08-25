@@ -26,7 +26,7 @@ export default function ProjectsList() {
 			<div className="grid gap-6 sm:grid-cols-2">
 				{allProjects.map((project) => {
 					const actions = [
-						...(project.demoUrl ? [{ href: project.demoUrl, label: 'demo' }] : []),
+						...(project.demoUrl ? [{ href: project.demoUrl, label: t('projects.projectTypes.website') }] : []),
 						...(project.githubUrl ? [{ href: project.githubUrl, label: 'github' }] : []),
 					];
 					return (

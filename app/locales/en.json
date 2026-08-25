@@ -218,6 +218,25 @@
         "netlifySsrDesc": "Server-side rendering (SSR) deployment setup on Netlify ensuring highly optimized performance and SEO metrics."
       }
     },
+    "writeplease": {
+      "title": "WritePlease",
+      "description": "A cross-platform, text-focused novel-writing app for independent authors.",
+      "fullDescription": "WritePlease is a focused novel-writing environment for authors who want structure without giving up ownership of their work. Instead of locking projects into a proprietary cloud format, it stores manuscripts as human-readable RTF files in ordinary folders, making them portable, inspectable, and compatible with Dropbox, OneDrive, Git, or a text editor. It keeps the writing process local and calm, from planning a story to preparing a finished manuscript.",
+      "imagesCaptions": {
+        "canvasPlanning": "Canvas view mapping scenes and story connections",
+        "darkFolderOverview": "Dark theme project overview with folders and chapter word counts"
+      },
+      "features": {
+        "canvasPlanning": "Canvas Planning View",
+        "canvasPlanningDesc": "Plan the story visually on a canvas and connect ideas, scenes, and narrative threads.",
+        "bilingualSpellcheck": "English & German Spellcheck",
+        "bilingualSpellcheckDesc": "Built-in spellchecking for both English and German writing projects.",
+        "binderOrganization": "Binder-Based Organization",
+        "binderOrganizationDesc": "Organize parts, chapters, and scenes in a flexible hierarchy with drag-and-drop reordering.",
+        "exportFormats": "PDF, EPUB & DOCX Export",
+        "exportFormatsDesc": "Export finished manuscripts as PDF, EPUB, or editable DOCX documents."
+      }
+    },
     "zilo": {
       "title": "Zilo Text Editor",
       "description": "A reimplementation of the kilo Text Editor, written in the Zig Programming language.",

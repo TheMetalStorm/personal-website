@@ -218,6 +218,25 @@
         "netlifySsrDesc": "Serverseitiges Rendering (SSR) Deployment auf Netlify für hochoptimierte Performance und exzellente SEO-Werte."
       }
     },
+    "writeplease": {
+      "title": "WritePlease",
+      "description": "Eine plattformübergreifende, textorientierte Schreib-App für unabhängige Autoren.",
+      "fullDescription": "WritePlease ist eine fokussierte Schreibumgebung für Autoren, die Struktur wünschen, ohne die Kontrolle über ihre Arbeit abzugeben. Statt Projekte in ein proprietäres Cloud-Format einzuschließen, speichert die App Manuskripte als menschenlesbare RTF-Dateien in gewöhnlichen Ordnern. Dadurch bleiben sie portabel, überprüfbar und mit Dropbox, OneDrive, Git oder einem Texteditor kompatibel. WritePlease hält den Schreibprozess lokal und ruhig, von der Planung einer Geschichte bis zur Vorbereitung eines fertigen Manuskripts.",
+      "imagesCaptions": {
+        "canvasPlanning": "Canvas-Ansicht mit Szenen und Verbindungen der Geschichte",
+        "darkFolderOverview": "Projektübersicht im Dark Theme mit Ordnern und Kapitel-Wortzahlen"
+      },
+      "features": {
+        "canvasPlanning": "Canvas-Planungsansicht",
+        "canvasPlanningDesc": "Die Geschichte visuell auf einer Canvas planen und Ideen, Szenen und Erzählstränge verbinden.",
+        "bilingualSpellcheck": "Englische und deutsche Rechtschreibprüfung",
+        "bilingualSpellcheckDesc": "Integrierte Rechtschreibprüfung für Schreibprojekte auf Englisch und Deutsch.",
+        "binderOrganization": "Binder-basierte Organisation",
+        "binderOrganizationDesc": "Teile, Kapitel und Szenen in einer flexiblen Hierarchie organisieren und per Drag-and-drop neu ordnen.",
+        "exportFormats": "PDF-, EPUB- und DOCX-Export",
+        "exportFormatsDesc": "Fertige Manuskripte als PDF, EPUB oder bearbeitbare DOCX-Dokumente exportieren."
+      }
+    },
     "zilo": {
       "title": "Zilo Text Editor",
       "description": "Eine Neuimplementierung des kilo Text Editors, geschrieben in der Zig Programmiersprache.",
