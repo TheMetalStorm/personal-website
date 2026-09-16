@@ -12,7 +12,8 @@ function Address({ locale }: { locale: 'de' | 'en' }) {
 			{locale === 'de' ? 'Inhaber' : 'Proprietor'}: Simon Arapoglu<br />
 			Steubenstraße 47<br />
 			90763 Fürth<br />
-			{locale === 'de' ? 'Deutschland' : 'Germany'}
+			{locale === 'de' ? 'Deutschland' : 'Germany'}<br />
+			{locale === 'de' ? 'USt-IdNr.' : 'VAT ID'}: DE465046970-00001
 		</address>
 	);
 }
