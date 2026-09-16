@@ -13,7 +13,7 @@ function Address({ locale }: { locale: 'de' | 'en' }) {
 			Steubenstraße 47<br />
 			90763 Fürth<br />
 			{locale === 'de' ? 'Deutschland' : 'Germany'}<br />
-			{locale === 'de' ? 'USt-IdNr.' : 'VAT ID'}: DE465046970-00001
+			{locale === 'de' ? 'W-IdNr.' : 'Business Identification Number'}: DE465046970-00001
 		</address>
 	);
 }
